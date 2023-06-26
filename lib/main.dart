@@ -17,8 +17,8 @@ class MyApp extends StatelessWidget {
       title: 'Ghar Darpan',
       translations: Languages(),
       // this were you will give your local, like if its hindi, urdu, spanish
-      locale: Locale('en', 'US'),
-      fallbackLocale:  Locale('en', 'US'),
+      locale: const Locale('en', 'US'),
+      fallbackLocale:  const Locale('en', 'US'),
       getPages: AppRoutes.appRoutes(),
     );
   }

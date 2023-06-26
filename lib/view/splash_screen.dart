@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:ghar_darpan/view_models/services/splash_services.dart';
 
 
