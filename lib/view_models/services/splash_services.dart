@@ -7,11 +7,12 @@ import 'package:ghar_darpan/model/login/login_result_model.dart';
 
 class SplashServices {
 
-  void isLogin(){
-   bool? isLogin =  login.read("isLogin");
+  Future<void> isLogin() async {
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    bool isLogin = await sharedPreferences.setBool("isLogin", true);
    if(isLogin==null || !isLogin){
      Timer(const Duration(seconds: 3) ,
-             () => Get.toNamed(RouteName.preLoginView) );
+             () => Get.toNamed(RouteName.loginView) );
    }else {
      Timer(const Duration(seconds: 3) ,
              () => Get.toNamed(RouteName.dashboardView) );
@@ -21,6 +22,7 @@ class SplashServices {
     login.write("isLogin", true);
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     sharedPreferences.setString("id", clientLogin!.id ?? "");
+    sharedPreferences.setBool("isLogin", true);
     sharedPreferences.setString("loginId", clientLogin.loginId ?? "");
     sharedPreferences.setString("accessToken", clientLogin.accessToken ?? "");
     sharedPreferences.setString("bookingId", clientLogin.bookingId ?? "");

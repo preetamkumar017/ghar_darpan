@@ -16,8 +16,8 @@ abstract class FlutterFlowTheme {
     return darkMode == null
         ? ThemeMode.system
         : darkMode
-            ? ThemeMode.dark
-            : ThemeMode.light;
+        ? ThemeMode.dark
+        : ThemeMode.light;
   }
 
   static void saveThemeMode(ThemeMode mode) => mode == ThemeMode.system
@@ -64,6 +64,9 @@ abstract class FlutterFlowTheme {
   late Color badgeSecondary;
   late Color containerTextClrPrimary;
   late Color containerTextColourSecondary;
+  late Color divider;
+  late Color shadowColour;
+  late Color highlightColour;
 
   @Deprecated('Use displaySmallFamily instead')
   String get title1Family => displaySmallFamily;
@@ -163,6 +166,9 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color badgeSecondary = Color(0xFFEFF7FC);
   late Color containerTextClrPrimary = Color(0xFFFFFFFF);
   late Color containerTextColourSecondary = Color(0xFF8F8F16);
+  late Color divider = Color(0xFFDBDBDB);
+  late Color shadowColour = Color(0xFFCAC9C9);
+  late Color highlightColour = Color(0xFF008F9A);
 }
 
 abstract class Typography {
@@ -205,109 +211,109 @@ class ThemeTypography extends Typography {
 
   String get displayLargeFamily => 'Inter';
   TextStyle get displayLarge => GoogleFonts.getFont(
-        'Inter',
-        color: theme.primaryText,
-        fontWeight: FontWeight.normal,
-        fontSize: 64.0,
-      );
+    'Inter',
+    color: theme.primaryText,
+    fontWeight: FontWeight.normal,
+    fontSize: 64.0,
+  );
   String get displayMediumFamily => 'Inter';
   TextStyle get displayMedium => GoogleFonts.getFont(
-        'Inter',
-        color: theme.primaryText,
-        fontWeight: FontWeight.normal,
-        fontSize: 44.0,
-      );
+    'Inter',
+    color: theme.primaryText,
+    fontWeight: FontWeight.normal,
+    fontSize: 44.0,
+  );
   String get displaySmallFamily => 'Inter';
   TextStyle get displaySmall => GoogleFonts.getFont(
-        'Inter',
-        color: theme.primaryText,
-        fontWeight: FontWeight.w600,
-        fontSize: 36.0,
-      );
+    'Inter',
+    color: theme.primaryText,
+    fontWeight: FontWeight.w600,
+    fontSize: 36.0,
+  );
   String get headlineLargeFamily => 'Inter';
   TextStyle get headlineLarge => GoogleFonts.getFont(
-        'Inter',
-        color: theme.primaryText,
-        fontWeight: FontWeight.w600,
-        fontSize: 18.0,
-      );
+    'Inter',
+    color: theme.primaryText,
+    fontWeight: FontWeight.w600,
+    fontSize: 18.0,
+  );
   String get headlineMediumFamily => 'Inter';
   TextStyle get headlineMedium => GoogleFonts.getFont(
-        'Inter',
-        color: theme.primaryText,
-        fontWeight: FontWeight.normal,
-        fontSize: 15.0,
-      );
+    'Inter',
+    color: theme.primaryText,
+    fontWeight: FontWeight.normal,
+    fontSize: 15.0,
+  );
   String get headlineSmallFamily => 'Inter';
   TextStyle get headlineSmall => GoogleFonts.getFont(
-        'Inter',
-        color: theme.containerTextClrPrimary,
-        fontWeight: FontWeight.w600,
-        fontSize: 18.0,
-      );
+    'Inter',
+    color: theme.containerTextClrPrimary,
+    fontWeight: FontWeight.w600,
+    fontSize: 16.0,
+  );
   String get titleLargeFamily => 'Inter';
   TextStyle get titleLarge => GoogleFonts.getFont(
-        'Inter',
-        color: theme.primaryText,
-        fontWeight: FontWeight.w500,
-        fontSize: 22.0,
-      );
+    'Inter',
+    color: theme.primaryText,
+    fontWeight: FontWeight.w500,
+    fontSize: 22.0,
+  );
   String get titleMediumFamily => 'Inter';
   TextStyle get titleMedium => GoogleFonts.getFont(
-        'Inter',
-        color: theme.info,
-        fontWeight: FontWeight.normal,
-        fontSize: 18.0,
-      );
+    'Inter',
+    color: theme.info,
+    fontWeight: FontWeight.normal,
+    fontSize: 18.0,
+  );
   String get titleSmallFamily => 'Inter';
   TextStyle get titleSmall => GoogleFonts.getFont(
-        'Inter',
-        color: theme.info,
-        fontWeight: FontWeight.w500,
-        fontSize: 16.0,
-      );
+    'Inter',
+    color: theme.highlightColour,
+    fontWeight: FontWeight.w600,
+    fontSize: 18.0,
+  );
   String get labelLargeFamily => 'Inter';
   TextStyle get labelLarge => GoogleFonts.getFont(
-        'Inter',
-        color: theme.containerTextClrPrimary,
-        fontWeight: FontWeight.w600,
-        fontSize: 12.0,
-      );
+    'Inter',
+    color: theme.containerTextClrPrimary,
+    fontWeight: FontWeight.w600,
+    fontSize: 12.0,
+  );
   String get labelMediumFamily => 'Inter';
   TextStyle get labelMedium => GoogleFonts.getFont(
-        'Inter',
-        color: theme.secondaryText,
-        fontWeight: FontWeight.normal,
-        fontSize: 12.0,
-      );
+    'Inter',
+    color: theme.secondaryText,
+    fontWeight: FontWeight.normal,
+    fontSize: 11.0,
+  );
   String get labelSmallFamily => 'Inter';
   TextStyle get labelSmall => GoogleFonts.getFont(
-        'Inter',
-        color: theme.secondaryText,
-        fontWeight: FontWeight.normal,
-        fontSize: 12.0,
-      );
+    'Inter',
+    color: theme.secondaryText,
+    fontWeight: FontWeight.normal,
+    fontSize: 12.0,
+  );
   String get bodyLargeFamily => 'Inter';
   TextStyle get bodyLarge => GoogleFonts.getFont(
-        'Inter',
-        color: theme.primaryText,
-        fontWeight: FontWeight.normal,
-        fontSize: 12.0,
-      );
+    'Inter',
+    color: theme.primaryText,
+    fontWeight: FontWeight.normal,
+    fontSize: 11.0,
+  );
   String get bodyMediumFamily => 'Inter';
   TextStyle get bodyMedium => GoogleFonts.getFont(
-        'Inter',
-        color: theme.containerTextClrPrimary,
-        fontWeight: FontWeight.normal,
-        fontSize: 10.0,
-      );
+    'Inter',
+    color: theme.info,
+    fontWeight: FontWeight.normal,
+    fontSize: 10.0,
+  );
   String get bodySmallFamily => 'Inter';
   TextStyle get bodySmall => GoogleFonts.getFont(
-        'Inter',
-        color: theme.primaryText,
-        fontWeight: FontWeight.normal,
-        fontSize: 10.0,
-      );
+    'Inter',
+    color: theme.primaryText,
+    fontWeight: FontWeight.normal,
+    fontSize: 10.0,
+  );
 }
 
 class DarkModeTheme extends FlutterFlowTheme {
@@ -345,6 +351,9 @@ class DarkModeTheme extends FlutterFlowTheme {
   late Color badgeSecondary = Color(0xFFBD20ED);
   late Color containerTextClrPrimary = Color(0xFFC505B5);
   late Color containerTextColourSecondary = Color(0xFF8F8F16);
+  late Color divider = Color(0xFF0174E0);
+  late Color shadowColour = Color(0xFF66BCA6);
+  late Color highlightColour = Color(0xFF352EF5);
 }
 
 extension TextStyleHelper on TextStyle {
@@ -361,23 +370,23 @@ extension TextStyleHelper on TextStyle {
   }) =>
       useGoogleFonts
           ? GoogleFonts.getFont(
-              fontFamily!,
-              color: color ?? this.color,
-              fontSize: fontSize ?? this.fontSize,
-              letterSpacing: letterSpacing ?? this.letterSpacing,
-              fontWeight: fontWeight ?? this.fontWeight,
-              fontStyle: fontStyle ?? this.fontStyle,
-              decoration: decoration,
-              height: lineHeight,
-            )
+        fontFamily!,
+        color: color ?? this.color,
+        fontSize: fontSize ?? this.fontSize,
+        letterSpacing: letterSpacing ?? this.letterSpacing,
+        fontWeight: fontWeight ?? this.fontWeight,
+        fontStyle: fontStyle ?? this.fontStyle,
+        decoration: decoration,
+        height: lineHeight,
+      )
           : copyWith(
-              fontFamily: fontFamily,
-              color: color,
-              fontSize: fontSize,
-              letterSpacing: letterSpacing,
-              fontWeight: fontWeight,
-              fontStyle: fontStyle,
-              decoration: decoration,
-              height: lineHeight,
-            );
+        fontFamily: fontFamily,
+        color: color,
+        fontSize: fontSize,
+        letterSpacing: letterSpacing,
+        fontWeight: fontWeight,
+        fontStyle: fontStyle,
+        decoration: decoration,
+        height: lineHeight,
+      );
 }

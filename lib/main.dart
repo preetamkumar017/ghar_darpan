@@ -14,7 +14,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Ghar Darpan',
+      debugShowCheckedModeBanner: false,
+      title: 'ghar_darpan'.tr,
       translations: Languages(),
       // this were you will give your local, like if its hindi, urdu, spanish
       locale: const Locale('en', 'US'),

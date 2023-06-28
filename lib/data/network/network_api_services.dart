@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:developer';
 import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:ghar_darpan/data/app_exceptions.dart';
@@ -8,8 +7,8 @@ import 'package:ghar_darpan/view_models/services/box_storage.dart';
 import 'package:http/http.dart' as http;
 class NetworkApiServices extends BaseApiServices {
 
-String authCode = login.read("auth_code");
-String user_id = login.read("auth_code");
+String authCode = login.read("auth_code") ?? "";
+String user_id = login.read("auth_code") ?? "";
   @override
   Future<dynamic> getApi(String url)async{
 
