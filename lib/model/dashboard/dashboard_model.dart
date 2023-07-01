@@ -8,7 +8,7 @@ class DashboardModel {
 
   DashboardModel.fromJson(Map<String, dynamic> json) {
     clientInfo = json['client_info'] != null
-        ? ClientInfo.fromJson(json['client_info'])
+        ? new ClientInfo.fromJson(json['client_info'])
         : null;
     code = json['code'];
     status = json['status'];
@@ -16,7 +16,7 @@ class DashboardModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
+    final Map<String, dynamic> data = new Map<String, dynamic>();
     if (clientInfo != null) {
       data['client_info'] = clientInfo!.toJson();
     }
@@ -53,7 +53,7 @@ class ClientInfo {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
+    final Map<String, dynamic> data = new Map<String, dynamic>();
     data['booking_id'] = bookingId;
     data['booking_date'] = bookingDate;
     data['project_cost'] = projectCost;

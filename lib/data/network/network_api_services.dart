@@ -1,17 +1,20 @@
 import 'dart:convert';
+import 'dart:developer';
 import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:ghar_darpan/data/app_exceptions.dart';
 import 'package:ghar_darpan/data/network/base_api_services.dart';
 import 'package:ghar_darpan/view_models/services/box_storage.dart';
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 class NetworkApiServices extends BaseApiServices {
 
 String authCode = login.read("auth_code") ?? "";
 String user_id = login.read("auth_code") ?? "";
   @override
   Future<dynamic> getApi(String url)async{
-
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    String authCode = sharedPreferences.getString("isLogin") ?? "";
     dynamic responseJson ;
     try {
       final response = await http.get(
@@ -35,10 +38,14 @@ String user_id = login.read("auth_code") ?? "";
 
   @override
   Future<dynamic> postApi(Map data , String url)async{
-
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    String authCode = sharedPreferences.getString("accessToken") ?? "";
+    String bookingId = sharedPreferences.getString("bookingId") ?? "";
+    data.addAll({"booking_id" : bookingId});
     if (kDebugMode) {
       debugPrint(url);
       debugPrint(data.toString());
+      debugPrint(authCode.toString());
     }
 
     dynamic responseJson ;
@@ -46,10 +53,11 @@ String user_id = login.read("auth_code") ?? "";
       final response = await http.post(Uri.parse(url),
           headers: {
             'Content-Type': 'application/json',
-            'token': 'Bearer $authCode',
+            'Authorization': 'Bearer $authCode',
           },
         body: jsonEncode(data)
       ).timeout( const Duration(seconds: 10));
+      log(response.body.toString());
       // Utils.snackBar("",response.body.toString());
       responseJson  = returnResponse(response) ;
     }on SocketException {
@@ -58,69 +66,6 @@ String user_id = login.read("auth_code") ?? "";
       throw RequestTimeOut('');
     }
     return responseJson ;
-  }
-
-  Future<dynamic> putApi(var data , String url)async{
-
-    if (kDebugMode) {
-      //debugPrint(url);
-      //debugPrint(data);
-    }
-    dynamic responseJson ;
-    try {
-
-      final response = await http.put(Uri.parse(url),
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer $authCode',
-          },
-          body: data
-      ).timeout( const Duration(seconds: 10));
-      responseJson  = returnResponse(response) ;
-    }on SocketException {
-      throw InternetException('');
-    }on RequestTimeOut {
-      throw RequestTimeOut('');
-
-    }
-    if (kDebugMode) {
-      //debugPrint(responseJson);
-    }
-    return responseJson ;
-
-  }
-
-
-  Future<dynamic> deleteApi(var data , String url)async{
-
-    if (kDebugMode) {
-      debugPrint(url);
-      debugPrint(data);
-    }
-    dynamic responseJson ;
-    try {
-
-      final response = await http.delete(Uri.parse(url),
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer $authCode',
-          },
-          body: data
-      ).timeout( const Duration(seconds: 10));
-
-      print(response.body);
-      responseJson  = returnResponse(response);
-    }on SocketException {
-      throw InternetException('');
-    }on RequestTimeOut {
-      throw RequestTimeOut('');
-
-    }
-    if (kDebugMode) {
-      debugPrint(responseJson);
-    }
-    return responseJson ;
-
   }
 
   Future getPostWithFormDataApiResponse(List<http.MultipartFile> file, data,String url) async {
