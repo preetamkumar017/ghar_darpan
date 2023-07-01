@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:ghar_darpan/view_models/services/splash_services.dart';
 
 
@@ -18,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    // splashScreen.isLogin();
+    splashScreen.isLogin();
 
   }
 

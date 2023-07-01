@@ -2,25 +2,28 @@ import 'dart:convert';
 import 'dart:developer';
 import 'dart:io';
 import 'package:flutter/foundation.dart';
+import 'package:ghar_darpan/data/app_exceptions.dart';
 import 'package:ghar_darpan/data/network/base_api_services.dart';
+import 'package:ghar_darpan/view_models/services/box_storage.dart';
 import 'package:http/http.dart' as http;
-
-import '../app_exceptions.dart';
-
+import 'package:shared_preferences/shared_preferences.dart';
 class NetworkApiServices extends BaseApiServices {
 
-
+String authCode = login.read("auth_code") ?? "";
+String user_id = login.read("auth_code") ?? "";
   @override
   Future<dynamic> getApi(String url)async{
-
-    if (kDebugMode) {
-      debugPrint(url);
-    }
-
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    String authCode = sharedPreferences.getString("isLogin") ?? "";
     dynamic responseJson ;
     try {
-
-      final response = await http.get(Uri.parse(url)).timeout( const Duration(seconds: 10));
+      final response = await http.get(
+          Uri.parse(url),
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer $authCode',
+          },
+      ).timeout( const Duration(seconds: 10));
       responseJson  = returnResponse(response) ;
       // debugPrint(responseJson);
     }on SocketException {
@@ -34,18 +37,27 @@ class NetworkApiServices extends BaseApiServices {
   }
 
   @override
-  Future<dynamic> postApi(var data , String url)async{
-
+  Future<dynamic> postApi(Map data , String url)async{
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    String authCode = sharedPreferences.getString("accessToken") ?? "";
+    String bookingId = sharedPreferences.getString("bookingId") ?? "";
+    data.addAll({"booking_id" : bookingId});
     if (kDebugMode) {
       debugPrint(url);
       debugPrint(data.toString());
+      debugPrint(authCode.toString());
     }
 
     dynamic responseJson ;
     try {
       final response = await http.post(Uri.parse(url),
-        body: data
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer $authCode',
+          },
+        body: jsonEncode(data)
       ).timeout( const Duration(seconds: 10));
+      log(response.body.toString());
       // Utils.snackBar("",response.body.toString());
       responseJson  = returnResponse(response) ;
     }on SocketException {
@@ -56,61 +68,6 @@ class NetworkApiServices extends BaseApiServices {
     return responseJson ;
   }
 
-  Future<dynamic> putApi(var data , String url)async{
-
-    if (kDebugMode) {
-      //debugPrint(url);
-      //debugPrint(data);
-    }
-    dynamic responseJson ;
-    try {
-
-      final response = await http.put(Uri.parse(url),
-          body: data
-      ).timeout( const Duration(seconds: 10));
-      responseJson  = returnResponse(response) ;
-    }on SocketException {
-      throw InternetException('');
-    }on RequestTimeOut {
-      throw RequestTimeOut('');
-
-    }
-    if (kDebugMode) {
-      //debugPrint(responseJson);
-    }
-    return responseJson ;
-
-  }
-
-
-  Future<dynamic> deleteApi(var data , String url)async{
-
-    if (kDebugMode) {
-      debugPrint(url);
-      debugPrint(data);
-    }
-    dynamic responseJson ;
-    try {
-
-      final response = await http.post(Uri.parse(url),
-          body: data
-      ).timeout( const Duration(seconds: 10));
-
-      print(response.body);
-      responseJson  = returnResponse(response);
-    }on SocketException {
-      throw InternetException('');
-    }on RequestTimeOut {
-      throw RequestTimeOut('');
-
-    }
-    if (kDebugMode) {
-      debugPrint(responseJson);
-    }
-    return responseJson ;
-
-  }
-
   Future getPostWithFormDataApiResponse(List<http.MultipartFile> file, data,String url) async {
     dynamic responseJson;
 
@@ -118,18 +75,11 @@ class NetworkApiServices extends BaseApiServices {
       //debugPrint(url);
       var request = http.MultipartRequest("POST", Uri.parse(url));
 
-      // debugPrint(data.toString());
-      // debugPrint(file.length.toString());
       request.fields.addAll(data);
       request.files.addAll(file);
       var response = await request.send();
-      //debugPrint(response.statusCode);
       var responseString = await response.stream.bytesToString();
-      //debugPrint(responseString);
       responseJson = returnResponseFile(response, responseString);
-
-      // //debugPrint(responseJson.toString());
-
     } on SocketException {
       throw FetchDataException('No Internet Connection');
     }
@@ -211,25 +161,6 @@ class NetworkApiServices extends BaseApiServices {
 
   }
 
-  Future getPostWithFormDataAndJSONApiResponse(String url, file, data) async {
-    dynamic responseJson;
-
-    try {
-      var request = http.MultipartRequest("POST", Uri.parse(url));
-      request.fields['json'] = data;
-      request.files.addAll(file);
-      var response = await request.send();
-      // //debugPrint(response.toString());
-      var responseString = await response.stream.bytesToString();
-      responseJson = returnResponseFile(response, responseString);
-
-    } on SocketException {
-      throw FetchDataException('No Internet Connection');
-    }
-    // //debugPrint(responseJson.toString());
-
-    return responseJson;
-  }
 
 
 }
