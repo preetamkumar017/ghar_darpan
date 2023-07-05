@@ -11,6 +11,7 @@ class Languages extends Translations {
       'email_hint' : 'Email' ,
       'internet_exception' : "We're unable tp show results.\nPlease check your data\nconenction." ,
       'general_exception' : "We're unable to process your request.\n Please try again" ,
+      'not_found_exception' : "We're unable to process your request.\n Please try again" ,
       'welcome_back' : 'Welcome\nBack' ,
       'login' :'Login' ,
       'password_hint' :'Password' ,

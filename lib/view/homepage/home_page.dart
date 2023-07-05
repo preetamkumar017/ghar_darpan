@@ -3,9 +3,9 @@ import 'package:get/get.dart';
 import 'package:ghar_darpan/flutter_flow/flutter_flow_theme.dart';
 import 'package:ghar_darpan/res/assets/image_assets.dart';
 import 'package:ghar_darpan/view/homepage/dashboard_view.dart';
-import 'package:ghar_darpan/view/homepage/payment_view.dart';
 import 'package:ghar_darpan/view/homepage/team_member_view.dart';
 import 'package:ghar_darpan/view/homepage/track_progress_view.dart';
+import 'package:ghar_darpan/view/profile/facilities_view.dart';
 import 'package:ghar_darpan/view_models/controller/home_controller.dart';
 
 class HomePage extends StatefulWidget {
@@ -19,7 +19,7 @@ class _HomePageState extends State<HomePage> {
   final homeController = Get.put(HomeController());
   final List<Widget> _widgetOptions = [
     const DashboardView(),
-    const PaymentView(),
+    const FacilitiesView(),
     const TrackProgressView(),
     const TeamMemberView(),
   ];

@@ -33,5 +33,22 @@ class ImageAssets {
   static const String plotGallery = '$profile/plot_gallery.png' ;
   static const String workProgress = '$profile/work_progress.png' ;
 /*==============================End Profile==========================================*/
+/*==============================Start Addon==========================================*/
+  static const String addonDir = '$images/addon' ;
+
+  static const String bricks = '$addonDir/bricks.png' ;
+  static const String completionTime = '$addonDir/completion_time.png' ;
+  static const String falseCeiling = '$addonDir/false_ceiling.png' ;
+  static const String floorStrength = '$addonDir/floor_strength.png' ;
+  static const String frame = '$addonDir/frame.png' ;
+  static const String kitchen = '$addonDir/kitchen.png' ;
+  static const String marble = '$addonDir/marble.png' ;
+  static const String septicTank = '$addonDir/septic_tank.png' ;
+  static const String septicTank1 = '$addonDir/septic_tank1.png' ;
+  static const String steel = '$addonDir/steel.png' ;
+  static const String toilet = '$addonDir/toilet.png' ;
+  static const String window = '$addonDir/window.png' ;
+  static const String windowGranite = '$addonDir/window_granite.png' ;
+/*==============================End Addon==========================================*/
 
 }

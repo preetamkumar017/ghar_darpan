@@ -5,4 +5,9 @@ class AppUrl {
   static const String domainWithBookingApi  = "$domain/cost_calc/index.php/ClientApi";
   static const String login = "$domainWithBookingApi/login";
   static const String dashboard = "$domainWithBookingApi/dashboard";
+
+  /**************************Start Profile pages***************************************/
+  static const String addonView = "$domainWithBookingApi/addonView";
+  static const String facilityView = "$domainWithBookingApi/facilityView";
+/**************************End Profile pages***************************************/
 }

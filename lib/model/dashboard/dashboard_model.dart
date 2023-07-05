@@ -17,18 +17,22 @@ class DashboardModel {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (clientInfo != null) {
-      data['client_info'] = clientInfo!.toJson();
+    if (this.clientInfo != null) {
+      data['client_info'] = this.clientInfo!.toJson();
     }
-    data['code'] = code;
-    data['status'] = status;
-    data['message'] = message;
+    data['code'] = this.code;
+    data['status'] = this.status;
+    data['message'] = this.message;
     return data;
   }
 }
 
 class ClientInfo {
   String? bookingId;
+  String? clientName;
+  String? emailId;
+  String? mobileNo;
+  String? permanentAddr;
   String? bookingDate;
   String? projectCost;
   String? aggrementDate;
@@ -37,6 +41,10 @@ class ClientInfo {
 
   ClientInfo(
       {this.bookingId,
+        this.clientName,
+        this.emailId,
+        this.mobileNo,
+        this.permanentAddr,
         this.bookingDate,
         this.projectCost,
         this.aggrementDate,
@@ -45,6 +53,10 @@ class ClientInfo {
 
   ClientInfo.fromJson(Map<String, dynamic> json) {
     bookingId = json['booking_id'];
+    clientName = json['client_name'];
+    emailId = json['email_id'];
+    mobileNo = json['mobile_no'];
+    permanentAddr = json['permanent_addr'];
     bookingDate = json['booking_date'];
     projectCost = json['project_cost'];
     aggrementDate = json['aggrement_date'];
@@ -54,12 +66,16 @@ class ClientInfo {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['booking_id'] = bookingId;
-    data['booking_date'] = bookingDate;
-    data['project_cost'] = projectCost;
-    data['aggrement_date'] = aggrementDate;
-    data['start_date'] = startDate;
-    data['end_date'] = endDate;
+    data['booking_id'] = this.bookingId;
+    data['client_name'] = this.clientName;
+    data['email_id'] = this.emailId;
+    data['mobile_no'] = this.mobileNo;
+    data['permanent_addr'] = this.permanentAddr;
+    data['booking_date'] = this.bookingDate;
+    data['project_cost'] = this.projectCost;
+    data['aggrement_date'] = this.aggrementDate;
+    data['start_date'] = this.startDate;
+    data['end_date'] = this.endDate;
     return data;
   }
 }

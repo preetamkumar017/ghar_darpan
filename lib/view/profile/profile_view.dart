@@ -1,4 +1,7 @@
+import 'package:get/get.dart';
 import 'package:ghar_darpan/res/assets/image_assets.dart';
+import 'package:ghar_darpan/res/routes/routes_name.dart';
+import 'package:ghar_darpan/view_models/controller/dashboard_controller/dashboard_controller.dart';
 
 import '/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +15,7 @@ class ProfileView extends StatefulWidget {
 
 class _ProfileViewState extends State<ProfileView> {
 
+  final dashData = Get.put(DashboardController());
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -65,19 +69,19 @@ class _ProfileViewState extends State<ProfileView> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Kshitija',
+                            dashData.getName,
                             style: FlutterFlowTheme.of(context).bodyLarge,
                           ),
                           Text(
-                            'kshitija@gmail.com',
+                            dashData.getEmail,
                             style: FlutterFlowTheme.of(context).labelMedium,
                           ),
                           Text(
-                            '9808735733',
+                            dashData.getMobile,
                             style: FlutterFlowTheme.of(context).labelMedium,
                           ),
                           Text(
-                            'Sunder Nagar  Raipur, Chhattisgarh',
+                            dashData.getAddress,
                             style: FlutterFlowTheme.of(context).labelMedium,
                           ),
                         ],
@@ -135,10 +139,12 @@ class _ProfileViewState extends State<ProfileView> {
                   ],
                 ),
                 child: ListTile(
-
+                  onTap: () {
+                    Get.toNamed(RouteName.addonView);
+                  },
                   leading: Image.asset(ImageAssets.addon,height: 25,width: 25,),
                   title: Text(
-                    'My Top-up',
+                    'My Addon',
                     style: FlutterFlowTheme.of(context).headlineMedium,
                   ),
                   trailing: Icon(
@@ -166,6 +172,9 @@ class _ProfileViewState extends State<ProfileView> {
                   ],
                 ),
                 child: ListTile(
+                  onTap: () {
+                    Get.toNamed(RouteName.facilities);
+                  },
                   leading: Image.asset(ImageAssets.facilities,height: 25,width: 25,),
                   title: Text(
                     'My Facilities',
