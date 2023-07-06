@@ -289,7 +289,7 @@ class ThemeTypography extends Typography {
   String get labelSmallFamily => 'Inter';
   TextStyle get labelSmall => GoogleFonts.getFont(
     'Inter',
-    color: theme.secondaryText,
+    color: theme.highlightColour,
     fontWeight: FontWeight.normal,
     fontSize: 12.0,
   );

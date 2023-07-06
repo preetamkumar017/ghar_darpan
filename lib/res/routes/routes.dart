@@ -5,6 +5,7 @@ import 'package:ghar_darpan/view/homepage/home_page.dart';
 import 'package:ghar_darpan/view/login_page/login_view.dart';
 import 'package:ghar_darpan/view/profile/addon_view.dart';
 import 'package:ghar_darpan/view/profile/facilities_view.dart';
+import 'package:ghar_darpan/view/profile/plot_details_view.dart';
 import 'package:ghar_darpan/view/profile/profile_view.dart';
 import 'package:ghar_darpan/view/splash_screen.dart';
 
@@ -50,6 +51,12 @@ class AppRoutes {
     GetPage(
       name: RouteName.facilities,
       page: () => const FacilitiesView(),
+      transitionDuration: const Duration(milliseconds: 250),
+      transition: Transition.leftToRightWithFade ,
+    ),
+    GetPage(
+      name: RouteName.plotDetails,
+      page: () => const PlotDetailsView(),
       transitionDuration: const Duration(milliseconds: 250),
       transition: Transition.leftToRightWithFade ,
     ),

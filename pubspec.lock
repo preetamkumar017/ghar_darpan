@@ -757,6 +757,54 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.0"
+  syncfusion_flutter_core:
+    dependency: transitive
+    description:
+      name: syncfusion_flutter_core
+      sha256: "9be1bb9bbdb42823439a18da71484f1964c14dbe1c255ab1b931932b12fa96e8"
+      url: "https://pub.dev"
+    source: hosted
+    version: "19.4.56"
+  syncfusion_flutter_pdf:
+    dependency: transitive
+    description:
+      name: syncfusion_flutter_pdf
+      sha256: d58343684dc28ca7a37882802552bb5b8d4177ad41a62b9ef8441709d9a818e6
+      url: "https://pub.dev"
+    source: hosted
+    version: "19.4.56-beta"
+  syncfusion_flutter_pdfviewer:
+    dependency: "direct main"
+    description:
+      name: syncfusion_flutter_pdfviewer
+      sha256: f2cfe12c15536fbaf0b6e010ac83889ad84ddff53951c7f70c449b8262f3f9ed
+      url: "https://pub.dev"
+    source: hosted
+    version: "19.4.56-beta"
+  syncfusion_flutter_pdfviewer_macos:
+    dependency: transitive
+    description:
+      name: syncfusion_flutter_pdfviewer_macos
+      sha256: e26c3e6934c35cbf3e155338af20a6340beea2c7caaa379d2473270a50709616
+      url: "https://pub.dev"
+    source: hosted
+    version: "19.4.56-beta"
+  syncfusion_flutter_pdfviewer_platform_interface:
+    dependency: transitive
+    description:
+      name: syncfusion_flutter_pdfviewer_platform_interface
+      sha256: "96e50c33ec79e54c6b6c6cfcf3463d60441a9b4c06b40192e7ca139b13ac1bf0"
+      url: "https://pub.dev"
+    source: hosted
+    version: "19.4.56-beta"
+  syncfusion_flutter_pdfviewer_web:
+    dependency: transitive
+    description:
+      name: syncfusion_flutter_pdfviewer_web
+      sha256: "96d3268bb3de6605e7fe64c083425b681d28a198e66dd65a1f86b9d9f07a83b7"
+      url: "https://pub.dev"
+    source: hosted
+    version: "19.4.56-beta"
   synchronized:
     dependency: transitive
     description:
@@ -893,6 +941,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.0"
+  xml:
+    dependency: transitive
+    description:
+      name: xml
+      sha256: "80d494c09849dc3f899d227a78c30c5b949b985ededf884cb3f3bcd39f4b447a"
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.4.1"
 sdks:
   dart: ">=2.19.0 <4.0.0"
   flutter: ">=3.3.0"

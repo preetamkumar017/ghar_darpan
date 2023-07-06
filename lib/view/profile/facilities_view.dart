@@ -1,6 +1,12 @@
 import 'package:get/get.dart';
+import 'package:ghar_darpan/data/response/status.dart';
+import 'package:ghar_darpan/res/components/data_not_found_exception.dart';
+import 'package:ghar_darpan/res/components/general_exception.dart';
+import 'package:ghar_darpan/res/components/internet_exceptions_widget.dart';
+import 'package:ghar_darpan/view_models/controller/profile/facility_controller.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:ghar_darpan/model/profile/facility_model.dart';
 
 class FacilitiesView extends StatefulWidget {
   const FacilitiesView({Key? key}) : super(key: key);
@@ -11,10 +17,12 @@ class FacilitiesView extends StatefulWidget {
 
 class _FacilitiesViewState extends State<FacilitiesView> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  final facilities = Get.put(FacilityController());
 
   @override
   void initState() {
     super.initState();
+    facilities.getData();
   }
 
   @override
@@ -83,226 +91,98 @@ class _FacilitiesViewState extends State<FacilitiesView> {
                       // spacing: 20.0,
                       alignment: WrapAlignment.start,
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              boxShadow: const [
-                                BoxShadow(
-                                  blurRadius: 4,
-                                  color: Color(0x33000000),
-                                  offset: Offset(0, 2),
-                                )
-                              ],
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  10, 10, 10, 10),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  ClipRRect(
-                                    borderRadius: BorderRadius.circular(0),
-                                    child: Image.network(
-                                      'https://picsum.photos/200/300',
-                                      width: 30,
-                                      height: 30,
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        10, 0, 0, 0),
-                                    child: Text(
-                                      'Swimming Pool',
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelSmall,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              boxShadow: const [
-                                BoxShadow(
-                                  blurRadius: 4,
-                                  color: Color(0x33000000),
-                                  offset: Offset(0, 2),
-                                )
-                              ],
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  10, 10, 10, 10),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  ClipRRect(
-                                    borderRadius: BorderRadius.circular(0),
-                                    child: Image.network(
-                                      'https://picsum.photos/200/2',
-                                      width: 30,
-                                      height: 30,
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        10, 0, 0, 0),
-                                    child: Text(
-                                      'Gym',
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelSmall,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              boxShadow: const [
-                                BoxShadow(
-                                  blurRadius: 4,
-                                  color: Color(0x33000000),
-                                  offset: Offset(0, 2),
-                                )
-                              ],
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  10, 10, 10, 10),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  ClipRRect(
-                                    borderRadius: BorderRadius.circular(0),
-                                    child: Image.network(
-                                      'https://picsum.photos/200/300',
-                                      width: 30,
-                                      height: 30,
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        10, 0, 0, 0),
-                                    child: Text(
-                                      'Pool',
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelSmall,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              boxShadow: const [
-                                BoxShadow(
-                                  blurRadius: 4,
-                                  color: Color(0x33000000),
-                                  offset: Offset(0, 2),
-                                )
-                              ],
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  10, 10, 10, 10),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  ClipRRect(
-                                    borderRadius: BorderRadius.circular(0),
-                                    child: Image.network(
-                                      'https://picsum.photos/200/2',
-                                      width: 30,
-                                      height: 30,
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        10, 0, 0, 0),
-                                    child: Text(
-                                      'Gym',
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelSmall,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              boxShadow: const [
-                                BoxShadow(
-                                  blurRadius: 4,
-                                  color: Color(0x33000000),
-                                  offset: Offset(0, 2),
-                                )
-                              ],
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  10, 10, 10, 10),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  ClipRRect(
-                                    borderRadius: BorderRadius.circular(0),
-                                    child: Image.network(
-                                      'https://picsum.photos/200/2',
-                                      width: 30,
-                                      height: 30,
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        10, 0, 0, 0),
-                                    child: Text(
-                                      'Gym',
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelSmall,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
+
+                        Obx(() {
+                          switch (facilities.getStatus) {
+                            case Status.LOADING:
+                              return const Center(child: CircularProgressIndicator());
+                            case Status.ERROR:
+                              if (facilities.error.value == 'No internet') {
+                                return InterNetExceptionWidget(
+                                  onPress: () {
+                                    facilities.getData();
+                                  },
+                                );
+                              } else {
+                                return GeneralExceptionWidget(onPress: () {
+                                  facilities.getData();
+                                });
+                              }
+                            case Status.EMPTY:
+                              if (facilities.error.value == 'No internet') {
+                                return InterNetExceptionWidget(
+                                  onPress: () {
+                                    facilities.getData();
+                                  },
+                                );
+                              } else {
+                                return DataNotFoundExceptionWidget(onPress: () {
+                                  facilities.getData();
+                                });
+                              }
+                            case Status.COMPLETED:
+                              // Result result = facilities.getFacilities.result!;
+                              return Wrap(
+                                children: List.generate(
+                                    facilities.getFacilities.result!.length,
+                                        (index) {
+
+                                          Result result = facilities.getFacilities.result![index];
+                                            return Padding(
+                                              padding: const EdgeInsets.all(8.0),
+                                              child: Container(
+                                                decoration: BoxDecoration(
+                                                  color: FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                                  boxShadow: const [
+                                                    BoxShadow(
+                                                      blurRadius: 4,
+                                                      color: Color(0x33000000),
+                                                      offset: Offset(0, 2),
+                                                    )
+                                                  ],
+                                                  borderRadius: BorderRadius.circular(10),
+                                                ),
+                                                child: Padding(
+                                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                                      10, 10, 10, 10),
+                                                  child: Row(
+                                                    mainAxisSize: MainAxisSize.min,
+                                                    children: [
+                                                      ClipRRect(
+                                                        borderRadius: BorderRadius.circular(0),
+                                                        child: Image.network(
+                                                          result.facilityImg ?? "",
+                                                          width: 30,
+                                                          height: 30,
+                                                          fit: BoxFit.cover,
+                                                          errorBuilder: (context, error, stackTrace) {
+                                                            return Image.network("https://source.unsplash.com/random",
+                                                              width: 30,
+                                                              height: 30,);
+                                                          },
+                                                        ),
+                                                      ),
+                                                      Padding(
+                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                            10, 0, 0, 0),
+                                                        child: Text(
+                                                          result.name ?? "",
+                                                          style: FlutterFlowTheme.of(context)
+                                                              .labelSmall,
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                              ),
+                                            );
+                                        }),
+                              );
+                            default:
+                              return const SizedBox();
+                          }
+                        }),
                       ],
                     ),
                   ),

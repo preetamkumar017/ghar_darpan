@@ -50,5 +50,20 @@ class ImageAssets {
   static const String window = '$addonDir/window.png' ;
   static const String windowGranite = '$addonDir/window_granite.png' ;
 /*==============================End Addon==========================================*/
+/*==============================Start Plot Details==========================================*/
+  static const String plotDetails = '$images/plot_details' ;
+
+  static const String boundaryWallHeight = '$plotDetails/boundary_wall_height.png';
+  static const String boundaryWallArea = '$plotDetails/boundary_wall_area.png';
+  static const String boundaryWallRft = '$plotDetails/boundary_wall_rft.png';
+  static const String firstFloorCost = '$plotDetails/first_floor_cost.png';
+  static const String groundFloorCost = '$plotDetails/ground_floor_cost.png';
+  static const String openArea = '$plotDetails/open_area.png';
+  static const String plotDepth = '$plotDetails/plot_depth.png';
+  static const String plotLength = '$plotDetails/plot_length.png';
+  static const String plotWidth = '$plotDetails/plot_width.png';
+  static const String totalArea = '$plotDetails/total_area.png';
+
+/*==============================End Plot Details==========================================*/
 
 }

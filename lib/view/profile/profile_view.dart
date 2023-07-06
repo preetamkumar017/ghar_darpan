@@ -109,6 +109,9 @@ class _ProfileViewState extends State<ProfileView> {
                   ],
                 ),
                 child: ListTile(
+                  onTap: () {
+                    Get.toNamed(RouteName.plotDetails);
+                  },
                   leading: Image.asset(ImageAssets.myBuilding,height: 25,width: 25,),
                   title: Text(
                     'About Plot',
