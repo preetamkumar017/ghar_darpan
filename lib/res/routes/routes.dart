@@ -7,6 +7,7 @@ import 'package:ghar_darpan/view/profile/addon_view.dart';
 import 'package:ghar_darpan/view/profile/facilities_view.dart';
 import 'package:ghar_darpan/view/profile/plot_details_view.dart';
 import 'package:ghar_darpan/view/profile/profile_view.dart';
+import 'package:ghar_darpan/view/profile/submitted_documents_view.dart';
 import 'package:ghar_darpan/view/splash_screen.dart';
 
 class AppRoutes {
@@ -57,6 +58,12 @@ class AppRoutes {
     GetPage(
       name: RouteName.plotDetails,
       page: () => const PlotDetailsView(),
+      transitionDuration: const Duration(milliseconds: 250),
+      transition: Transition.leftToRightWithFade ,
+    ),
+    GetPage(
+      name: RouteName.submittedDocuments,
+      page: () => const SubmittedDocumentsView(),
       transitionDuration: const Duration(milliseconds: 250),
       transition: Transition.leftToRightWithFade ,
     ),

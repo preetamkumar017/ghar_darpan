@@ -21,21 +21,14 @@ class _PDFScreenState extends State<PDFScreen> with WidgetsBindingObserver {
   }
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Document"),
-        actions: <Widget>[
-          IconButton(
-            icon: const Icon(Icons.share),
-            onPressed: () {},
-          ),
-        ],
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.red,
+        body: SfPdfViewer.network(
+            widget.path ?? "",
+            controller: _pdfViewerController,
+            key: _pdfViewerStateKey),
       ),
-      backgroundColor: Colors.red,
-      body: SfPdfViewer.network(
-          'https://cdn.syncfusion.com/content/PDFViewer/flutter-succinctly.pdf',
-          controller: _pdfViewerController,
-          key: _pdfViewerStateKey),
     );
   }
 }

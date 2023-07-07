@@ -9,5 +9,6 @@ class AppUrl {
   /**************************Start Profile pages***************************************/
   static const String addonView = "$domainWithBookingApi/addonView";
   static const String facilityView = "$domainWithBookingApi/facilityView";
+  static const String attachDoc = "$domainWithBookingApi/attach_doc";
 /**************************End Profile pages***************************************/
 }

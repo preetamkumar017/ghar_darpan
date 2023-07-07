@@ -238,6 +238,9 @@ class _ProfileViewState extends State<ProfileView> {
                   ],
                 ),
                 child: ListTile(
+                  onTap: () {
+                    Get.toNamed(RouteName.attachments);
+                  },
                   leading: Image.asset(ImageAssets.attachment,height: 25,width: 25,),
                   title: Text(
                     'My Attachments',

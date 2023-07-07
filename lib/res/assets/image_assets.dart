@@ -63,7 +63,14 @@ class ImageAssets {
   static const String plotLength = '$plotDetails/plot_length.png';
   static const String plotWidth = '$plotDetails/plot_width.png';
   static const String totalArea = '$plotDetails/total_area.png';
-
 /*==============================End Plot Details==========================================*/
 
+/*==============================Start Attachments==========================================*/
+  static const String attachments = '$images/attachments' ;
+
+  static const String anubandh = '$attachments/anubandh.png';
+  static const String bookingFormDetails = '$attachments/booking_form_details.png';
+  static const String estimateCostCalculator = '$attachments/estimate_cost_calculator.png';
+  static const String submittedDocuments = '$attachments/submitted_documents.png';
+/*==============================End Plot Details==========================================*/
 }
