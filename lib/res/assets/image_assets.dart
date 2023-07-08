@@ -73,4 +73,12 @@ class ImageAssets {
   static const String estimateCostCalculator = '$attachments/estimate_cost_calculator.png';
   static const String submittedDocuments = '$attachments/submitted_documents.png';
 /*==============================End Plot Details==========================================*/
+/*==============================Start Tracking==========================================*/
+  static const String track = '$images/track' ;
+
+  static const String hold = '$track/hold.png';
+  static const String running = '$track/running.png';
+  static const String untouched = '$track/untouched.png';
+  static const String completed = '$track/completed.png';
+/*==============================End Tracking==========================================*/
 }

@@ -105,6 +105,7 @@ flutter:
    - assets/images/addon/
    - assets/images/plot_details/
    - assets/images/attachments/
+   - assets/images/track/
    - assets/logo/
   #   - images/a_dot_ham.jpeg
 
