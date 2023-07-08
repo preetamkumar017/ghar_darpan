@@ -11,4 +11,9 @@ class AppUrl {
   static const String facilityView = "$domainWithBookingApi/facilityView";
   static const String attachDoc = "$domainWithBookingApi/attach_doc";
 /**************************End Profile pages***************************************/
+
+  /**************************Start Uploads Link***************************************/
+  //http://localhost/cost_calc/assets/uploads/adhar_1684148204.jpg
+  static const String uploadedFile  = "$domain/cost_calc/assets/uploads/";
+/**************************End Uploads Link***************************************/
 }

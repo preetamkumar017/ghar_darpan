@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:ghar_darpan/data/response/status.dart';
@@ -17,9 +19,9 @@ class AttachDocController extends GetxController
   get getError => error.value;
   void setError(String value) => error.value = value;
 
-  Rx<AttachedDocModel> addon = AttachedDocModel().obs;
-  AttachedDocModel get getAddon => addon.value;
-  setAddon(AttachedDocModel value)=>addon.value=value;
+  Rx<AttachedDocModel> attachDoc = AttachedDocModel().obs;
+  AttachedDocModel get getAttachDoc => attachDoc.value;
+  setAttachDoc(AttachedDocModel value)=>attachDoc.value=value;
 
   getData()
   {
@@ -29,9 +31,10 @@ class AttachDocController extends GetxController
       debugPrint(value.toJson().toString());
       if(value.code == 200)
       {
-        setAddon(value);
+        setAttachDoc(value);
       }else
       {
+        log("this");
         setLoading(Status.EMPTY);
       }
     }).onError((error, stackTrace){

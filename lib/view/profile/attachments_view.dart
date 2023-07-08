@@ -43,7 +43,9 @@ class _AttachmentViewState extends State<AttachmentView> {
           icon: Icon(Icons.arrow_back,
               color: FlutterFlowTheme.of(context)
                   .iconSecondary), // Set the back arrow color to black
-          onPressed: () => Get.back(),
+          onPressed: () {
+            Get.back();
+          },
         ),
       ),
       body: SafeArea(

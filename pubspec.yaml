@@ -72,6 +72,7 @@ dependencies:
   url_launcher_platform_interface: 2.1.2
   cool_alert: ^2.0.1
   syncfusion_flutter_pdfviewer: ^19.1.69-beta
+  photo_view: ^0.14.0
 
 
 dev_dependencies:

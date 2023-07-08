@@ -81,7 +81,9 @@ class _ProfileViewState extends State<ProfileView> {
                             style: FlutterFlowTheme.of(context).labelMedium,
                           ),
                           Text(
-                            dashData.getAddress,
+                            "${dashData.getAddress['p_hno']},${dashData.getAddress['p_street']},\n"
+                                "${dashData.getAddress['p_landmark']},${dashData.getAddress['p_city']},"
+                                "${dashData.getAddress['p_state']},${dashData.getAddress['p_pincode']}",
                             style: FlutterFlowTheme.of(context).labelMedium,
                           ),
                         ],

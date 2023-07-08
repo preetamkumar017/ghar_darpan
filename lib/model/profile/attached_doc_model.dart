@@ -1,5 +1,5 @@
 class AttachedDocModel {
-  List<Result>? result;
+  Result? result;
   int? code;
   String? status;
   String? message;
@@ -7,25 +7,21 @@ class AttachedDocModel {
   AttachedDocModel({this.result, this.code, this.status, this.message});
 
   AttachedDocModel.fromJson(Map<String, dynamic> json) {
-    if (json['result'] != null) {
-      result = <Result>[];
-      json['result'].forEach((v) {
-        result!.add(new Result.fromJson(v));
-      });
-    }
+    result =
+    json['result'] != null ? new Result.fromJson(json['result']) : null;
     code = json['code'];
     status = json['status'];
     message = json['message'];
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    if (result != null) {
-      data['result'] = result!.map((v) => v.toJson()).toList();
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    if (this.result != null) {
+      data['result'] = this.result!.toJson();
     }
-    data['code'] = code;
-    data['status'] = status;
-    data['message'] = message;
+    data['code'] = this.code;
+    data['status'] = this.status;
+    data['message'] = this.message;
     return data;
   }
 }
@@ -52,13 +48,13 @@ class Result {
   String? anyOther;
   String? chkAnyOther;
   String? otherName;
-  String? createBy;
-  String? createDate;
+  Null? createBy;
+  Null? createDate;
   String? updateDate;
-  String? ip;
+  Null? ip;
 
   Result(
-      { this.id,
+      {this.id,
         this.bookingId,
         this.chkAdharCopy,
         this.adharCopy,
@@ -113,32 +109,32 @@ class Result {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['id'] = id;
-    data['booking_id'] = bookingId;
-    data['chk_adhar_copy'] = chkAdharCopy;
-    data['adhar_copy'] = adharCopy;
-    data['chk_pancard_copy'] = chkPancardCopy;
-    data['pancard_copy'] = pancardCopy;
-    data['chk_electric_bill'] = chkElectricBill;
-    data['electric_bill'] = electricBill;
-    data['chk_registry_copy'] = chkRegistryCopy;
-    data['registry_copy'] = registryCopy;
-    data['chk_b_one_copy'] = chkBOneCopy;
-    data['b_one_copy'] = bOneCopy;
-    data['chk_khasra_map'] = chkKhasraMap;
-    data['khasra_map'] = khasraMap;
-    data['chk_approved_tncp'] = chkApprovedTncp;
-    data['approved_tncp'] = approvedTncp;
-    data['chk_tax_receipt'] = chkTaxReceipt;
-    data['tax_receipt'] = taxReceipt;
-    data['any_other'] = anyOther;
-    data['chk_any_other'] = chkAnyOther;
-    data['other_name'] = otherName;
-    data['create_by'] = createBy;
-    data['create_date'] = createDate;
-    data['update_date'] = updateDate;
-    data['ip'] = ip;
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['id'] = this.id;
+    data['booking_id'] = this.bookingId;
+    data['chk_adhar_copy'] = this.chkAdharCopy;
+    data['adhar_copy'] = this.adharCopy;
+    data['chk_pancard_copy'] = this.chkPancardCopy;
+    data['pancard_copy'] = this.pancardCopy;
+    data['chk_electric_bill'] = this.chkElectricBill;
+    data['electric_bill'] = this.electricBill;
+    data['chk_registry_copy'] = this.chkRegistryCopy;
+    data['registry_copy'] = this.registryCopy;
+    data['chk_b_one_copy'] = this.chkBOneCopy;
+    data['b_one_copy'] = this.bOneCopy;
+    data['chk_khasra_map'] = this.chkKhasraMap;
+    data['khasra_map'] = this.khasraMap;
+    data['chk_approved_tncp'] = this.chkApprovedTncp;
+    data['approved_tncp'] = this.approvedTncp;
+    data['chk_tax_receipt'] = this.chkTaxReceipt;
+    data['tax_receipt'] = this.taxReceipt;
+    data['any_other'] = this.anyOther;
+    data['chk_any_other'] = this.chkAnyOther;
+    data['other_name'] = this.otherName;
+    data['create_by'] = this.createBy;
+    data['create_date'] = this.createDate;
+    data['update_date'] = this.updateDate;
+    data['ip'] = this.ip;
     return data;
   }
 }

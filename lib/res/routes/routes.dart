@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:ghar_darpan/res/components/image_viewer_menual.dart';
 import 'package:ghar_darpan/res/routes/routes_name.dart';
 import 'package:ghar_darpan/view/homepage/dashboard_view.dart';
 import 'package:ghar_darpan/view/homepage/home_page.dart';
@@ -64,6 +65,12 @@ class AppRoutes {
     GetPage(
       name: RouteName.submittedDocuments,
       page: () => const SubmittedDocumentsView(),
+      transitionDuration: const Duration(milliseconds: 250),
+      transition: Transition.leftToRightWithFade ,
+    ),
+    GetPage(
+      name: RouteName.myImageView,
+      page: () => const MyImageViewManual(),
       transitionDuration: const Duration(milliseconds: 250),
       transition: Transition.leftToRightWithFade ,
     ),

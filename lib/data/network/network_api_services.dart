@@ -40,8 +40,9 @@ String user_id = login.read("auth_code") ?? "";
   Future<dynamic> postApi(Map data , String url)async{
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     String authCode = sharedPreferences.getString("accessToken") ?? "";
-    String bookingId = sharedPreferences.getString("bookingId") ?? "";
-    data.addAll({"booking_id" : bookingId});
+    // String bookingId = sharedPreferences.getString("bookingId") ?? "";
+    // data.addAll({"booking_id" : bookingId});
+    data.addAll({"booking_id" : "4"});
     if (kDebugMode) {
       debugPrint(url);
       debugPrint(data.toString());

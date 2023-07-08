@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:developer';
 
 import 'package:get/get.dart';
@@ -34,7 +35,7 @@ class DashboardController extends GetxController
   setMobile(String value) => mobile.value = value;
 
   RxString address =  "".obs;
-  get getAddress => address.value;
+  get getAddress => jsonDecode(address.value);
   setAddress(String value) => address.value = value;
 
 
