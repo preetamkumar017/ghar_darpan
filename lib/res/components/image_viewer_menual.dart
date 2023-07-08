@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:photo_view/photo_view.dart';
@@ -12,7 +11,6 @@ class _MyImageViewManualState extends State<MyImageViewManual> {
   final args = Get.arguments;
   @override
   void initState() {
-    log(args);
     super.initState();
   }
   @override
@@ -20,7 +18,7 @@ class _MyImageViewManualState extends State<MyImageViewManual> {
     return SafeArea(
       child: Scaffold(
         body:  PhotoView(
-         imageProvider:NetworkImage("http://192.168.1.4/cost_calc/assets/uploads/adhar_1684148204.jpg")
+         imageProvider:NetworkImage(args)
           ),
       ),
     );
