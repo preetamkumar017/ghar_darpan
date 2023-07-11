@@ -35,9 +35,10 @@ class _ProfileViewState extends State<ProfileView> {
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
       body: SafeArea(
         top: true,
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: ListView(
+          physics: BouncingScrollPhysics(),
+          // mainAxisSize: MainAxisSize.max,
+          // crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(20.0, 30.0, 0.0, 10.0),
@@ -150,6 +151,39 @@ class _ProfileViewState extends State<ProfileView> {
                   leading: Image.asset(ImageAssets.addon,height: 25,width: 25,),
                   title: Text(
                     'My Addon',
+                    style: FlutterFlowTheme.of(context).headlineMedium,
+                  ),
+                  trailing: Icon(
+                    Icons.arrow_forward,
+                    color: FlutterFlowTheme.of(context).iconSecondary,
+                    size: 20.0,
+                  ),
+                  tileColor:
+                  FlutterFlowTheme.of(context).secondaryBackground,
+                  dense: false,
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                  boxShadow: [
+                    BoxShadow(
+                      blurRadius: 4.0,
+                      color: FlutterFlowTheme.of(context).shadowColour,
+                      offset: const Offset(0.0, 2.0),
+                    )
+                  ],
+                ),
+                child: ListTile(
+                  onTap: () {
+                    Get.toNamed(RouteName.myWorkStageView);
+                  },
+                  leading: Image.asset(ImageAssets.facilities,height: 25,width: 25,),
+                  title: Text(
+                    'My Work Stage',
                     style: FlutterFlowTheme.of(context).headlineMedium,
                   ),
                   trailing: Icon(

@@ -8,6 +8,7 @@ class AppUrl {
   /// ************************Start dashboard pages**************************************
   static const String dashboard = "$domainWithBookingApi/dashboard";
   static const String trackProgress = "$domainWithBookingApi/stageView";
+  static const String paymentHistory = "$domainWithBookingApi/paymentHistory";
   /**************************End dashboard pages***************************************/
 
   /// ************************Start Profile pages**************************************

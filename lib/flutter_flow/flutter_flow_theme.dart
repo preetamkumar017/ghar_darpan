@@ -67,6 +67,7 @@ abstract class FlutterFlowTheme {
   late Color divider;
   late Color shadowColour;
   late Color highlightColour;
+  late Color labelHoldColour;
 
   @Deprecated('Use displaySmallFamily instead')
   String get title1Family => displaySmallFamily;
@@ -169,6 +170,7 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color divider = Color(0xFFDBDBDB);
   late Color shadowColour = Color(0xFFCAC9C9);
   late Color highlightColour = Color(0xFF008F9A);
+  late Color labelHoldColour = Color(0xFFE3340D);
 }
 
 abstract class Typography {
@@ -354,6 +356,7 @@ class DarkModeTheme extends FlutterFlowTheme {
   late Color divider = Color(0xFF0174E0);
   late Color shadowColour = Color(0xFF66BCA6);
   late Color highlightColour = Color(0xFF352EF5);
+  late Color labelHoldColour = Color(0xFF2E6742);
 }
 
 extension TextStyleHelper on TextStyle {

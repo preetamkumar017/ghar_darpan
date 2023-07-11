@@ -3,6 +3,7 @@ import 'package:ghar_darpan/res/components/image_viewer_menual.dart';
 import 'package:ghar_darpan/res/routes/routes_name.dart';
 import 'package:ghar_darpan/view/homepage/dashboard_view.dart';
 import 'package:ghar_darpan/view/homepage/home_page.dart';
+import 'package:ghar_darpan/view/profile/my_work_stage_view.dart';
 import 'package:ghar_darpan/view/login_page/login_view.dart';
 import 'package:ghar_darpan/view/profile/addon_view.dart';
 import 'package:ghar_darpan/view/profile/facilities_view.dart';
@@ -71,6 +72,12 @@ class AppRoutes {
     GetPage(
       name: RouteName.myImageView,
       page: () => const MyImageViewManual(),
+      transitionDuration: const Duration(milliseconds: 250),
+      transition: Transition.leftToRightWithFade ,
+    ),
+    GetPage(
+      name: RouteName.myWorkStageView,
+      page: () => const MyWorkStageView(),
       transitionDuration: const Duration(milliseconds: 250),
       transition: Transition.leftToRightWithFade ,
     ),

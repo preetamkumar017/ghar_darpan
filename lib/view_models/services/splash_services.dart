@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 import 'package:get/get.dart';
 import 'package:ghar_darpan/res/routes/routes_name.dart';
 import 'package:ghar_darpan/view_models/services/box_storage.dart';
@@ -10,6 +11,7 @@ class SplashServices {
   Future<void> isLogin() async {
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     bool isLogin = await sharedPreferences.setBool("isLogin", true);
+    log(isLogin.toString());
    if(isLogin==null || !isLogin){
      Timer(const Duration(seconds: 3) ,
              () => Get.offNamed(RouteName.loginView) );
