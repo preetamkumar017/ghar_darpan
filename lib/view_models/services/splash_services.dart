@@ -12,10 +12,10 @@ class SplashServices {
     bool isLogin = await sharedPreferences.setBool("isLogin", true);
    if(isLogin==null || !isLogin){
      Timer(const Duration(seconds: 3) ,
-             () => Get.toNamed(RouteName.loginView) );
+             () => Get.offNamed(RouteName.loginView) );
    }else {
      Timer(const Duration(seconds: 3) ,
-             () => Get.toNamed(RouteName.dashboardView) );
+             () => Get.offNamed(RouteName.homePage) );
    }
   }
   Future<void> makeLogin(ClientLogin? clientLogin) async {
