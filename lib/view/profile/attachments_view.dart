@@ -1,7 +1,6 @@
 import 'package:get/get.dart';
 import 'package:ghar_darpan/res/assets/image_assets.dart';
 import 'package:ghar_darpan/res/routes/routes_name.dart';
-import 'package:ghar_darpan/view_models/controller/profile/attached_doc_controller.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +15,6 @@ class AttachmentView extends StatefulWidget {
 class _AttachmentViewState extends State<AttachmentView> {
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
-  final  attachDocController = Get.put(AttachDocController());
 
   @override
   void initState() {

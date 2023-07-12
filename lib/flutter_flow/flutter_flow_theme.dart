@@ -67,6 +67,7 @@ abstract class FlutterFlowTheme {
   late Color divider;
   late Color shadowColour;
   late Color highlightColour;
+  late Color labelHoldColour;
 
   @Deprecated('Use displaySmallFamily instead')
   String get title1Family => displaySmallFamily;
@@ -169,6 +170,7 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color divider = Color(0xFFDBDBDB);
   late Color shadowColour = Color(0xFFCAC9C9);
   late Color highlightColour = Color(0xFF008F9A);
+  late Color labelHoldColour = Color(0xFFE3340D);
 }
 
 abstract class Typography {
@@ -212,23 +214,23 @@ class ThemeTypography extends Typography {
   String get displayLargeFamily => 'Inter';
   TextStyle get displayLarge => GoogleFonts.getFont(
     'Inter',
-    color: theme.primaryText,
-    fontWeight: FontWeight.normal,
-    fontSize: 64.0,
+    color: theme.badgePrimary,
+    fontWeight: FontWeight.w600,
+    fontSize: 12.0,
   );
   String get displayMediumFamily => 'Inter';
   TextStyle get displayMedium => GoogleFonts.getFont(
     'Inter',
-    color: theme.primaryText,
-    fontWeight: FontWeight.normal,
-    fontSize: 44.0,
+    color: theme.buttonPrimary,
+    fontWeight: FontWeight.w600,
+    fontSize: 12.0,
   );
   String get displaySmallFamily => 'Inter';
   TextStyle get displaySmall => GoogleFonts.getFont(
     'Inter',
-    color: theme.primaryText,
-    fontWeight: FontWeight.w600,
-    fontSize: 36.0,
+    color: theme.badgePrimary,
+    fontWeight: FontWeight.normal,
+    fontSize: 12.0,
   );
   String get headlineLargeFamily => 'Inter';
   TextStyle get headlineLarge => GoogleFonts.getFont(
@@ -354,6 +356,7 @@ class DarkModeTheme extends FlutterFlowTheme {
   late Color divider = Color(0xFF0174E0);
   late Color shadowColour = Color(0xFF66BCA6);
   late Color highlightColour = Color(0xFF352EF5);
+  late Color labelHoldColour = Color(0xFF2E6742);
 }
 
 extension TextStyleHelper on TextStyle {
