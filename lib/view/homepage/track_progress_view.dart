@@ -7,7 +7,7 @@ import 'package:ghar_darpan/res/assets/image_assets.dart';
 import 'package:ghar_darpan/res/components/data_not_found_exception.dart';
 import 'package:ghar_darpan/res/components/general_exception.dart';
 import 'package:ghar_darpan/res/components/internet_exceptions_widget.dart';
-import 'package:ghar_darpan/view_models/controller/dashboard_controller/track_progress_controller.dart';
+import 'package:ghar_darpan/view_models/controller/dashboard/track_progress_controller.dart';
 import 'package:ghar_darpan/view_models/services/common_methods.dart';
 
 class TrackProgressView extends StatefulWidget {

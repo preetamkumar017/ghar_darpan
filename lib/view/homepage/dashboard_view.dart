@@ -4,7 +4,7 @@ import 'package:ghar_darpan/res/assets/image_assets.dart';
 import 'package:ghar_darpan/res/components/general_exception.dart';
 import 'package:ghar_darpan/res/components/internet_exceptions_widget.dart';
 import 'package:ghar_darpan/res/routes/routes_name.dart';
-import 'package:ghar_darpan/view_models/controller/dashboard_controller/dashboard_controller.dart';
+import 'package:ghar_darpan/view_models/controller/dashboard/dashboard_controller.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:ghar_darpan/model/dashboard/dashboard_model.dart';
@@ -73,6 +73,7 @@ class _DashboardViewState extends State<DashboardView> {
           child: Stack(
             children: [
               SingleChildScrollView(
+                physics: BouncingScrollPhysics(),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -181,14 +182,6 @@ class _DashboardViewState extends State<DashboardView> {
                           ClientInfo clientInfo = dashData.getDashboard
                               .clientInfo!;
                           return Container(
-                            width: MediaQuery
-                                .of(context)
-                                .size
-                                .width * 1.0,
-                            height: MediaQuery
-                                .of(context)
-                                .size
-                                .height * 0.9,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme
                                   .of(context)

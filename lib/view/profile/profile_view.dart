@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:ghar_darpan/res/assets/image_assets.dart';
 import 'package:ghar_darpan/res/routes/routes_name.dart';
-import 'package:ghar_darpan/view_models/controller/dashboard_controller/dashboard_controller.dart';
+import 'package:ghar_darpan/view_models/controller/dashboard/dashboard_controller.dart';
 
 import '/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';

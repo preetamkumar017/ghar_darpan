@@ -149,23 +149,23 @@ class _FacilitiesViewState extends State<FacilitiesView> {
                                                   child: Row(
                                                     mainAxisSize: MainAxisSize.min,
                                                     children: [
-                                                      ClipRRect(
-                                                        borderRadius: BorderRadius.circular(0),
-                                                        child: Image.network(
-                                                          result.facilityImg ?? "",
-                                                          width: 30,
-                                                          height: 30,
-                                                          fit: BoxFit.cover,
-                                                          errorBuilder: (context, error, stackTrace) {
-                                                            return Image.network("https://source.unsplash.com/random",
-                                                              width: 30,
-                                                              height: 30,);
-                                                          },
-                                                        ),
-                                                      ),
+                                                      // ClipRRect(
+                                                      //   borderRadius: BorderRadius.circular(0),
+                                                      //   child: Image.network(
+                                                      //     result.facilityImg ?? "",
+                                                      //     width: 30,
+                                                      //     height: 30,
+                                                      //     fit: BoxFit.cover,
+                                                      //     errorBuilder: (context, error, stackTrace) {
+                                                      //       return Image.network("https://source.unsplash.com/random",
+                                                      //         width: 30,
+                                                      //         height: 30,);
+                                                      //     },
+                                                      //   ),
+                                                      // ),
                                                       Padding(
                                                         padding: const EdgeInsetsDirectional.fromSTEB(
-                                                            10, 0, 0, 0),
+                                                            0, 0, 0, 0),
                                                         child: Text(
                                                           result.name ?? "",
                                                           style: FlutterFlowTheme.of(context)

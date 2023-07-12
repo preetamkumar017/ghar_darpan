@@ -214,23 +214,23 @@ class ThemeTypography extends Typography {
   String get displayLargeFamily => 'Inter';
   TextStyle get displayLarge => GoogleFonts.getFont(
     'Inter',
-    color: theme.primaryText,
-    fontWeight: FontWeight.normal,
-    fontSize: 64.0,
+    color: theme.badgePrimary,
+    fontWeight: FontWeight.w600,
+    fontSize: 12.0,
   );
   String get displayMediumFamily => 'Inter';
   TextStyle get displayMedium => GoogleFonts.getFont(
     'Inter',
-    color: theme.primaryText,
-    fontWeight: FontWeight.normal,
-    fontSize: 44.0,
+    color: theme.buttonPrimary,
+    fontWeight: FontWeight.w600,
+    fontSize: 12.0,
   );
   String get displaySmallFamily => 'Inter';
   TextStyle get displaySmall => GoogleFonts.getFont(
     'Inter',
-    color: theme.primaryText,
-    fontWeight: FontWeight.w600,
-    fontSize: 36.0,
+    color: theme.badgePrimary,
+    fontWeight: FontWeight.normal,
+    fontSize: 12.0,
   );
   String get headlineLargeFamily => 'Inter';
   TextStyle get headlineLarge => GoogleFonts.getFont(

@@ -116,6 +116,7 @@ class _SubmittedDocumentsViewState extends State<SubmittedDocumentsView> {
                         child: Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(30, 0, 30, 0),
                           child: GridView(
+                            physics: BouncingScrollPhysics(),
                             padding: EdgeInsets.zero,
                             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                               crossAxisCount: 2,
@@ -139,7 +140,7 @@ class _SubmittedDocumentsViewState extends State<SubmittedDocumentsView> {
                                     children: [
                                       Container(
                                         width: Get.width * 0.5,
-                                        height: Get.height * 0.13,
+                                        height: Get.height * 0.2,
                                         decoration: BoxDecoration(
                                           boxShadow: [
                                             BoxShadow(
@@ -183,7 +184,7 @@ class _SubmittedDocumentsViewState extends State<SubmittedDocumentsView> {
                                     children: [
                                       Container(
                                         width: Get.width * 0.5,
-                                        height: Get.height * 0.13,
+                                        height: Get.height * 0.2,
                                         decoration: BoxDecoration(
                                           boxShadow: [
                                             BoxShadow(
@@ -227,7 +228,7 @@ class _SubmittedDocumentsViewState extends State<SubmittedDocumentsView> {
                                     children: [
                                       Container(
                                         width: Get.width * 0.5,
-                                        height: Get.height * 0.13,
+                                        height: Get.height * 0.2,
                                         decoration: BoxDecoration(
                                           boxShadow: [
                                             BoxShadow(
@@ -271,7 +272,7 @@ class _SubmittedDocumentsViewState extends State<SubmittedDocumentsView> {
                                     children: [
                                       Container(
                                         width: Get.width * 0.5,
-                                        height: Get.height * 0.13,
+                                        height: Get.height * 0.2,
                                         decoration: BoxDecoration(
                                           boxShadow: [
                                             BoxShadow(
@@ -315,7 +316,7 @@ class _SubmittedDocumentsViewState extends State<SubmittedDocumentsView> {
                                     children: [
                                       Container(
                                         width: Get.width * 0.5,
-                                        height: Get.height * 0.13,
+                                        height: Get.height * 0.2,
                                         decoration: BoxDecoration(
                                           boxShadow: [
                                             BoxShadow(
@@ -359,7 +360,7 @@ class _SubmittedDocumentsViewState extends State<SubmittedDocumentsView> {
                                     children: [
                                       Container(
                                         width: Get.width * 0.5,
-                                        height: Get.height * 0.13,
+                                        height: Get.height * 0.2,
                                         decoration: BoxDecoration(
                                           boxShadow: [
                                             BoxShadow(
@@ -403,7 +404,7 @@ class _SubmittedDocumentsViewState extends State<SubmittedDocumentsView> {
                                     children: [
                                       Container(
                                         width: Get.width * 0.5,
-                                        height: Get.height * 0.13,
+                                        height: Get.height * 0.2,
                                         decoration: BoxDecoration(
                                           boxShadow: [
                                             BoxShadow(
@@ -447,7 +448,7 @@ class _SubmittedDocumentsViewState extends State<SubmittedDocumentsView> {
                                     children: [
                                       Container(
                                         width: Get.width * 0.5,
-                                        height: Get.height * 0.13,
+                                        height: Get.height * 0.2,
                                         decoration: BoxDecoration(
                                           boxShadow: [
                                             BoxShadow(
@@ -491,7 +492,7 @@ class _SubmittedDocumentsViewState extends State<SubmittedDocumentsView> {
                                     children: [
                                       Container(
                                         width: Get.width * 0.5,
-                                        height: Get.height * 0.13,
+                                        height: Get.height * 0.2,
                                         decoration: BoxDecoration(
                                           boxShadow: [
                                             BoxShadow(

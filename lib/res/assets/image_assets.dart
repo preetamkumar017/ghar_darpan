@@ -81,4 +81,11 @@ class ImageAssets {
   static const String untouched = '$track/untouched.png';
   static const String completed = '$track/completed.png';
 /*==============================End Tracking==========================================*/
+/*==============================Start Transaction history==========================================*/
+  static const String transaction = '$images/transaction_history' ;
+  static const String redo = '$transaction/redo.png' ;
+  static const String processing = '$transaction/processing.png' ;
+  static const String money = '$transaction/money.png' ;
+/*==============================End Transaction history==========================================*/
+
 }

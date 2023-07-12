@@ -10,7 +10,8 @@ class SplashServices {
 
   Future<void> isLogin() async {
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
-    bool isLogin = await sharedPreferences.setBool("isLogin", true);
+
+    bool? isLogin =  sharedPreferences.getBool("isLogin");
     log(isLogin.toString());
    if(isLogin==null || !isLogin){
      Timer(const Duration(seconds: 3) ,
