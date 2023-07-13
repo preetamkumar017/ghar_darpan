@@ -33,15 +33,29 @@ class _ProfileViewState extends State<ProfileView> {
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+      appBar: AppBar(
+        // toolbarHeight: 35,
+        backgroundColor:
+        Colors.transparent, // Set the background color to transparent
+        elevation: 0, // Remove the elevation
+        leading: IconButton(
+            icon: Icon(Icons.arrow_back,
+                color: FlutterFlowTheme.of(context)
+                    .iconSecondary), // Set the back arrow color to black
+            onPressed: () {
+              Get.back();
+            }
+        ),
+      ),
       body: SafeArea(
         top: true,
         child: ListView(
-          physics: BouncingScrollPhysics(),
+          physics: const BouncingScrollPhysics(),
           // mainAxisSize: MainAxisSize.max,
           // crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(20.0, 30.0, 0.0, 10.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 10.0),
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
@@ -54,10 +68,7 @@ class _ProfileViewState extends State<ProfileView> {
                       decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                       ),
-                      child: Image.asset(
-                        ImageAssets.users,
-                        fit: BoxFit.cover,
-                      ),
+                      child: Icon(Icons.person,size: 35,color: FlutterFlowTheme.of(context).iconSecondary,)
                     ),
                   ),
                   Align(
@@ -230,36 +241,36 @@ class _ProfileViewState extends State<ProfileView> {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
-                  boxShadow: [
-                    BoxShadow(
-                      blurRadius: 4.0,
-                      color: FlutterFlowTheme.of(context).shadowColour,
-                      offset: const Offset(0.0, 2.0),
-                    )
-                  ],
-                ),
-                child: ListTile(
-                  leading: Image.asset(ImageAssets.agreement,height: 25,width: 25,),
-                  title: Text(
-                    'My Agreement',
-                    style: FlutterFlowTheme.of(context).headlineMedium,
-                  ),
-                  trailing: Icon(
-                    Icons.arrow_forward,
-                    color: FlutterFlowTheme.of(context).iconSecondary,
-                    size: 20.0,
-                  ),
-                  tileColor:
-                  FlutterFlowTheme.of(context).secondaryBackground,
-                  dense: false,
-                ),
-              ),
-            ),
+            // Padding(
+            //   padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+            //   child: Container(
+            //     decoration: BoxDecoration(
+            //       color: FlutterFlowTheme.of(context).secondaryBackground,
+            //       boxShadow: [
+            //         BoxShadow(
+            //           blurRadius: 4.0,
+            //           color: FlutterFlowTheme.of(context).shadowColour,
+            //           offset: const Offset(0.0, 2.0),
+            //         )
+            //       ],
+            //     ),
+            //     child: ListTile(
+            //       leading: Image.asset(ImageAssets.agreement,height: 25,width: 25,),
+            //       title: Text(
+            //         'My Agreement',
+            //         style: FlutterFlowTheme.of(context).headlineMedium,
+            //       ),
+            //       trailing: Icon(
+            //         Icons.arrow_forward,
+            //         color: FlutterFlowTheme.of(context).iconSecondary,
+            //         size: 20.0,
+            //       ),
+            //       tileColor:
+            //       FlutterFlowTheme.of(context).secondaryBackground,
+            //       dense: false,
+            //     ),
+            //   ),
+            // ),
             Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
               child: Container(
@@ -293,6 +304,36 @@ class _ProfileViewState extends State<ProfileView> {
                 ),
               ),
             ),
+            // Padding(
+            //   padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+            //   child: Container(
+            //     decoration: BoxDecoration(
+            //       color: FlutterFlowTheme.of(context).secondaryBackground,
+            //       boxShadow: [
+            //         BoxShadow(
+            //           blurRadius: 4.0,
+            //           color: FlutterFlowTheme.of(context).shadowColour,
+            //           offset: const Offset(0.0, 2.0),
+            //         )
+            //       ],
+            //     ),
+            //     child: ListTile(
+            //       leading: Image.asset(ImageAssets.workProgress,height: 25,width: 25,),
+            //       title: Text(
+            //         'My Work Process',
+            //         style: FlutterFlowTheme.of(context).headlineMedium,
+            //       ),
+            //       trailing: Icon(
+            //         Icons.arrow_forward,
+            //         color: FlutterFlowTheme.of(context).iconSecondary,
+            //         size: 20.0,
+            //       ),
+            //       tileColor:
+            //       FlutterFlowTheme.of(context).secondaryBackground,
+            //       dense: false,
+            //     ),
+            //   ),
+            // ),
             Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
               child: Container(
@@ -307,36 +348,9 @@ class _ProfileViewState extends State<ProfileView> {
                   ],
                 ),
                 child: ListTile(
-                  leading: Image.asset(ImageAssets.workProgress,height: 25,width: 25,),
-                  title: Text(
-                    'My Work Process',
-                    style: FlutterFlowTheme.of(context).headlineMedium,
-                  ),
-                  trailing: Icon(
-                    Icons.arrow_forward,
-                    color: FlutterFlowTheme.of(context).iconSecondary,
-                    size: 20.0,
-                  ),
-                  tileColor:
-                  FlutterFlowTheme.of(context).secondaryBackground,
-                  dense: false,
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
-                  boxShadow: [
-                    BoxShadow(
-                      blurRadius: 4.0,
-                      color: FlutterFlowTheme.of(context).shadowColour,
-                      offset: const Offset(0.0, 2.0),
-                    )
-                  ],
-                ),
-                child: ListTile(
+                  onTap: () {
+                    Get.toNamed(RouteName.plotGallery);
+                  },
                   leading: Image.asset(ImageAssets.plotGallery,height: 25,width: 25,),
                   title: Text(
                     'My Plot Gallery',
@@ -378,7 +392,7 @@ class _ProfileViewState extends State<ProfileView> {
                             Container(
                               height:30,
                               width: 30,
-                              margin: EdgeInsets.all(5.0),
+                              margin: const EdgeInsets.all(5.0),
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(100),
                                 color: FlutterFlowTheme.of(context).badgePrimary,

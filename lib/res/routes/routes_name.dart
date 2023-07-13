@@ -12,6 +12,7 @@ class RouteName {
   static const String submittedDocuments = '/submitted_documents_view' ;
   static const String myImageView = '/my_image_view_manual' ;
   static const String myWorkStageView = '/my_work_stage_view' ;
+  static const String plotGallery = '/plot_gallery' ;
 
 
 

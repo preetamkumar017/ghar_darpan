@@ -1,5 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ukcdesigner.ghar_darpan">
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.PHONE" />
    <application
         android:label="Ghar Darpan"
         android:name="${applicationName}"

@@ -34,15 +34,7 @@ class _TrackProgressViewState extends State<TrackProgressView> {
         // toolbarHeight: 35,
         backgroundColor:
         Colors.transparent, // Set the background color to transparent
-        elevation: 0, // Remove the elevation
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back,
-              color: FlutterFlowTheme.of(context)
-                  .iconSecondary), // Set the back arrow color to black
-          onPressed: () {
-            Get.back();
-          }
-        ),
+        elevation: 0,
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -72,7 +64,7 @@ class _TrackProgressViewState extends State<TrackProgressView> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(20, 10, 0, 0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(20, 10, 0, 20),
                     child: Text(
                       'Stages for your dream house.',
                       style: FlutterFlowTheme.of(context).labelMedium,

@@ -44,14 +44,14 @@ class _PaymentHistoryViewState extends State<PaymentHistoryView> {
           backgroundColor:
           Colors.transparent, // Set the background color to transparent
           elevation: 0, // Remove the elevation
-          leading: IconButton(
-              icon: Icon(Icons.arrow_back,
-                  color: FlutterFlowTheme.of(context)
-                      .iconSecondary), // Set the back arrow color to black
-              onPressed: () {
-                Get.back();
-              }
-          ),
+          // leading: IconButton(
+          //     icon: Icon(Icons.arrow_back,
+          //         color: FlutterFlowTheme.of(context)
+          //             .iconSecondary), // Set the back arrow color to black
+          //     onPressed: () {
+          //       Get.back();
+          //     }
+          // ),
         ),
         body: SafeArea(
           top: true,

@@ -97,10 +97,11 @@ class _DashboardViewState extends State<DashboardView> {
                                 decoration: const BoxDecoration(
                                   shape: BoxShape.circle,
                                 ),
-                                child: Image.asset(
-                                  ImageAssets.users,
-                                  fit: BoxFit.cover,
-                                ),
+                                child:Icon(Icons.person,size: 35,color: FlutterFlowTheme.of(context).iconSecondary,)
+                                // Image.asset(
+                                //   ImageAssets.profileImage,
+                                //   fit: BoxFit.cover,
+                                // ),
                               ),
                             ),
                           ),

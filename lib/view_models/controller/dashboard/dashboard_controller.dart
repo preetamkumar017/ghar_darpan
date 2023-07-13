@@ -34,6 +34,10 @@ class DashboardController extends GetxController
   get getMobile => mobile.value;
   setMobile(String value) => mobile.value = value;
 
+  RxString siteId =  "".obs;
+  get getSiteId => siteId.value;
+  setSiteId(String value) => siteId.value = value;
+
   RxString address =  "".obs;
   get getAddress => jsonDecode(address.value);
   setAddress(String value) => address.value = value;
@@ -52,6 +56,7 @@ class DashboardController extends GetxController
           setEmail(value.clientInfo!.emailId ?? "");
           setMobile(value.clientInfo!.mobileNo ?? "");
           setAddress(value.clientInfo!.permanentAddr ?? "");
+          setSiteId(value.clientInfo!.siteId ?? "");
         }
     }).onError((error, stackTrace){
       setLoading(Status.ERROR);
