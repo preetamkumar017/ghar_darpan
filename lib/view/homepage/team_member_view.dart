@@ -63,7 +63,7 @@ class _TeamMemberViewState extends State<TeamMemberView> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(20, 10, 0, 0),
+                padding: const EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                 child: Text(
                   'My Team Members',
                   style: FlutterFlowTheme.of(context).headlineLarge,

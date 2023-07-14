@@ -24,7 +24,7 @@ class _DashboardViewState extends State<DashboardView> {
   @override
   void initState() {
     super.initState();
-    dashData.init();
+    dashData.init(context);
   }
 
   @override
@@ -171,12 +171,12 @@ class _DashboardViewState extends State<DashboardView> {
                           if (dashData.error.value == 'No internet') {
                             return InterNetExceptionWidget(
                               onPress: () {
-                                dashData.init();
+                                dashData.init(context);
                               },
                             );
                           } else {
                             return GeneralExceptionWidget(onPress: () {
-                              dashData.init();
+                              dashData.init(context);
                             });
                           }
                         case Status.COMPLETED:

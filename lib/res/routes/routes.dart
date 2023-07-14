@@ -8,6 +8,7 @@ import 'package:ghar_darpan/view/profile/my_work_stage_view.dart';
 import 'package:ghar_darpan/view/login_page/login_view.dart';
 import 'package:ghar_darpan/view/profile/addon_view.dart';
 import 'package:ghar_darpan/view/profile/facilities_view.dart';
+import 'package:ghar_darpan/view/profile/notification_view.dart';
 import 'package:ghar_darpan/view/profile/plot_details_view.dart';
 import 'package:ghar_darpan/view/profile/plot_gallery_view.dart';
 import 'package:ghar_darpan/view/profile/profile_view.dart';
@@ -92,6 +93,12 @@ class AppRoutes {
     GetPage(
       name: RouteName.plotGallery,
       page: () => const PlotGalleryView(),
+      transitionDuration: const Duration(milliseconds: 250),
+      transition: Transition.leftToRightWithFade ,
+    ),
+    GetPage(
+      name: RouteName.notification,
+      page: () => const NotificationView(),
       transitionDuration: const Duration(milliseconds: 250),
       transition: Transition.leftToRightWithFade ,
     ),

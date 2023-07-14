@@ -2,6 +2,8 @@
     package="com.ukcdesigner.ghar_darpan">
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission-sdk-23 android:name="android.permission.INTERNET" />
    <application
         android:label="Ghar Darpan"
         android:name="${applicationName}"

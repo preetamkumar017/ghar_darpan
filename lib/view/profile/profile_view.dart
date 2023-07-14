@@ -381,6 +381,9 @@ class _ProfileViewState extends State<ProfileView> {
                   ],
                 ),
                 child: ListTile(
+                  onTap: () {
+                    Get.toNamed(RouteName.notification);
+                  },
                   leading: Image.asset(ImageAssets.notification,height: 25,width: 25,),
                   title: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
