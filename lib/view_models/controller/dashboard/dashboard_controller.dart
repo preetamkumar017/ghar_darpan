@@ -41,7 +41,14 @@ class DashboardController extends GetxController
   setSiteId(String value) => siteId.value = value;
 
   RxString address =  "".obs;
-  get getAddress => jsonDecode(address.value);
+  get getAddress {
+    if(address.value!="") {
+     return jsonDecode(address.value);
+    }else
+      {
+        return jsonDecode("{\"p_hno\":\"\",\"p_street\":\"\",\"p_landmark\":\"\",\"p_city\":\"\",\"p_state\":\"\",\"p_pincode\":\"\"}") ;
+      }
+  }
   setAddress(String value) => address.value = value;
 
 
@@ -72,7 +79,10 @@ class DashboardController extends GetxController
                 );
               }
             }
-        }
+        }else
+          {
+            setLoading(Status.EMPTY);
+          }
     }).onError((error, stackTrace){
       setLoading(Status.ERROR);
     });

@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:ghar_darpan/data/response/status.dart';
 import 'package:ghar_darpan/res/assets/image_assets.dart';
+import 'package:ghar_darpan/res/components/data_not_found_exception.dart';
 import 'package:ghar_darpan/res/components/general_exception.dart';
 import 'package:ghar_darpan/res/components/internet_exceptions_widget.dart';
 import 'package:ghar_darpan/res/routes/routes_name.dart';
@@ -179,6 +180,10 @@ class _DashboardViewState extends State<DashboardView> {
                               dashData.init(context);
                             });
                           }
+                        case Status.EMPTY:
+                            return DataNotFoundExceptionWidget(onPress: () {
+                              dashData.init(context);
+                            });
                         case Status.COMPLETED:
                           ClientInfo clientInfo = dashData.getDashboard
                               .clientInfo!;
