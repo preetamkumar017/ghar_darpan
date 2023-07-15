@@ -2,10 +2,11 @@
 
 class AppUrl {
   static const String domain  = "https://ukcdesigner.in";
+  static const String domainWithClientApi  = "$domain/client_manager/index.php/ClientApi";
   // static const String domain  = "http://192.168.1.4";
+  // static const String domainWithClientApi  = "$domain/cost_calc/index.php/ClientApi";
 
   static var subMainUrl = '$domain/approvalzone/';
-  static const String domainWithClientApi  = "$domain/cost_calc/index.php/ClientApi";
   static const String domainWithClientManagerApi  = "$domain/approvalzone/index.php/ClientManagerApi";
   static const String login = "$domainWithClientApi/login";
 
@@ -24,7 +25,7 @@ class AppUrl {
 
 
   static const String plotGallery = "$domainWithClientManagerApi/manualUploadedImages";
-/**************************End Profile pages***************************************/
+  /**************************End Profile pages***************************************/
 
   /// ************************Start Uploads Link**************************************
   static const String uploadedFile  = "$domain/cost_calc/assets/uploads/";
