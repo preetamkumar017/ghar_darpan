@@ -20,10 +20,10 @@ class _DataNotFoundExceptionWidgetState extends State<DataNotFoundExceptionWidge
       child: Column(
         children: [
           SizedBox(height: height * .15 ,),
-          const Icon(Icons.cloud_off , color: AppColor.redColor,size: 50,),
-          Padding(
-            padding: const EdgeInsets.only(top: 30),
-            child: Center(child: Text('not_found_exception'.tr , textAlign: TextAlign.center,)),
+          const Icon(Icons.cached_outlined , color: AppColor.redColor,size: 50,),
+          const Padding(
+            padding: EdgeInsets.only(top: 30),
+            child: Center(child: Text('No Data Found \n Please try again' , textAlign: TextAlign.center,)),
           ),
           SizedBox(height: height * .15 ,),
           InkWell(

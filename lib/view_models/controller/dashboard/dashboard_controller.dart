@@ -1,10 +1,12 @@
 import 'dart:convert';
 import 'dart:developer';
 
+import 'package:cool_alert/cool_alert.dart';
 import 'package:get/get.dart';
 import 'package:ghar_darpan/data/response/status.dart';
 import 'package:ghar_darpan/model/dashboard/dashboard_model.dart';
 import 'package:ghar_darpan/repository/dashboard_repository/dashboard_repository.dart';
+import 'package:ghar_darpan/view_models/services/common_methods.dart';
 
 class DashboardController extends GetxController
 {
@@ -34,12 +36,16 @@ class DashboardController extends GetxController
   get getMobile => mobile.value;
   setMobile(String value) => mobile.value = value;
 
+  RxString siteId =  "".obs;
+  get getSiteId => siteId.value;
+  setSiteId(String value) => siteId.value = value;
+
   RxString address =  "".obs;
   get getAddress => jsonDecode(address.value);
   setAddress(String value) => address.value = value;
 
 
-  init()
+  init(context)
   {
     log("called");
     setLoading(Status.LOADING);
@@ -52,6 +58,20 @@ class DashboardController extends GetxController
           setEmail(value.clientInfo!.emailId ?? "");
           setMobile(value.clientInfo!.mobileNo ?? "");
           setAddress(value.clientInfo!.permanentAddr ?? "");
+          setSiteId(value.clientInfo!.siteId ?? "");
+
+          if(value.isDue ?? false)
+            {
+              for (var element in value.notification!) {
+                CoolAlert.show(
+                  context: context,
+                  type: CoolAlertType.info,
+                  // text: element.pendingAmt,
+                  title: "Upcoming  Payment ${element.pendingAmt ?? ""}/-",
+                  text: "Your Next Payment  Date is ${myDateFormat(element.payableDate ?? "")}",
+                );
+              }
+            }
         }
     }).onError((error, stackTrace){
       setLoading(Status.ERROR);

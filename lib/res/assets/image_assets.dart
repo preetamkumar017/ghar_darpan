@@ -8,6 +8,7 @@ class ImageAssets {
   static const String users = '$images/Users.png' ;
   static const String img2 = '$images/img2.png' ;
   static const String img1 = '$images/image1.png' ;
+  static const String profileImage = '$images/profile.png' ;
 
 /*==============================Start Bottom Navigation==========================================*/
   static const String bottomNavigation = '$images/bottom_navigation' ;

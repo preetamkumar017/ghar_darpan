@@ -24,7 +24,7 @@ class _DashboardViewState extends State<DashboardView> {
   @override
   void initState() {
     super.initState();
-    dashData.init();
+    dashData.init(context);
   }
 
   @override
@@ -97,10 +97,11 @@ class _DashboardViewState extends State<DashboardView> {
                                 decoration: const BoxDecoration(
                                   shape: BoxShape.circle,
                                 ),
-                                child: Image.asset(
-                                  ImageAssets.users,
-                                  fit: BoxFit.cover,
-                                ),
+                                child:Icon(Icons.person,size: 35,color: FlutterFlowTheme.of(context).iconSecondary,)
+                                // Image.asset(
+                                //   ImageAssets.profileImage,
+                                //   fit: BoxFit.cover,
+                                // ),
                               ),
                             ),
                           ),
@@ -170,12 +171,12 @@ class _DashboardViewState extends State<DashboardView> {
                           if (dashData.error.value == 'No internet') {
                             return InterNetExceptionWidget(
                               onPress: () {
-                                dashData.init();
+                                dashData.init(context);
                               },
                             );
                           } else {
                             return GeneralExceptionWidget(onPress: () {
-                              dashData.init();
+                              dashData.init(context);
                             });
                           }
                         case Status.COMPLETED:

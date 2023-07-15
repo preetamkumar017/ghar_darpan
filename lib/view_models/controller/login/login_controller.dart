@@ -53,7 +53,7 @@ class LoginController extends GetxController
             type: CoolAlertType.success,
             text: "Login successful!",
           );
-          Get.toNamed(RouteName.dashboardView);
+          Get.toNamed(RouteName.homePage);
           Utils.toastMessage("Login SuccessFull");
 
         } else
