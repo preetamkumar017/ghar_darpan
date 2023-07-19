@@ -1,14 +1,14 @@
 import 'package:get/get.dart';
-import 'package:ghar_darpan/data/response/status.dart';
-import 'package:ghar_darpan/res/assets/image_assets.dart';
-import 'package:ghar_darpan/res/components/data_not_found_exception.dart';
-import 'package:ghar_darpan/res/components/general_exception.dart';
-import 'package:ghar_darpan/res/components/internet_exceptions_widget.dart';
-import 'package:ghar_darpan/view_models/controller/dashboard/payment_history_controller.dart';
-import 'package:ghar_darpan/view_models/services/common_methods.dart';
+import 'package:ghar_darsan/data/response/status.dart';
+import 'package:ghar_darsan/res/assets/image_assets.dart';
+import 'package:ghar_darsan/res/components/data_not_found_exception.dart';
+import 'package:ghar_darsan/res/components/general_exception.dart';
+import 'package:ghar_darsan/res/components/internet_exceptions_widget.dart';
+import 'package:ghar_darsan/view_models/controller/dashboard/payment_history_controller.dart';
+import 'package:ghar_darsan/view_models/services/common_methods.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:ghar_darpan/model/dashboard/payment_history_model.dart';
+import 'package:ghar_darsan/model/dashboard/payment_history_model.dart';
 
 class PaymentHistoryView extends StatefulWidget {
   const PaymentHistoryView({Key? key}) : super(key: key);

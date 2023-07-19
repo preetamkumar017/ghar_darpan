@@ -1,9 +1,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ghar_darpan/data/response/status.dart';
-import 'package:ghar_darpan/model/profile/notification_model.dart';
-import 'package:ghar_darpan/repository/profile/profile_repository.dart';
+import 'package:ghar_darsan/data/response/status.dart';
+import 'package:ghar_darsan/model/profile/notification_model.dart';
+import 'package:ghar_darsan/repository/profile/profile_repository.dart';
 
 class NotificationController extends GetxController
 {

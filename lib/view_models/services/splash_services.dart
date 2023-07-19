@@ -1,10 +1,10 @@
 import 'dart:async';
 import 'dart:developer';
 import 'package:get/get.dart';
-import 'package:ghar_darpan/res/routes/routes_name.dart';
-import 'package:ghar_darpan/view_models/services/box_storage.dart';
+import 'package:ghar_darsan/res/routes/routes_name.dart';
+import 'package:ghar_darsan/view_models/services/box_storage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:ghar_darpan/model/login/login_result_model.dart';
+import 'package:ghar_darsan/model/login/login_result_model.dart';
 
 class SplashServices {
 

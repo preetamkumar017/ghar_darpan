@@ -1,13 +1,13 @@
 
 import 'dart:developer';
 
-import 'package:ghar_darpan/data/network/network_api_services.dart';
-import 'package:ghar_darpan/model/profile/addon_model.dart';
-import 'package:ghar_darpan/model/profile/attached_doc_model.dart';
-import 'package:ghar_darpan/model/profile/facility_model.dart';
-import 'package:ghar_darpan/model/profile/notification_model.dart';
-import 'package:ghar_darpan/model/profile/plot_gallery_model.dart';
-import 'package:ghar_darpan/res/app_url/app_url.dart';
+import 'package:ghar_darsan/data/network/network_api_services.dart';
+import 'package:ghar_darsan/model/profile/addon_model.dart';
+import 'package:ghar_darsan/model/profile/attached_doc_model.dart';
+import 'package:ghar_darsan/model/profile/facility_model.dart';
+import 'package:ghar_darsan/model/profile/notification_model.dart';
+import 'package:ghar_darsan/model/profile/plot_gallery_model.dart';
+import 'package:ghar_darsan/res/app_url/app_url.dart';
 
 class ProfileRepository {
 

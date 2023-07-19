@@ -4,7 +4,7 @@ import 'package:another_flushbar/flushbar_route.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
-import 'package:ghar_darpan/res/colors/app_color.dart';
+import 'package:ghar_darsan/res/colors/app_color.dart';
 
 class Utils {
     static void fieldFocusChange(BuildContext context , FocusNode current , FocusNode  nextFocus ){

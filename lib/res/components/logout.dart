@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ghar_darpan/res/routes/routes_name.dart';
-import 'package:ghar_darpan/view_models/services/box_storage.dart';
+import 'package:ghar_darsan/res/routes/routes_name.dart';
+import 'package:ghar_darsan/view_models/services/box_storage.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LogoutConfirmationDialog extends StatelessWidget {
   const LogoutConfirmationDialog({Key? key}) : super(key: key);
@@ -19,8 +20,11 @@ class LogoutConfirmationDialog extends StatelessWidget {
         ),
         TextButton(
           child: const Text('Logout'),
-          onPressed: () {
+          onPressed: () async {
             login.erase();
+
+            SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+            sharedPreferences.clear();
             Get.offAllNamed(RouteName.splashScreen);
           },
         ),

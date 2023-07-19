@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:ghar_darpan/res/assets/image_assets.dart';
-import 'package:ghar_darpan/view_models/controller/login/login_controller.dart';
+import 'package:ghar_darsan/res/assets/image_assets.dart';
+import 'package:ghar_darsan/view_models/controller/login/login_controller.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -33,12 +33,11 @@ class _LoginViewState extends State<LoginView> {
       backgroundColor: FlutterFlowTheme
           .of(context)
           .primaryBackground,
-      body: SingleChildScrollView(
-        child: SafeArea(
-          top: true,
-          child: Stack(
-            children: [
-              Form(
+      body: Stack(
+        children: [
+          SingleChildScrollView(
+            child: SafeArea(
+              child: Form(
                 key: loginController.getFormKey,
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
@@ -321,20 +320,20 @@ class _LoginViewState extends State<LoginView> {
                   ],
                 ),
               ),
-              Obx(() {
-                return Visibility(
-                  visible: loginController.getLoading,
-                  child: Container(
-                    height: Get.height,
-                    width: Get.width,
-                    color: Colors.white60,
-                    child: Center(child: CircularProgressIndicator()),
-                  ),
-                );
-              })
-            ],
+            ),
           ),
-        ),
+          Obx(() {
+            return Visibility(
+              visible: loginController.getLoading,
+              child: Container(
+                height: Get.height,
+                width: Get.width,
+                color: Colors.white60,
+                child: Center(child: CircularProgressIndicator()),
+              ),
+            );
+          })
+        ],
       ),
     );
   }

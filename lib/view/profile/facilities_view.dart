@@ -1,12 +1,12 @@
 import 'package:get/get.dart';
-import 'package:ghar_darpan/data/response/status.dart';
-import 'package:ghar_darpan/res/components/data_not_found_exception.dart';
-import 'package:ghar_darpan/res/components/general_exception.dart';
-import 'package:ghar_darpan/res/components/internet_exceptions_widget.dart';
-import 'package:ghar_darpan/view_models/controller/profile/facility_controller.dart';
+import 'package:ghar_darsan/data/response/status.dart';
+import 'package:ghar_darsan/res/components/data_not_found_exception.dart';
+import 'package:ghar_darsan/res/components/general_exception.dart';
+import 'package:ghar_darsan/res/components/internet_exceptions_widget.dart';
+import 'package:ghar_darsan/view_models/controller/profile/facility_controller.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:ghar_darpan/model/profile/facility_model.dart';
+import 'package:ghar_darsan/model/profile/facility_model.dart';
 
 class FacilitiesView extends StatefulWidget {
   const FacilitiesView({Key? key}) : super(key: key);

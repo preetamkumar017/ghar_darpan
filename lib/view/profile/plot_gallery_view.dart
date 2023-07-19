@@ -1,17 +1,17 @@
 import 'dart:developer';
 
 import 'package:get/get.dart';
-import 'package:ghar_darpan/data/response/status.dart';
-import 'package:ghar_darpan/flutter_flow/flutter_flow_util.dart';
-import 'package:ghar_darpan/res/app_url/app_url.dart';
-import 'package:ghar_darpan/res/components/data_not_found_exception.dart';
-import 'package:ghar_darpan/res/components/general_exception.dart';
-import 'package:ghar_darpan/res/components/internet_exceptions_widget.dart';
-import 'package:ghar_darpan/res/routes/routes_name.dart';
-import 'package:ghar_darpan/view_models/controller/profile/plot_gallery_controller.dart';
+import 'package:ghar_darsan/data/response/status.dart';
+import 'package:ghar_darsan/flutter_flow/flutter_flow_util.dart';
+import 'package:ghar_darsan/res/app_url/app_url.dart';
+import 'package:ghar_darsan/res/components/data_not_found_exception.dart';
+import 'package:ghar_darsan/res/components/general_exception.dart';
+import 'package:ghar_darsan/res/components/internet_exceptions_widget.dart';
+import 'package:ghar_darsan/res/routes/routes_name.dart';
+import 'package:ghar_darsan/view_models/controller/profile/plot_gallery_controller.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:ghar_darpan/model/profile/plot_gallery_model.dart';
+import 'package:ghar_darsan/model/profile/plot_gallery_model.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class PlotGalleryView extends StatefulWidget {

@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:ghar_darpan/res/assets/image_assets.dart';
-import 'package:ghar_darpan/res/routes/routes_name.dart';
+import 'package:ghar_darsan/res/assets/image_assets.dart';
+import 'package:ghar_darsan/res/routes/routes_name.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';

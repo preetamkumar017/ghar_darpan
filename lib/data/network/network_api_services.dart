@@ -2,9 +2,9 @@ import 'dart:convert';
 import 'dart:developer';
 import 'dart:io';
 import 'package:flutter/foundation.dart';
-import 'package:ghar_darpan/data/app_exceptions.dart';
-import 'package:ghar_darpan/data/network/base_api_services.dart';
-import 'package:ghar_darpan/view_models/services/box_storage.dart';
+import 'package:ghar_darsan/data/app_exceptions.dart';
+import 'package:ghar_darsan/data/network/base_api_services.dart';
+import 'package:ghar_darsan/view_models/services/box_storage.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 class NetworkApiServices extends BaseApiServices {

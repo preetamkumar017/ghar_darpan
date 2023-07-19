@@ -2,10 +2,10 @@ import 'dart:developer';
 import 'package:cool_alert/cool_alert.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import 'package:ghar_darpan/repository/login_repository/login_repository.dart';
-import 'package:ghar_darpan/res/routes/routes_name.dart';
-import 'package:ghar_darpan/utils/utils.dart';
-import 'package:ghar_darpan/view_models/services/splash_services.dart';
+import 'package:ghar_darsan/repository/login_repository/login_repository.dart';
+import 'package:ghar_darsan/res/routes/routes_name.dart';
+import 'package:ghar_darsan/utils/utils.dart';
+import 'package:ghar_darsan/view_models/services/splash_services.dart';
 class LoginController extends GetxController
 {
   final _loginRepository = LoginRepository();
@@ -66,9 +66,10 @@ class LoginController extends GetxController
           Utils.toastMessage("Login Attempted Failed");
         }
       }).onError((error, stackTrace) {
+
+        setLoading(false);
         debugPrint(error.toString());
       });
     }
-    setLoading(false);
   }
 }

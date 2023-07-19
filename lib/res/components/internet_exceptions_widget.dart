@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ghar_darpan/res/colors/app_color.dart';
+import 'package:ghar_darsan/res/colors/app_color.dart';
 
 
 class InterNetExceptionWidget extends StatefulWidget {

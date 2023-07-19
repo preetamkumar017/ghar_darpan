@@ -1,9 +1,9 @@
 import 'dart:developer';
 
 import 'package:get/get.dart';
-import 'package:ghar_darpan/data/response/status.dart';
-import 'package:ghar_darpan/model/dashboard/track_progress_model.dart';
-import 'package:ghar_darpan/repository/dashboard_repository/dashboard_repository.dart';
+import 'package:ghar_darsan/data/response/status.dart';
+import 'package:ghar_darsan/model/dashboard/track_progress_model.dart';
+import 'package:ghar_darsan/repository/dashboard_repository/dashboard_repository.dart';
 
 class TrackProgressController extends GetxController
 {

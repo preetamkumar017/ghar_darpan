@@ -1,6 +1,6 @@
 
 
-import 'package:ghar_darpan/data/response/status.dart';
+import 'package:ghar_darsan/data/response/status.dart';
 
 class ApiResponse<T> {
 

@@ -1,6 +1,6 @@
-import 'package:ghar_darpan/data/network/network_api_services.dart';
-import 'package:ghar_darpan/model/login/login_result_model.dart';
-import 'package:ghar_darpan/res/app_url/app_url.dart';
+import 'package:ghar_darsan/data/network/network_api_services.dart';
+import 'package:ghar_darsan/model/login/login_result_model.dart';
+import 'package:ghar_darsan/res/app_url/app_url.dart';
 
 class LoginRepository {
 

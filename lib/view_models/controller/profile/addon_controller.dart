@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:ghar_darpan/data/response/status.dart';
-import 'package:ghar_darpan/model/profile/addon_model.dart';
-import 'package:ghar_darpan/repository/profile/profile_repository.dart';
+import 'package:ghar_darsan/data/response/status.dart';
+import 'package:ghar_darsan/model/profile/addon_model.dart';
+import 'package:ghar_darsan/repository/profile/profile_repository.dart';
 
 class AddonController extends GetxController
 {

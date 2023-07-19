@@ -1,9 +1,9 @@
 import 'dart:developer';
 
 import 'package:get/get.dart';
-import 'package:ghar_darpan/data/response/status.dart';
-import 'package:ghar_darpan/model/dashboard/team_list_model.dart';
-import 'package:ghar_darpan/repository/dashboard_repository/dashboard_repository.dart';
+import 'package:ghar_darsan/data/response/status.dart';
+import 'package:ghar_darsan/model/dashboard/team_list_model.dart';
+import 'package:ghar_darsan/repository/dashboard_repository/dashboard_repository.dart';
 
 class TeamListController extends GetxController
 {

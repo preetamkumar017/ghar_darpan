@@ -2,9 +2,9 @@ import 'dart:developer';
 
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:ghar_darpan/data/response/status.dart';
-import 'package:ghar_darpan/model/profile/attached_doc_model.dart';
-import 'package:ghar_darpan/repository/profile/profile_repository.dart';
+import 'package:ghar_darsan/data/response/status.dart';
+import 'package:ghar_darsan/model/profile/attached_doc_model.dart';
+import 'package:ghar_darsan/repository/profile/profile_repository.dart';
 
 class AttachDocController extends GetxController
 {

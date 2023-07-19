@@ -1,10 +1,10 @@
 import 'dart:developer';
-import 'package:ghar_darpan/data/network/network_api_services.dart';
-import 'package:ghar_darpan/model/dashboard/dashboard_model.dart';
-import 'package:ghar_darpan/model/dashboard/payment_history_model.dart';
-import 'package:ghar_darpan/model/dashboard/team_list_model.dart';
-import 'package:ghar_darpan/model/dashboard/track_progress_model.dart';
-import 'package:ghar_darpan/res/app_url/app_url.dart';
+import 'package:ghar_darsan/data/network/network_api_services.dart';
+import 'package:ghar_darsan/model/dashboard/dashboard_model.dart';
+import 'package:ghar_darsan/model/dashboard/payment_history_model.dart';
+import 'package:ghar_darsan/model/dashboard/team_list_model.dart';
+import 'package:ghar_darsan/model/dashboard/track_progress_model.dart';
+import 'package:ghar_darsan/res/app_url/app_url.dart';
 
 class DashboardRepository {
 

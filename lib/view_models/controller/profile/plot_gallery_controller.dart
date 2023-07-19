@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:ghar_darpan/data/response/status.dart';
-import 'package:ghar_darpan/model/profile/plot_gallery_model.dart';
-import 'package:ghar_darpan/repository/profile/profile_repository.dart';
-import 'package:ghar_darpan/view_models/controller/dashboard/dashboard_controller.dart';
+import 'package:ghar_darsan/data/response/status.dart';
+import 'package:ghar_darsan/model/profile/plot_gallery_model.dart';
+import 'package:ghar_darsan/repository/profile/profile_repository.dart';
+import 'package:ghar_darsan/view_models/controller/dashboard/dashboard_controller.dart';
 
 class PlotGalleryController extends GetxController
 {

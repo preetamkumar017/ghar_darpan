@@ -3,10 +3,10 @@ import 'dart:developer';
 
 import 'package:cool_alert/cool_alert.dart';
 import 'package:get/get.dart';
-import 'package:ghar_darpan/data/response/status.dart';
-import 'package:ghar_darpan/model/dashboard/dashboard_model.dart';
-import 'package:ghar_darpan/repository/dashboard_repository/dashboard_repository.dart';
-import 'package:ghar_darpan/view_models/services/common_methods.dart';
+import 'package:ghar_darsan/data/response/status.dart';
+import 'package:ghar_darsan/model/dashboard/dashboard_model.dart';
+import 'package:ghar_darsan/repository/dashboard_repository/dashboard_repository.dart';
+import 'package:ghar_darsan/view_models/services/common_methods.dart';
 
 class DashboardController extends GetxController
 {
