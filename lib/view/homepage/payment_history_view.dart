@@ -62,7 +62,7 @@ class _PaymentHistoryViewState extends State<PaymentHistoryView> {
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                 child: Text(
-                  'Stage Payments',
+                  'Payments History',
                   style: FlutterFlowTheme.of(context).headlineLarge,
                 ),
               ),

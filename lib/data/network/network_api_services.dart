@@ -40,9 +40,9 @@ String user_id = login.read("auth_code") ?? "";
   Future<dynamic> postApi(Map data , String url)async{
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     String authCode = sharedPreferences.getString("accessToken") ?? "";
-    // String bookingId = sharedPreferences.getString("bookingId") ?? "";
-    // data.addAll({"booking_id" : bookingId});
-    data.addAll({"booking_id" : "4"});
+    String bookingId = sharedPreferences.getString("bookingId") ?? "";
+    data.addAll({"booking_id" : bookingId});
+    // data.addAll({"booking_id" : "4"});
     if (kDebugMode) {
       debugPrint(url);
       debugPrint(data.toString());
@@ -58,7 +58,7 @@ String user_id = login.read("auth_code") ?? "";
           },
         body: jsonEncode(data)
       ).timeout( const Duration(seconds: 10));
-      log(response.body.toString());
+      // log(response.body.toString());
       // Utils.snackBar("",response.body.toString());
       responseJson  = returnResponse(response) ;
     }on SocketException {
@@ -72,9 +72,9 @@ String user_id = login.read("auth_code") ?? "";
   Future<dynamic> postApiWithoutJson(Map data , String url)async{
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     String authCode = sharedPreferences.getString("accessToken") ?? "";
-    // String bookingId = sharedPreferences.getString("bookingId") ?? "";
-    // data.addAll({"booking_id" : bookingId});
-    data.addAll({"booking_id" : "4"});
+    String bookingId = sharedPreferences.getString("bookingId") ?? "";
+    data.addAll({"booking_id" : bookingId});
+    // data.addAll({"booking_id" : "4"});
     if (kDebugMode) {
       debugPrint(url);
       debugPrint(data.toString());
@@ -86,7 +86,7 @@ String user_id = login.read("auth_code") ?? "";
       final response = await http.post(Uri.parse(url),
         body: data
       ).timeout( const Duration(seconds: 10));
-      log(response.body.toString());
+      // log(response.body.toString());
       // Utils.snackBar("",response.body.toString());
       responseJson  = returnResponse(response) ;
     }on SocketException {

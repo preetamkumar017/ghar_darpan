@@ -40,6 +40,14 @@ class DashboardController extends GetxController
   get getSiteId => siteId.value;
   setSiteId(String value) => siteId.value = value;
 
+  RxString calcId =  "".obs;
+  get getCalId => calcId.value;
+  setCalId(String value) => calcId.value = value;
+
+  RxString bookingId =  "".obs;
+  get getBookingId => bookingId.value;
+  setBookingId(String value) => bookingId.value = value;
+
   RxString address =  "".obs;
   get getAddress {
     if(address.value!="") {
@@ -52,11 +60,12 @@ class DashboardController extends GetxController
   setAddress(String value) => address.value = value;
 
 
-  init(context)
+  void getData(context)
   {
     log("called");
     setLoading(Status.LOADING);
     _dashboardRepository.dashboardApi().then((value) {
+      log(value.toJson().toString());
       setLoading(Status.COMPLETED);
       if(value.code == 200)
         {
@@ -66,6 +75,8 @@ class DashboardController extends GetxController
           setMobile(value.clientInfo!.mobileNo ?? "");
           setAddress(value.clientInfo!.permanentAddr ?? "");
           setSiteId(value.clientInfo!.siteId ?? "");
+          setCalId(value.clientInfo!.calcId ?? "");
+          setBookingId(value.clientInfo!.bookingId ?? "");
 
           if(value.isDue ?? false)
             {

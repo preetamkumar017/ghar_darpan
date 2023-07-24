@@ -138,28 +138,30 @@ class _SubmittedDocumentsViewState extends State<SubmittedDocumentsView> {
                                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                     crossAxisAlignment: CrossAxisAlignment.center,
                                     children: [
-                                      Container(
-                                        width: Get.width * 0.5,
-                                        height: Get.height * 0.2,
-                                        decoration: BoxDecoration(
-                                          boxShadow: [
-                                            BoxShadow(
-                                              blurRadius: 4,
-                                              color: FlutterFlowTheme.of(context).shadowColour,
-                                              offset: const Offset(0, 2),
-                                            )
-                                          ],
-                                          borderRadius: BorderRadius.circular(20),
-                                          border: Border.all(
-                                            color: FlutterFlowTheme.of(context).borderPrimary,
-                                            width: 1,
+                                      Expanded(
+                                        child: Container(
+                                          width: Get.width * 0.5,
+                                          height: Get.height * 0.25,
+                                          decoration: BoxDecoration(
+                                            boxShadow: [
+                                              BoxShadow(
+                                                blurRadius: 4,
+                                                color: FlutterFlowTheme.of(context).shadowColour,
+                                                offset: const Offset(0, 2),
+                                              )
+                                            ],
+                                            borderRadius: BorderRadius.circular(20),
+                                            border: Border.all(
+                                              color: FlutterFlowTheme.of(context).borderPrimary,
+                                              width: 1,
+                                            ),
                                           ),
-                                        ),
-                                        child: ClipRRect(
-                                          borderRadius: BorderRadius.circular(19),
-                                          child: Image.network(
-                                            "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.adharCopy ?? ""}",
-                                            fit: BoxFit.fill,
+                                          child: ClipRRect(
+                                            borderRadius: BorderRadius.circular(19),
+                                            child: Image.network(
+                                              "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.adharCopy ?? ""}",
+                                              fit: BoxFit.fill,
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -182,28 +184,30 @@ class _SubmittedDocumentsViewState extends State<SubmittedDocumentsView> {
                                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                     crossAxisAlignment: CrossAxisAlignment.center,
                                     children: [
-                                      Container(
-                                        width: Get.width * 0.5,
-                                        height: Get.height * 0.2,
-                                        decoration: BoxDecoration(
-                                          boxShadow: [
-                                            BoxShadow(
-                                              blurRadius: 4,
-                                              color: FlutterFlowTheme.of(context).shadowColour,
-                                              offset: const Offset(0, 2),
-                                            )
-                                          ],
-                                          borderRadius: BorderRadius.circular(20),
-                                          border: Border.all(
-                                            color: FlutterFlowTheme.of(context).borderPrimary,
-                                            width: 1,
+                                      Expanded(
+                                        child: Container(
+                                          width: Get.width * 0.5,
+                                          height: Get.height * 0.2,
+                                          decoration: BoxDecoration(
+                                            boxShadow: [
+                                              BoxShadow(
+                                                blurRadius: 4,
+                                                color: FlutterFlowTheme.of(context).shadowColour,
+                                                offset: const Offset(0, 2),
+                                              )
+                                            ],
+                                            borderRadius: BorderRadius.circular(20),
+                                            border: Border.all(
+                                              color: FlutterFlowTheme.of(context).borderPrimary,
+                                              width: 1,
+                                            ),
                                           ),
-                                        ),
-                                        child: ClipRRect(
-                                          borderRadius: BorderRadius.circular(19),
-                                          child: Image.network(
-                                            "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.pancardCopy ?? ""}",
-                                            fit: BoxFit.fill,
+                                          child: ClipRRect(
+                                            borderRadius: BorderRadius.circular(19),
+                                            child: Image.network(
+                                              "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.pancardCopy ?? ""}",
+                                              fit: BoxFit.fill,
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -226,28 +230,30 @@ class _SubmittedDocumentsViewState extends State<SubmittedDocumentsView> {
                                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                     crossAxisAlignment: CrossAxisAlignment.center,
                                     children: [
-                                      Container(
-                                        width: Get.width * 0.5,
-                                        height: Get.height * 0.2,
-                                        decoration: BoxDecoration(
-                                          boxShadow: [
-                                            BoxShadow(
-                                              blurRadius: 4,
-                                              color: FlutterFlowTheme.of(context).shadowColour,
-                                              offset: const Offset(0, 2),
-                                            )
-                                          ],
-                                          borderRadius: BorderRadius.circular(20),
-                                          border: Border.all(
-                                            color: FlutterFlowTheme.of(context).borderPrimary,
-                                            width: 1,
+                                      Expanded(
+                                        child: Container(
+                                          width: Get.width * 0.5,
+                                          height: Get.height * 0.2,
+                                          decoration: BoxDecoration(
+                                            boxShadow: [
+                                              BoxShadow(
+                                                blurRadius: 4,
+                                                color: FlutterFlowTheme.of(context).shadowColour,
+                                                offset: const Offset(0, 2),
+                                              )
+                                            ],
+                                            borderRadius: BorderRadius.circular(20),
+                                            border: Border.all(
+                                              color: FlutterFlowTheme.of(context).borderPrimary,
+                                              width: 1,
+                                            ),
                                           ),
-                                        ),
-                                        child: ClipRRect(
-                                          borderRadius: BorderRadius.circular(19),
-                                          child: Image.network(
-                                            "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.electricBill ?? ""}",
-                                            fit: BoxFit.fill,
+                                          child: ClipRRect(
+                                            borderRadius: BorderRadius.circular(19),
+                                            child: Image.network(
+                                              "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.electricBill ?? ""}",
+                                              fit: BoxFit.fill,
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -270,28 +276,30 @@ class _SubmittedDocumentsViewState extends State<SubmittedDocumentsView> {
                                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                     crossAxisAlignment: CrossAxisAlignment.center,
                                     children: [
-                                      Container(
-                                        width: Get.width * 0.5,
-                                        height: Get.height * 0.2,
-                                        decoration: BoxDecoration(
-                                          boxShadow: [
-                                            BoxShadow(
-                                              blurRadius: 4,
-                                              color: FlutterFlowTheme.of(context).shadowColour,
-                                              offset: const Offset(0, 2),
-                                            )
-                                          ],
-                                          borderRadius: BorderRadius.circular(20),
-                                          border: Border.all(
-                                            color: FlutterFlowTheme.of(context).borderPrimary,
-                                            width: 1,
+                                      Expanded(
+                                        child: Container(
+                                          width: Get.width * 0.5,
+                                          height: Get.height * 0.2,
+                                          decoration: BoxDecoration(
+                                            boxShadow: [
+                                              BoxShadow(
+                                                blurRadius: 4,
+                                                color: FlutterFlowTheme.of(context).shadowColour,
+                                                offset: const Offset(0, 2),
+                                              )
+                                            ],
+                                            borderRadius: BorderRadius.circular(20),
+                                            border: Border.all(
+                                              color: FlutterFlowTheme.of(context).borderPrimary,
+                                              width: 1,
+                                            ),
                                           ),
-                                        ),
-                                        child: ClipRRect(
-                                          borderRadius: BorderRadius.circular(19),
-                                          child: Image.network(
-                                            "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.registryCopy ?? ""}",
-                                            fit: BoxFit.fill,
+                                          child: ClipRRect(
+                                            borderRadius: BorderRadius.circular(19),
+                                            child: Image.network(
+                                              "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.registryCopy ?? ""}",
+                                              fit: BoxFit.fill,
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -314,28 +322,30 @@ class _SubmittedDocumentsViewState extends State<SubmittedDocumentsView> {
                                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                     crossAxisAlignment: CrossAxisAlignment.center,
                                     children: [
-                                      Container(
-                                        width: Get.width * 0.5,
-                                        height: Get.height * 0.2,
-                                        decoration: BoxDecoration(
-                                          boxShadow: [
-                                            BoxShadow(
-                                              blurRadius: 4,
-                                              color: FlutterFlowTheme.of(context).shadowColour,
-                                              offset: const Offset(0, 2),
-                                            )
-                                          ],
-                                          borderRadius: BorderRadius.circular(20),
-                                          border: Border.all(
-                                            color: FlutterFlowTheme.of(context).borderPrimary,
-                                            width: 1,
+                                      Expanded(
+                                        child: Container(
+                                          width: Get.width * 0.5,
+                                          height: Get.height * 0.2,
+                                          decoration: BoxDecoration(
+                                            boxShadow: [
+                                              BoxShadow(
+                                                blurRadius: 4,
+                                                color: FlutterFlowTheme.of(context).shadowColour,
+                                                offset: const Offset(0, 2),
+                                              )
+                                            ],
+                                            borderRadius: BorderRadius.circular(20),
+                                            border: Border.all(
+                                              color: FlutterFlowTheme.of(context).borderPrimary,
+                                              width: 1,
+                                            ),
                                           ),
-                                        ),
-                                        child: ClipRRect(
-                                          borderRadius: BorderRadius.circular(19),
-                                          child: Image.network(
-                                            "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.bOneCopy ?? ""}",
-                                            fit: BoxFit.fill,
+                                          child: ClipRRect(
+                                            borderRadius: BorderRadius.circular(19),
+                                            child: Image.network(
+                                              "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.bOneCopy ?? ""}",
+                                              fit: BoxFit.fill,
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -358,28 +368,30 @@ class _SubmittedDocumentsViewState extends State<SubmittedDocumentsView> {
                                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                     crossAxisAlignment: CrossAxisAlignment.center,
                                     children: [
-                                      Container(
-                                        width: Get.width * 0.5,
-                                        height: Get.height * 0.2,
-                                        decoration: BoxDecoration(
-                                          boxShadow: [
-                                            BoxShadow(
-                                              blurRadius: 4,
-                                              color: FlutterFlowTheme.of(context).shadowColour,
-                                              offset: const Offset(0, 2),
-                                            )
-                                          ],
-                                          borderRadius: BorderRadius.circular(20),
-                                          border: Border.all(
-                                            color: FlutterFlowTheme.of(context).borderPrimary,
-                                            width: 1,
+                                      Expanded(
+                                        child: Container(
+                                          width: Get.width * 0.5,
+                                          height: Get.height * 0.2,
+                                          decoration: BoxDecoration(
+                                            boxShadow: [
+                                              BoxShadow(
+                                                blurRadius: 4,
+                                                color: FlutterFlowTheme.of(context).shadowColour,
+                                                offset: const Offset(0, 2),
+                                              )
+                                            ],
+                                            borderRadius: BorderRadius.circular(20),
+                                            border: Border.all(
+                                              color: FlutterFlowTheme.of(context).borderPrimary,
+                                              width: 1,
+                                            ),
                                           ),
-                                        ),
-                                        child: ClipRRect(
-                                          borderRadius: BorderRadius.circular(19),
-                                          child: Image.network(
-                                            "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.khasraMap ?? ""}",
-                                            fit: BoxFit.fill,
+                                          child: ClipRRect(
+                                            borderRadius: BorderRadius.circular(19),
+                                            child: Image.network(
+                                              "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.khasraMap ?? ""}",
+                                              fit: BoxFit.fill,
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -402,28 +414,30 @@ class _SubmittedDocumentsViewState extends State<SubmittedDocumentsView> {
                                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                     crossAxisAlignment: CrossAxisAlignment.center,
                                     children: [
-                                      Container(
-                                        width: Get.width * 0.5,
-                                        height: Get.height * 0.2,
-                                        decoration: BoxDecoration(
-                                          boxShadow: [
-                                            BoxShadow(
-                                              blurRadius: 4,
-                                              color: FlutterFlowTheme.of(context).shadowColour,
-                                              offset: const Offset(0, 2),
-                                            )
-                                          ],
-                                          borderRadius: BorderRadius.circular(20),
-                                          border: Border.all(
-                                            color: FlutterFlowTheme.of(context).borderPrimary,
-                                            width: 1,
+                                      Expanded(
+                                        child: Container(
+                                          width: Get.width * 0.5,
+                                          height: Get.height * 0.2,
+                                          decoration: BoxDecoration(
+                                            boxShadow: [
+                                              BoxShadow(
+                                                blurRadius: 4,
+                                                color: FlutterFlowTheme.of(context).shadowColour,
+                                                offset: const Offset(0, 2),
+                                              )
+                                            ],
+                                            borderRadius: BorderRadius.circular(20),
+                                            border: Border.all(
+                                              color: FlutterFlowTheme.of(context).borderPrimary,
+                                              width: 1,
+                                            ),
                                           ),
-                                        ),
-                                        child: ClipRRect(
-                                          borderRadius: BorderRadius.circular(19),
-                                          child: Image.network(
-                                            "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.approvedTncp ?? ""}",
-                                            fit: BoxFit.fill,
+                                          child: ClipRRect(
+                                            borderRadius: BorderRadius.circular(19),
+                                            child: Image.network(
+                                              "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.approvedTncp ?? ""}",
+                                              fit: BoxFit.fill,
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -446,28 +460,30 @@ class _SubmittedDocumentsViewState extends State<SubmittedDocumentsView> {
                                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                     crossAxisAlignment: CrossAxisAlignment.center,
                                     children: [
-                                      Container(
-                                        width: Get.width * 0.5,
-                                        height: Get.height * 0.2,
-                                        decoration: BoxDecoration(
-                                          boxShadow: [
-                                            BoxShadow(
-                                              blurRadius: 4,
-                                              color: FlutterFlowTheme.of(context).shadowColour,
-                                              offset: const Offset(0, 2),
-                                            )
-                                          ],
-                                          borderRadius: BorderRadius.circular(20),
-                                          border: Border.all(
-                                            color: FlutterFlowTheme.of(context).borderPrimary,
-                                            width: 1,
+                                      Expanded(
+                                        child: Container(
+                                          width: Get.width * 0.5,
+                                          height: Get.height * 0.2,
+                                          decoration: BoxDecoration(
+                                            boxShadow: [
+                                              BoxShadow(
+                                                blurRadius: 4,
+                                                color: FlutterFlowTheme.of(context).shadowColour,
+                                                offset: const Offset(0, 2),
+                                              )
+                                            ],
+                                            borderRadius: BorderRadius.circular(20),
+                                            border: Border.all(
+                                              color: FlutterFlowTheme.of(context).borderPrimary,
+                                              width: 1,
+                                            ),
                                           ),
-                                        ),
-                                        child: ClipRRect(
-                                          borderRadius: BorderRadius.circular(19),
-                                          child: Image.network(
-                                            "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.taxReceipt ?? ""}",
-                                            fit: BoxFit.fill,
+                                          child: ClipRRect(
+                                            borderRadius: BorderRadius.circular(19),
+                                            child: Image.network(
+                                              "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.taxReceipt ?? ""}",
+                                              fit: BoxFit.fill,
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -490,28 +506,30 @@ class _SubmittedDocumentsViewState extends State<SubmittedDocumentsView> {
                                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                     crossAxisAlignment: CrossAxisAlignment.center,
                                     children: [
-                                      Container(
-                                        width: Get.width * 0.5,
-                                        height: Get.height * 0.2,
-                                        decoration: BoxDecoration(
-                                          boxShadow: [
-                                            BoxShadow(
-                                              blurRadius: 4,
-                                              color: FlutterFlowTheme.of(context).shadowColour,
-                                              offset: const Offset(0, 2),
-                                            )
-                                          ],
-                                          borderRadius: BorderRadius.circular(20),
-                                          border: Border.all(
-                                            color: FlutterFlowTheme.of(context).borderPrimary,
-                                            width: 1,
+                                      Expanded(
+                                        child: Container(
+                                          width: Get.width * 0.5,
+                                          height: Get.height * 0.2,
+                                          decoration: BoxDecoration(
+                                            boxShadow: [
+                                              BoxShadow(
+                                                blurRadius: 4,
+                                                color: FlutterFlowTheme.of(context).shadowColour,
+                                                offset: const Offset(0, 2),
+                                              )
+                                            ],
+                                            borderRadius: BorderRadius.circular(20),
+                                            border: Border.all(
+                                              color: FlutterFlowTheme.of(context).borderPrimary,
+                                              width: 1,
+                                            ),
                                           ),
-                                        ),
-                                        child: ClipRRect(
-                                          borderRadius: BorderRadius.circular(19),
-                                          child: Image.network(
-                                            "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.anyOther ?? ""}",
-                                            fit: BoxFit.fill,
+                                          child: ClipRRect(
+                                            borderRadius: BorderRadius.circular(19),
+                                            child: Image.network(
+                                              "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.anyOther ?? ""}",
+                                              fit: BoxFit.fill,
+                                            ),
                                           ),
                                         ),
                                       ),

@@ -50,7 +50,7 @@ class NotificationData {
   String? payableAmt;
   String? pendingAmt;
   String? payableDate;
-  Null? totalPaidAmt;
+  String? totalPaidAmt;
   String? paymentStatus;
   String? status;
   String? createBy;

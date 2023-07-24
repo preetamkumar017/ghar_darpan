@@ -4,6 +4,7 @@ import 'package:ghar_darsan/res/routes/routes_name.dart';
 import 'package:ghar_darsan/view/homepage/dashboard_view.dart';
 import 'package:ghar_darsan/view/homepage/home_page.dart';
 import 'package:ghar_darsan/view/profile/attachments_view.dart';
+import 'package:ghar_darsan/view/profile/more_details.dart';
 import 'package:ghar_darsan/view/profile/my_work_stage_view.dart';
 import 'package:ghar_darsan/view/login_page/login_view.dart';
 import 'package:ghar_darsan/view/profile/addon_view.dart';
@@ -99,6 +100,12 @@ class AppRoutes {
     GetPage(
       name: RouteName.notification,
       page: () => const NotificationView(),
+      transitionDuration: const Duration(milliseconds: 250),
+      transition: Transition.leftToRightWithFade ,
+    ),
+    GetPage(
+      name: RouteName.moreDetails,
+      page: () => const MoreDetails(),
       transitionDuration: const Duration(milliseconds: 250),
       transition: Transition.leftToRightWithFade ,
     ),

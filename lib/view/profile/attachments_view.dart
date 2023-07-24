@@ -1,6 +1,9 @@
 import 'package:get/get.dart';
+import 'package:ghar_darsan/res/app_url/app_url.dart';
 import 'package:ghar_darsan/res/assets/image_assets.dart';
+import 'package:ghar_darsan/res/components/pdf_viewer.dart';
 import 'package:ghar_darsan/res/routes/routes_name.dart';
+import 'package:ghar_darsan/view_models/controller/dashboard/dashboard_controller.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +18,7 @@ class AttachmentView extends StatefulWidget {
 class _AttachmentViewState extends State<AttachmentView> {
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  final dashboard = Get.put(DashboardController());
 
   @override
   void initState() {
@@ -117,13 +121,13 @@ class _AttachmentViewState extends State<AttachmentView> {
                               MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  'Estimate Cost Calculator',
+                                  'Estimate Cost ',
                                   style:
                                   FlutterFlowTheme.of(context).bodyLarge,
                                 ),
                                 FFButtonWidget(
                                   onPressed: () {
-                                    print('Button pressed ...');
+                                    Get.to(PDFScreen(path: "${AppUrl.estimateWithGST}${dashboard.getCalId}"));
                                   },
                                   text: 'Views',
                                   options: FFButtonOptions(
@@ -197,7 +201,7 @@ class _AttachmentViewState extends State<AttachmentView> {
                                 ),
                                 FFButtonWidget(
                                   onPressed: () {
-                                    print('Button pressed ...');
+                                    Get.to(PDFScreen(path: "${AppUrl.clientBookingPdf}${dashboard.getBookingId}"));
                                   },
                                   text: 'View',
                                   options: FFButtonOptions(
@@ -272,7 +276,7 @@ class _AttachmentViewState extends State<AttachmentView> {
                                 ),
                                 FFButtonWidget(
                                   onPressed: () {
-                                    print('Button pressed ...');
+                                    Get.to(PDFScreen(path: "${AppUrl.anubandhPdf}${dashboard.getBookingId}"));
                                   },
                                   text: 'View',
                                   options: FFButtonOptions(

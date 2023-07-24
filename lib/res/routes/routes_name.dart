@@ -14,6 +14,7 @@ class RouteName {
   static const String myWorkStageView = '/my_work_stage_view' ;
   static const String plotGallery = '/plot_gallery' ;
   static const String notification = '/notification' ;
+  static const String moreDetails = '/moreDetails' ;
 
 
 

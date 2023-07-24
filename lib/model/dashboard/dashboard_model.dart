@@ -132,13 +132,14 @@ class Notification {
 }
 
 class ClientInfo {
-  Null? aggrementDate;
+  String? aggrementDate;
   String? siteId;
   String? bookingId;
   String? clientName;
   String? emailId;
   String? mobileNo;
   String? permanentAddr;
+  String? calcId;
   String? bookingDate;
   String? projectCost;
   String? aggrPeriod;
@@ -153,6 +154,7 @@ class ClientInfo {
         this.emailId,
         this.mobileNo,
         this.permanentAddr,
+        this.calcId,
         this.bookingDate,
         this.projectCost,
         this.aggrPeriod,
@@ -167,6 +169,7 @@ class ClientInfo {
     emailId = json['email_id'];
     mobileNo = json['mobile_no'];
     permanentAddr = json['permanent_addr'];
+    calcId = json['calc_id'];
     bookingDate = json['booking_date'];
     projectCost = json['project_cost'];
     aggrPeriod = json['aggr_period'];
@@ -183,6 +186,7 @@ class ClientInfo {
     data['email_id'] = emailId;
     data['mobile_no'] = mobileNo;
     data['permanent_addr'] = permanentAddr;
+    data['calc_id'] = calcId;
     data['booking_date'] = bookingDate;
     data['project_cost'] = projectCost;
     data['aggr_period'] = aggrPeriod;

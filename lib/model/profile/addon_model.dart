@@ -42,7 +42,7 @@ class Result {
   String? floorDiscPrice;
   String? totalFDisc;
   String? totalWorkArea;
-  Null? avgCost;
+  String? avgCost;
   String? totalFloorCost;
   String? roadFacing;
   String? rftRate;

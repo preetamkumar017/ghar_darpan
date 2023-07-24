@@ -48,10 +48,10 @@ class Result {
   String? anyOther;
   String? chkAnyOther;
   String? otherName;
-  Null? createBy;
-  Null? createDate;
+  String? createBy;
+  String? createDate;
   String? updateDate;
-  Null? ip;
+  String? ip;
 
   Result(
       {this.id,

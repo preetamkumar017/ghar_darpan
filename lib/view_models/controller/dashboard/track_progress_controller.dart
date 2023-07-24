@@ -30,7 +30,10 @@ class TrackProgressController extends GetxController
       if(value.code == 200)
       {
         setTrackProgress(value);
-      }
+      }else
+        {
+          setLoading(Status.EMPTY);
+        }
     }).onError((error, stackTrace){
       setLoading(Status.ERROR);
     });

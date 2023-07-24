@@ -3,6 +3,7 @@ import 'package:ghar_darsan/data/response/status.dart';
 import 'package:ghar_darsan/res/components/data_not_found_exception.dart';
 import 'package:ghar_darsan/res/components/general_exception.dart';
 import 'package:ghar_darsan/res/components/internet_exceptions_widget.dart';
+import 'package:ghar_darsan/res/routes/routes_name.dart';
 import 'package:ghar_darsan/view_models/controller/dashboard/track_progress_controller.dart';
 import 'package:ghar_darsan/view_models/services/common_methods.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -240,9 +241,19 @@ class _MyWorkStageViewState
                                                 'Payment Status: ${paymentStatus}',
                                                 style:color,
                                               ),
-                                              Text(
-                                                'More Details',
-                                                style: FlutterFlowTheme.of(context).labelSmall,
+                                              InkWell(
+                                                onTap: () {
+                                                  Map data = {
+                                                    'work_tag': result.workTag,
+                                                    'stage_details':result.stageDetails,
+                                                    'stage_name':result.stageName,
+                                                  };
+                                                  Get.toNamed(RouteName.moreDetails,arguments: data);
+                                                },
+                                                child: Text(
+                                                  'More Details',
+                                                  style: FlutterFlowTheme.of(context).labelSmall,
+                                                ),
                                               ),
                                             ],
                                           ),

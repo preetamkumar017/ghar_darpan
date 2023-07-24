@@ -39,7 +39,7 @@ class Result {
   String? status;
   String? createDate;
   String? updateDate;
-  Null? ip;
+  String? ip;
 
   Result(
       {this.id,
