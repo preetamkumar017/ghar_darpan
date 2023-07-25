@@ -106,7 +106,7 @@ class _LoginViewState extends State<LoginView> {
                       padding: const EdgeInsetsDirectional.fromSTEB(
                           20, 40, 0, 0),
                       child: Text(
-                        'User Name ',
+                        'Mobile Number ',
                         style: FlutterFlowTheme
                             .of(context)
                             .headlineMedium,
@@ -122,7 +122,7 @@ class _LoginViewState extends State<LoginView> {
                           labelStyle: FlutterFlowTheme
                               .of(context)
                               .headlineMedium,
-                          hintText: 'Enter User Name',
+                          hintText: 'Enter Mobile Number',
                           hintStyle: FlutterFlowTheme
                               .of(context)
                               .headlineMedium,
@@ -174,7 +174,7 @@ class _LoginViewState extends State<LoginView> {
                             .headlineMedium,
                         validator: (value) {
                           if (value == null || value.isEmpty) {
-                            return 'Username is required';
+                            return 'Mobile Number is required';
                           }
                           return null;
                         },
@@ -329,7 +329,7 @@ class _LoginViewState extends State<LoginView> {
                 height: Get.height,
                 width: Get.width,
                 color: Colors.white60,
-                child: Center(child: CircularProgressIndicator()),
+                child: const Center(child: CircularProgressIndicator()),
               ),
             );
           })

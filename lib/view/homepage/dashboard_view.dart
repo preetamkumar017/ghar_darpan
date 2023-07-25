@@ -245,7 +245,7 @@ class _DashboardViewState extends State<DashboardView> {
                                                           .spaceBetween,
                                                       children: [
                                                         Text(
-                                                          'Plot Details',
+                                                          'Project Details',
                                                           style: FlutterFlowTheme
                                                               .of(context)
                                                               .headlineSmall,
@@ -548,7 +548,7 @@ class _DashboardViewState extends State<DashboardView> {
                                         borderRadius: BorderRadius.circular(
                                             8),
                                         child: Image.asset(
-                                          ImageAssets.img2,
+                                          ImageAssets.dashboard1,
                                           width: 80,
                                           height: 80,
                                           fit: BoxFit.cover,
@@ -725,33 +725,7 @@ class _DashboardViewState extends State<DashboardView> {
                                                             .labelMedium,
                                                       ),
                                                       TextSpan(
-                                                        text: 'Rs. 1,00,000',
-                                                        style: FlutterFlowTheme
-                                                            .of(context)
-                                                            .bodyLarge,
-                                                      )
-                                                    ],
-                                                    style: FlutterFlowTheme
-                                                        .of(context)
-                                                        .bodyMedium,
-                                                  ),
-                                                ),
-                                              ),
-                                              Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                    20, 10, 0, 0),
-                                                child: RichText(
-                                                  text: TextSpan(
-                                                    children: [
-                                                      TextSpan(
-                                                        text: 'Upcoming Payment:  ',
-                                                        style: FlutterFlowTheme
-                                                            .of(context)
-                                                            .labelMedium,
-                                                      ),
-                                                      TextSpan(
-                                                        text: 'Rs. 20,000',
+                                                        text: dashData.getDashboard.paymentStatus!.totalPaid ?? "",
                                                         style: FlutterFlowTheme
                                                             .of(context)
                                                             .bodyLarge,
@@ -777,7 +751,61 @@ class _DashboardViewState extends State<DashboardView> {
                                                             .labelMedium,
                                                       ),
                                                       TextSpan(
-                                                        text: '28 Aug, 2022',
+                                                        text: dashData.getDashboard.paymentStatus!.lastPaymentDate ?? "",
+                                                        style: FlutterFlowTheme
+                                                            .of(context)
+                                                            .bodyLarge,
+                                                      )
+                                                    ],
+                                                    style: FlutterFlowTheme
+                                                        .of(context)
+                                                        .bodyMedium,
+                                                  ),
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                    20, 10, 0, 0),
+                                                child: RichText(
+                                                  text: TextSpan(
+                                                    children: [
+                                                      TextSpan(
+                                                        text: 'Last Payment:  ',
+                                                        style: FlutterFlowTheme
+                                                            .of(context)
+                                                            .labelMedium,
+                                                      ),
+                                                      TextSpan(
+                                                        text: 'Rs. ${dashData.getDashboard.paymentStatus!.lastPayment}' ,
+
+                                                        style: FlutterFlowTheme
+                                                            .of(context)
+                                                            .bodyLarge,
+                                                      )
+                                                    ],
+                                                    style: FlutterFlowTheme
+                                                        .of(context)
+                                                        .bodyMedium,
+                                                  ),
+                                                ),
+                                              ),
+
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                    20, 10, 0, 0),
+                                                child: RichText(
+                                                  text: TextSpan(
+                                                    children: [
+                                                      TextSpan(
+                                                        text: 'Upcoming Payment:  ',
+                                                        style: FlutterFlowTheme
+                                                            .of(context)
+                                                            .labelMedium,
+                                                      ),
+                                                      TextSpan(
+                                                        text: 'Rs. ${dashData.getDashboard.paymentStatus!.upcomingAmt}',
                                                         style: FlutterFlowTheme
                                                             .of(context)
                                                             .bodyLarge,
@@ -797,13 +825,13 @@ class _DashboardViewState extends State<DashboardView> {
                                                   text: TextSpan(
                                                     children: [
                                                       TextSpan(
-                                                        text: 'Last Payment:  ',
+                                                        text: 'Due On:  ',
                                                         style: FlutterFlowTheme
                                                             .of(context)
                                                             .labelMedium,
                                                       ),
                                                       TextSpan(
-                                                        text: 'Rs. 50,000',
+                                                        text: dashData.getDashboard.paymentStatus!.upcomingAmtDate,
                                                         style: FlutterFlowTheme
                                                             .of(context)
                                                             .bodyLarge,
@@ -833,7 +861,7 @@ class _DashboardViewState extends State<DashboardView> {
                                                         .fromSTEB(
                                                         0, 10, 0, 10),
                                                     child: Text(
-                                                      'Any Dues Left: Rs. 10,00,000',
+                                                      'Any Dues Left: Rs. ${dashData.getDashboard.paymentStatus!.dueAmt}',
                                                       style: FlutterFlowTheme
                                                           .of(context)
                                                           .headlineMedium,
@@ -853,7 +881,7 @@ class _DashboardViewState extends State<DashboardView> {
                                         borderRadius: BorderRadius.circular(
                                             8),
                                         child: Image.asset(
-                                          ImageAssets.img2,
+                                          ImageAssets.dashboard2,
                                           width: 80,
                                           height: 80,
                                           fit: BoxFit.cover,
@@ -995,7 +1023,7 @@ class _DashboardViewState extends State<DashboardView> {
                                                                           0,
                                                                           0),
                                                                       child: Text(
-                                                                        'Stage 20',
+                                                                        dashData.getDashboard.stageDetails!.stageName ?? "",
                                                                         style: FlutterFlowTheme
                                                                             .of(
                                                                             context)
@@ -1043,7 +1071,7 @@ class _DashboardViewState extends State<DashboardView> {
                                                                   .labelMedium,
                                                             ),
                                                             TextSpan(
-                                                              text: '05 Nov, 2022',
+                                                              text: dashData.getDashboard.stageDetails!.startDate ?? "",
                                                               style:
                                                               FlutterFlowTheme
                                                                   .of(context)
@@ -1066,7 +1094,7 @@ class _DashboardViewState extends State<DashboardView> {
                                                                   .labelMedium,
                                                             ),
                                                             TextSpan(
-                                                              text: '31 Nov,2022',
+                                                              text: dashData.getDashboard.stageDetails!.endDate ?? "",
                                                               style:
                                                               FlutterFlowTheme
                                                                   .of(context)
@@ -1105,7 +1133,7 @@ class _DashboardViewState extends State<DashboardView> {
                                                                   .labelMedium,
                                                             ),
                                                             TextSpan(
-                                                              text: 'Rs. 20,000',
+                                                              text: 'Rs. ${dashData.getDashboard.stageDetails!.payableAmt ?? ""}',
                                                               style:
                                                               FlutterFlowTheme
                                                                   .of(context)
@@ -1182,7 +1210,8 @@ class _DashboardViewState extends State<DashboardView> {
                                                               const AlignmentDirectional(
                                                                   0, 0),
                                                               child: Text(
-                                                                'Payment Done',
+                                                                dashData.getDashboard.stageDetails!.payableAmt != "0" ?'Pending':
+                                                                    'Payment Done',
                                                                 style: FlutterFlowTheme
                                                                     .of(
                                                                     context)
@@ -1281,26 +1310,31 @@ class _DashboardViewState extends State<DashboardView> {
                                                     .of(context)
                                                     .labelLarge,
                                               ),
-                                              Container(
-                                                decoration: BoxDecoration(
-                                                  color: FlutterFlowTheme
-                                                      .of(context)
-                                                      .badgePrimary,
-                                                  borderRadius: BorderRadius
-                                                      .circular(2),
-                                                ),
-                                                child: Align(
-                                                  alignment: const AlignmentDirectional(
-                                                      0, 0),
-                                                  child: Padding(
-                                                    padding: const EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                        20, 10, 20, 10),
-                                                    child: Text(
-                                                      'See Details',
-                                                      style: FlutterFlowTheme
-                                                          .of(context)
-                                                          .bodyMedium,
+                                              InkWell(
+                                                onTap: () {
+                                                  Get.toNamed(RouteName.attachments);
+                                                },
+                                                child: Container(
+                                                  decoration: BoxDecoration(
+                                                    color: FlutterFlowTheme
+                                                        .of(context)
+                                                        .badgePrimary,
+                                                    borderRadius: BorderRadius
+                                                        .circular(2),
+                                                  ),
+                                                  child: Align(
+                                                    alignment: const AlignmentDirectional(
+                                                        0, 0),
+                                                    child: Padding(
+                                                      padding: const EdgeInsetsDirectional
+                                                          .fromSTEB(
+                                                          20, 10, 20, 10),
+                                                      child: Text(
+                                                        'See Details',
+                                                        style: FlutterFlowTheme
+                                                            .of(context)
+                                                            .bodyMedium,
+                                                      ),
                                                     ),
                                                   ),
                                                 ),

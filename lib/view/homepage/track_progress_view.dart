@@ -70,6 +70,116 @@ class _TrackProgressViewState extends State<TrackProgressView> {
                       style: FlutterFlowTheme.of(context).labelMedium,
                     ),
                   ),
+                  Container(
+                    margin: EdgeInsets.symmetric(vertical: 20),
+                    width: MediaQuery.sizeOf(context).width,
+                    height: MediaQuery.sizeOf(context).height * 0.05,
+                    decoration: BoxDecoration(
+                      // color: FlutterFlowTheme.of(context).secondaryBackground,
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Align(
+                            alignment: const AlignmentDirectional(0, 0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Container(
+                                  width: 20,
+                                  height: 20,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context).indexgreencompleted,
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                                  child: Text(
+                                    'Completed',
+                                    style: FlutterFlowTheme.of(context).bodyLarge,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Align(
+                            alignment: const AlignmentDirectional(0, 0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Container(
+                                  width: 20,
+                                  height: 20,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context).indexhold,
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                                  child: Text(
+                                    'Hold',
+                                    style: FlutterFlowTheme.of(context).bodyLarge,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Align(
+                            alignment: const AlignmentDirectional(0, 0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Container(
+                                  width: 20,
+                                  height: 20,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context).indexrunning,
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                                  child: Text(
+                                    'Running',
+                                    style: FlutterFlowTheme.of(context).bodyLarge,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Align(
+                            alignment: const AlignmentDirectional(0, 0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Container(
+                                  width: 20,
+                                  height: 20,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context).indexuntouched,
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                                  child: Text(
+                                    'Untouched',
+                                    style: FlutterFlowTheme.of(context).bodyLarge,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+
 
                   Obx(() {
                     switch (trackProgressController.getStatus) {
@@ -142,7 +252,7 @@ class _TrackProgressViewState extends State<TrackProgressView> {
                                           ],
                                         ),
 
-                                         Text("Amount Paid: ${result.totalPaidAmt ?? ""}"),
+                                         Text("Amount Paid: "+(int.parse(result.payableAmt ?? "0") - int.parse(result.pendingAmt ?? "0")).toString()),
                                       ],
                                     ),),
                                 ],);

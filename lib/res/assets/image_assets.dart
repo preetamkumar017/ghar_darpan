@@ -6,7 +6,8 @@ class ImageAssets {
   static const String messageIcon = 'assets/icons/message.svg' ;
   static const String login = '$images/login_image.jpg' ;
   static const String users = '$images/Users.png' ;
-  static const String img2 = '$images/img2.png' ;
+  static const String dashboard2 = '$images/dashboard2.png' ;
+  static const String dashboard1 = '$images/dashboard1.png' ;
   static const String img1 = '$images/image1.png' ;
   static const String profileImage = '$images/profile.png' ;
 

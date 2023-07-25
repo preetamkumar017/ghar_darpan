@@ -68,6 +68,10 @@ abstract class FlutterFlowTheme {
   late Color shadowColour;
   late Color highlightColour;
   late Color labelHoldColour;
+  late Color indexgreencompleted;
+  late Color indexhold;
+  late Color indexrunning;
+  late Color indexuntouched;
 
   @Deprecated('Use displaySmallFamily instead')
   String get title1Family => displaySmallFamily;
@@ -171,6 +175,10 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color shadowColour = Color(0xFFCAC9C9);
   late Color highlightColour = Color(0xFF008F9A);
   late Color labelHoldColour = Color(0xFFE3340D);
+  late Color indexgreencompleted = Color(0xFF0AB39C);
+  late Color indexhold = Color(0xFF3577F1);
+  late Color indexrunning = Color(0xFFF7844B);
+  late Color indexuntouched = Color(0xFF405189);
 }
 
 abstract class Typography {
@@ -221,7 +229,7 @@ class ThemeTypography extends Typography {
   String get displayMediumFamily => 'Inter';
   TextStyle get displayMedium => GoogleFonts.getFont(
     'Inter',
-    color: theme.buttonPrimary,
+    color: theme.highlightColour,
     fontWeight: FontWeight.w600,
     fontSize: 12.0,
   );
@@ -330,9 +338,9 @@ class DarkModeTheme extends FlutterFlowTheme {
   late Color secondary = const Color(0xFF39D2C0);
   late Color tertiary = const Color(0xFFEE8B60);
   late Color alternate = const Color(0xFF262D34);
-  late Color primaryText = const Color(0xFFFFFFFF);
+  late Color primaryText = const Color(0xFFEEEEF0);
   late Color secondaryText = const Color(0xFF95A1AC);
-  late Color primaryBackground = const Color(0xFF1D2428);
+  late Color primaryBackground = const Color(0xFF23293D);
   late Color secondaryBackground = const Color(0xFF14181B);
   late Color accent1 = const Color(0x4C4B39EF);
   late Color accent2 = const Color(0x4D39D2C0);
@@ -343,20 +351,24 @@ class DarkModeTheme extends FlutterFlowTheme {
   late Color error = const Color(0xFFFF5963);
   late Color info = const Color(0xFFFFFFFF);
 
-  late Color buttonPrimary = Color(0xFF0669E7);
-  late Color buttonSecondary = Color(0xFF159B42);
-  late Color borderPrimary = Color(0xFF1E6F1A);
+  late Color buttonPrimary = Color(0xFF27C499);
+  late Color buttonSecondary = Color(0xFFFFFFFF);
+  late Color borderPrimary = Color(0xFF008F9A);
   late Color borderSecondary = Color(0xFF3C8B77);
   late Color iconPrimary = Color(0xFF6CF3EA);
-  late Color iconSecondary = Color(0xFF6A682F);
+  late Color iconSecondary = Color(0xFF008F9A);
   late Color badgePrimary = Color(0xFFF47838);
-  late Color badgeSecondary = Color(0xFFBD20ED);
-  late Color containerTextClrPrimary = Color(0xFFC505B5);
+  late Color badgeSecondary = Color(0xFF27C499);
+  late Color containerTextClrPrimary = Color(0xFFFFFFFF);
   late Color containerTextColourSecondary = Color(0xFF8F8F16);
   late Color divider = Color(0xFF0174E0);
-  late Color shadowColour = Color(0xFF66BCA6);
-  late Color highlightColour = Color(0xFF352EF5);
+  late Color shadowColour = Color(0xFF21312F);
+  late Color highlightColour = Color(0xFF008F9A);
   late Color labelHoldColour = Color(0xFF2E6742);
+  late Color indexgreencompleted = Color(0xFFAA8D41);
+  late Color indexhold = Color(0xFF16BEEE);
+  late Color indexrunning = Color(0xFF1B15A3);
+  late Color indexuntouched = Color(0xFFC18868);
 }
 
 extension TextStyleHelper on TextStyle {

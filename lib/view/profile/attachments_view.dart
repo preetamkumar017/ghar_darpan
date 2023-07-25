@@ -345,7 +345,7 @@ class _AttachmentViewState extends State<AttachmentView> {
                               MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  'Submitted Documents',
+                                  'My Documents',
                                   style:
                                   FlutterFlowTheme.of(context).bodyLarge,
                                 ),

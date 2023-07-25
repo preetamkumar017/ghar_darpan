@@ -58,7 +58,7 @@ class _SubmittedDocumentsViewState extends State<SubmittedDocumentsView> {
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                 child: Text(
-                  'My Submitted Documents',
+                  'My Documents',
                   style: FlutterFlowTheme.of(context).headlineLarge,
                 ),
               ),
@@ -114,114 +114,107 @@ class _SubmittedDocumentsViewState extends State<SubmittedDocumentsView> {
                     return
                       Expanded(
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(30, 0, 30, 0),
+                          padding: const EdgeInsetsDirectional.fromSTEB(30, 10, 30, 0),
                           child: GridView(
                             physics: BouncingScrollPhysics(),
                             padding: EdgeInsets.zero,
                             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                               crossAxisCount: 2,
                               crossAxisSpacing: 10,
+                              mainAxisSpacing: 10,
                               childAspectRatio: 1,
                             ),
                             primary: false,
                             shrinkWrap: true,
                             scrollDirection: Axis.vertical,
                             children: [
-                              Visibility(
-                                visible: submittedDoc.getAttachDoc.result?.chkAdharCopy == "yes",
-                                child: InkWell(
-                                  onTap: () {
-                                    Get.toNamed(RouteName.myImageView, arguments: "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.adharCopy ?? ""}");
-                                  },
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                    crossAxisAlignment: CrossAxisAlignment.center,
-                                    children: [
-                                      Expanded(
-                                        child: Container(
-                                          width: Get.width * 0.5,
-                                          height: Get.height * 0.25,
-                                          decoration: BoxDecoration(
-                                            boxShadow: [
-                                              BoxShadow(
-                                                blurRadius: 4,
-                                                color: FlutterFlowTheme.of(context).shadowColour,
-                                                offset: const Offset(0, 2),
-                                              )
-                                            ],
-                                            borderRadius: BorderRadius.circular(20),
-                                            border: Border.all(
-                                              color: FlutterFlowTheme.of(context).borderPrimary,
-                                              width: 1,
-                                            ),
+                              if(submittedDoc.getAttachDoc.result?.chkAdharCopy    == "yes")InkWell(
+                                onTap: () {
+                                  Get.toNamed(RouteName.myImageView, arguments: "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.adharCopy ?? ""}");
+                                },
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Expanded(
+                                      child: Container(
+                                        width: Get.width * 0.5,
+                                        // height: Get.height * 0.25,
+                                        decoration: BoxDecoration(
+                                          boxShadow: [
+                                            BoxShadow(
+                                              blurRadius: 4,
+                                              color: FlutterFlowTheme.of(context).shadowColour,
+                                              offset: const Offset(0, 2),
+                                            )
+                                          ],
+                                          borderRadius: BorderRadius.circular(20),
+                                          border: Border.all(
+                                            color: FlutterFlowTheme.of(context).borderPrimary,
+                                            width: 1,
                                           ),
-                                          child: ClipRRect(
-                                            borderRadius: BorderRadius.circular(19),
-                                            child: Image.network(
-                                              "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.adharCopy ?? ""}",
-                                              fit: BoxFit.fill,
-                                            ),
+                                        ),
+                                        child: ClipRRect(
+                                          borderRadius: BorderRadius.circular(19),
+                                          child: Image.network(
+                                            "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.adharCopy ?? ""}",
+                                            fit: BoxFit.fill,
                                           ),
                                         ),
                                       ),
-                                      Text(
-                                        'Aadhaar Card',
-                                        style: FlutterFlowTheme.of(context).labelMedium,
-                                      ),
-                                    ],
-                                  ),
+                                    ),
+                                    Text(
+                                      'Aadhaar Card',
+                                      style: FlutterFlowTheme.of(context).labelMedium,
+                                    ),
+                                  ],
                                 ),
                               ),
-                              Visibility(
-                                visible: submittedDoc.getAttachDoc.result?.chkPancardCopy == "yes",
-                                child: InkWell(
-                                  onTap: () {
-                                    Get.toNamed(RouteName.myImageView, arguments: "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.pancardCopy ?? ""}");
-                                  },
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                    crossAxisAlignment: CrossAxisAlignment.center,
-                                    children: [
-                                      Expanded(
-                                        child: Container(
-                                          width: Get.width * 0.5,
-                                          height: Get.height * 0.2,
-                                          decoration: BoxDecoration(
-                                            boxShadow: [
-                                              BoxShadow(
-                                                blurRadius: 4,
-                                                color: FlutterFlowTheme.of(context).shadowColour,
-                                                offset: const Offset(0, 2),
-                                              )
-                                            ],
-                                            borderRadius: BorderRadius.circular(20),
-                                            border: Border.all(
-                                              color: FlutterFlowTheme.of(context).borderPrimary,
-                                              width: 1,
-                                            ),
+                              if(submittedDoc.getAttachDoc.result?.chkPancardCopy  == "yes")InkWell(
+                                onTap: () {
+                                  Get.toNamed(RouteName.myImageView, arguments: "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.pancardCopy ?? ""}");
+                                },
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Expanded(
+                                      child: Container(
+                                        width: Get.width * 0.5,
+                                        height: Get.height * 0.2,
+                                        decoration: BoxDecoration(
+                                          boxShadow: [
+                                            BoxShadow(
+                                              blurRadius: 4,
+                                              color: FlutterFlowTheme.of(context).shadowColour,
+                                              offset: const Offset(0, 2),
+                                            )
+                                          ],
+                                          borderRadius: BorderRadius.circular(20),
+                                          border: Border.all(
+                                            color: FlutterFlowTheme.of(context).borderPrimary,
+                                            width: 1,
                                           ),
-                                          child: ClipRRect(
-                                            borderRadius: BorderRadius.circular(19),
-                                            child: Image.network(
-                                              "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.pancardCopy ?? ""}",
-                                              fit: BoxFit.fill,
-                                            ),
+                                        ),
+                                        child: ClipRRect(
+                                          borderRadius: BorderRadius.circular(19),
+                                          child: Image.network(
+                                            "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.pancardCopy ?? ""}",
+                                            fit: BoxFit.fill,
                                           ),
                                         ),
                                       ),
-                                      Text(
-                                        'Pan Card',
-                                        style: FlutterFlowTheme.of(context).labelMedium,
-                                      ),
-                                    ],
-                                  ),
+                                    ),
+                                    Text(
+                                      'Pan Card',
+                                      style: FlutterFlowTheme.of(context).labelMedium,
+                                    ),
+                                  ],
                                 ),
                               ),
-                              Visibility(
-                                visible: submittedDoc.getAttachDoc.result?.chkElectricBill == "yes",
-                                child: InkWell(
+                              if(submittedDoc.getAttachDoc.result?.chkElectricBill == "yes")InkWell(
                                   onTap: () {
                                     Get.toNamed(RouteName.myImageView, arguments: "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.electricBill ?? ""}");
                                   },
@@ -263,282 +256,263 @@ class _SubmittedDocumentsViewState extends State<SubmittedDocumentsView> {
                                       ),
                                     ],
                                   ),
-                                ),
-                              ),
-                              Visibility(
-                                visible: submittedDoc.getAttachDoc.result?.chkRegistryCopy == "yes",
-                                child: InkWell(
-                                  onTap: () {
-                                    Get.toNamed(RouteName.myImageView, arguments: "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.registryCopy ?? ""}");
-                                  },
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                    crossAxisAlignment: CrossAxisAlignment.center,
-                                    children: [
-                                      Expanded(
-                                        child: Container(
-                                          width: Get.width * 0.5,
-                                          height: Get.height * 0.2,
-                                          decoration: BoxDecoration(
-                                            boxShadow: [
-                                              BoxShadow(
-                                                blurRadius: 4,
-                                                color: FlutterFlowTheme.of(context).shadowColour,
-                                                offset: const Offset(0, 2),
-                                              )
-                                            ],
-                                            borderRadius: BorderRadius.circular(20),
-                                            border: Border.all(
-                                              color: FlutterFlowTheme.of(context).borderPrimary,
-                                              width: 1,
-                                            ),
+                                )                               ,
+                              if(submittedDoc.getAttachDoc.result?.chkRegistryCopy == "yes")InkWell(
+                                onTap: () {
+                                  Get.toNamed(RouteName.myImageView, arguments: "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.registryCopy ?? ""}");
+                                },
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Expanded(
+                                      child: Container(
+                                        width: Get.width * 0.5,
+                                        height: Get.height * 0.2,
+                                        decoration: BoxDecoration(
+                                          boxShadow: [
+                                            BoxShadow(
+                                              blurRadius: 4,
+                                              color: FlutterFlowTheme.of(context).shadowColour,
+                                              offset: const Offset(0, 2),
+                                            )
+                                          ],
+                                          borderRadius: BorderRadius.circular(20),
+                                          border: Border.all(
+                                            color: FlutterFlowTheme.of(context).borderPrimary,
+                                            width: 1,
                                           ),
-                                          child: ClipRRect(
-                                            borderRadius: BorderRadius.circular(19),
-                                            child: Image.network(
-                                              "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.registryCopy ?? ""}",
-                                              fit: BoxFit.fill,
-                                            ),
+                                        ),
+                                        child: ClipRRect(
+                                          borderRadius: BorderRadius.circular(19),
+                                          child: Image.network(
+                                            "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.registryCopy ?? ""}",
+                                            fit: BoxFit.fill,
                                           ),
                                         ),
                                       ),
-                                      Text(
-                                        'Registry Copy',
-                                        style: FlutterFlowTheme.of(context).labelMedium,
-                                      ),
-                                    ],
-                                  ),
+                                    ),
+                                    Text(
+                                      'Registry Copy',
+                                      style: FlutterFlowTheme.of(context).labelMedium,
+                                    ),
+                                  ],
                                 ),
                               ),
-                              Visibility(
-                                visible: submittedDoc.getAttachDoc.result?.chkBOneCopy == "yes",
-                                child: InkWell(
-                                  onTap: () {
-                                    Get.toNamed(RouteName.myImageView, arguments: "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.bOneCopy ?? ""}");
-                                  },
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                    crossAxisAlignment: CrossAxisAlignment.center,
-                                    children: [
-                                      Expanded(
-                                        child: Container(
-                                          width: Get.width * 0.5,
-                                          height: Get.height * 0.2,
-                                          decoration: BoxDecoration(
-                                            boxShadow: [
-                                              BoxShadow(
-                                                blurRadius: 4,
-                                                color: FlutterFlowTheme.of(context).shadowColour,
-                                                offset: const Offset(0, 2),
-                                              )
-                                            ],
-                                            borderRadius: BorderRadius.circular(20),
-                                            border: Border.all(
-                                              color: FlutterFlowTheme.of(context).borderPrimary,
-                                              width: 1,
-                                            ),
+                              if(submittedDoc.getAttachDoc.result?.chkBOneCopy     == "yes")InkWell(
+                                onTap: () {
+                                  Get.toNamed(RouteName.myImageView, arguments: "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.bOneCopy ?? ""}");
+                                },
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Expanded(
+                                      child: Container(
+                                        width: Get.width * 0.5,
+                                        height: Get.height * 0.2,
+                                        decoration: BoxDecoration(
+                                          boxShadow: [
+                                            BoxShadow(
+                                              blurRadius: 4,
+                                              color: FlutterFlowTheme.of(context).shadowColour,
+                                              offset: const Offset(0, 2),
+                                            )
+                                          ],
+                                          borderRadius: BorderRadius.circular(20),
+                                          border: Border.all(
+                                            color: FlutterFlowTheme.of(context).borderPrimary,
+                                            width: 1,
                                           ),
-                                          child: ClipRRect(
-                                            borderRadius: BorderRadius.circular(19),
-                                            child: Image.network(
-                                              "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.bOneCopy ?? ""}",
-                                              fit: BoxFit.fill,
-                                            ),
+                                        ),
+                                        child: ClipRRect(
+                                          borderRadius: BorderRadius.circular(19),
+                                          child: Image.network(
+                                            "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.bOneCopy ?? ""}",
+                                            fit: BoxFit.fill,
                                           ),
                                         ),
                                       ),
-                                      Text(
-                                        'B1 Certificate',
-                                        style: FlutterFlowTheme.of(context).labelMedium,
-                                      ),
-                                    ],
-                                  ),
+                                    ),
+                                    Text(
+                                      'B1 Certificate',
+                                      style: FlutterFlowTheme.of(context).labelMedium,
+                                    ),
+                                  ],
                                 ),
                               ),
-                              Visibility(
-                                visible: submittedDoc.getAttachDoc.result?.chkKhasraMap == "yes",
-                                child: InkWell(
-                                  onTap: () {
-                                    Get.toNamed(RouteName.myImageView, arguments: "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.khasraMap ?? ""}");
-                                  },
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                    crossAxisAlignment: CrossAxisAlignment.center,
-                                    children: [
-                                      Expanded(
-                                        child: Container(
-                                          width: Get.width * 0.5,
-                                          height: Get.height * 0.2,
-                                          decoration: BoxDecoration(
-                                            boxShadow: [
-                                              BoxShadow(
-                                                blurRadius: 4,
-                                                color: FlutterFlowTheme.of(context).shadowColour,
-                                                offset: const Offset(0, 2),
-                                              )
-                                            ],
-                                            borderRadius: BorderRadius.circular(20),
-                                            border: Border.all(
-                                              color: FlutterFlowTheme.of(context).borderPrimary,
-                                              width: 1,
-                                            ),
+                              if(submittedDoc.getAttachDoc.result?.chkKhasraMap    == "yes")InkWell(
+                                onTap: () {
+                                  Get.toNamed(RouteName.myImageView, arguments: "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.khasraMap ?? ""}");
+                                },
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Expanded(
+                                      child: Container(
+                                        width: Get.width * 0.5,
+                                        height: Get.height * 0.2,
+                                        decoration: BoxDecoration(
+                                          boxShadow: [
+                                            BoxShadow(
+                                              blurRadius: 4,
+                                              color: FlutterFlowTheme.of(context).shadowColour,
+                                              offset: const Offset(0, 2),
+                                            )
+                                          ],
+                                          borderRadius: BorderRadius.circular(20),
+                                          border: Border.all(
+                                            color: FlutterFlowTheme.of(context).borderPrimary,
+                                            width: 1,
                                           ),
-                                          child: ClipRRect(
-                                            borderRadius: BorderRadius.circular(19),
-                                            child: Image.network(
-                                              "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.khasraMap ?? ""}",
-                                              fit: BoxFit.fill,
-                                            ),
+                                        ),
+                                        child: ClipRRect(
+                                          borderRadius: BorderRadius.circular(19),
+                                          child: Image.network(
+                                            "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.khasraMap ?? ""}",
+                                            fit: BoxFit.fill,
                                           ),
                                         ),
                                       ),
-                                      Text(
-                                        'Khasra Map',
-                                        style: FlutterFlowTheme.of(context).labelMedium,
-                                      ),
-                                    ],
-                                  ),
+                                    ),
+                                    Text(
+                                      'Khasra Map',
+                                      style: FlutterFlowTheme.of(context).labelMedium,
+                                    ),
+                                  ],
                                 ),
                               ),
-                              Visibility(
-                                visible: submittedDoc.getAttachDoc.result?.chkApprovedTncp == "yes",
-                                child: InkWell(
-                                  onTap: () {
-                                    Get.toNamed(RouteName.myImageView, arguments: "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.approvedTncp ?? ""}");
-                                  },
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                    crossAxisAlignment: CrossAxisAlignment.center,
-                                    children: [
-                                      Expanded(
-                                        child: Container(
-                                          width: Get.width * 0.5,
-                                          height: Get.height * 0.2,
-                                          decoration: BoxDecoration(
-                                            boxShadow: [
-                                              BoxShadow(
-                                                blurRadius: 4,
-                                                color: FlutterFlowTheme.of(context).shadowColour,
-                                                offset: const Offset(0, 2),
-                                              )
-                                            ],
-                                            borderRadius: BorderRadius.circular(20),
-                                            border: Border.all(
-                                              color: FlutterFlowTheme.of(context).borderPrimary,
-                                              width: 1,
-                                            ),
+                              if(submittedDoc.getAttachDoc.result?.chkApprovedTncp == "yes")InkWell(
+                                onTap: () {
+                                  Get.toNamed(RouteName.myImageView, arguments: "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.approvedTncp ?? ""}");
+                                },
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Expanded(
+                                      child: Container(
+                                        width: Get.width * 0.5,
+                                        height: Get.height * 0.2,
+                                        decoration: BoxDecoration(
+                                          boxShadow: [
+                                            BoxShadow(
+                                              blurRadius: 4,
+                                              color: FlutterFlowTheme.of(context).shadowColour,
+                                              offset: const Offset(0, 2),
+                                            )
+                                          ],
+                                          borderRadius: BorderRadius.circular(20),
+                                          border: Border.all(
+                                            color: FlutterFlowTheme.of(context).borderPrimary,
+                                            width: 1,
                                           ),
-                                          child: ClipRRect(
-                                            borderRadius: BorderRadius.circular(19),
-                                            child: Image.network(
-                                              "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.approvedTncp ?? ""}",
-                                              fit: BoxFit.fill,
-                                            ),
+                                        ),
+                                        child: ClipRRect(
+                                          borderRadius: BorderRadius.circular(19),
+                                          child: Image.network(
+                                            "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.approvedTncp ?? ""}",
+                                            fit: BoxFit.fill,
                                           ),
                                         ),
                                       ),
-                                      Text(
-                                        'Approved TNCP',
-                                        style: FlutterFlowTheme.of(context).labelMedium,
-                                      ),
-                                    ],
-                                  ),
+                                    ),
+                                    Text(
+                                      'Approved TNCP',
+                                      style: FlutterFlowTheme.of(context).labelMedium,
+                                    ),
+                                  ],
                                 ),
                               ),
-                              Visibility(
-                                visible: submittedDoc.getAttachDoc.result?.chkTaxReceipt == "yes",
-                                child: InkWell(
-                                  onTap: () {
-                                    Get.toNamed(RouteName.myImageView, arguments: "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.taxReceipt ?? ""}");
-                                  },
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                    crossAxisAlignment: CrossAxisAlignment.center,
-                                    children: [
-                                      Expanded(
-                                        child: Container(
-                                          width: Get.width * 0.5,
-                                          height: Get.height * 0.2,
-                                          decoration: BoxDecoration(
-                                            boxShadow: [
-                                              BoxShadow(
-                                                blurRadius: 4,
-                                                color: FlutterFlowTheme.of(context).shadowColour,
-                                                offset: const Offset(0, 2),
-                                              )
-                                            ],
-                                            borderRadius: BorderRadius.circular(20),
-                                            border: Border.all(
-                                              color: FlutterFlowTheme.of(context).borderPrimary,
-                                              width: 1,
-                                            ),
+                              if(submittedDoc.getAttachDoc.result?.chkTaxReceipt   == "yes")InkWell(
+                                onTap: () {
+                                  Get.toNamed(RouteName.myImageView, arguments: "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.taxReceipt ?? ""}");
+                                },
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Expanded(
+                                      child: Container(
+                                        width: Get.width * 0.5,
+                                        height: Get.height * 0.2,
+                                        decoration: BoxDecoration(
+                                          boxShadow: [
+                                            BoxShadow(
+                                              blurRadius: 4,
+                                              color: FlutterFlowTheme.of(context).shadowColour,
+                                              offset: const Offset(0, 2),
+                                            )
+                                          ],
+                                          borderRadius: BorderRadius.circular(20),
+                                          border: Border.all(
+                                            color: FlutterFlowTheme.of(context).borderPrimary,
+                                            width: 1,
                                           ),
-                                          child: ClipRRect(
-                                            borderRadius: BorderRadius.circular(19),
-                                            child: Image.network(
-                                              "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.taxReceipt ?? ""}",
-                                              fit: BoxFit.fill,
-                                            ),
+                                        ),
+                                        child: ClipRRect(
+                                          borderRadius: BorderRadius.circular(19),
+                                          child: Image.network(
+                                            "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.taxReceipt ?? ""}",
+                                            fit: BoxFit.fill,
                                           ),
                                         ),
                                       ),
-                                      Text(
-                                        'Tax Receipt',
-                                        style: FlutterFlowTheme.of(context).labelMedium,
-                                      ),
-                                    ],
-                                  ),
+                                    ),
+                                    Text(
+                                      'Tax Receipt',
+                                      style: FlutterFlowTheme.of(context).labelMedium,
+                                    ),
+                                  ],
                                 ),
                               ),
-                              Visibility(
-                                visible: submittedDoc.getAttachDoc.result?.chkAnyOther == "yes",
-                                child: InkWell(
-                                  onTap: () {
-                                    Get.toNamed(RouteName.myImageView, arguments: "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.anyOther ?? ""}");
-                                  },
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                    crossAxisAlignment: CrossAxisAlignment.center,
-                                    children: [
-                                      Expanded(
-                                        child: Container(
-                                          width: Get.width * 0.5,
-                                          height: Get.height * 0.2,
-                                          decoration: BoxDecoration(
-                                            boxShadow: [
-                                              BoxShadow(
-                                                blurRadius: 4,
-                                                color: FlutterFlowTheme.of(context).shadowColour,
-                                                offset: const Offset(0, 2),
-                                              )
-                                            ],
-                                            borderRadius: BorderRadius.circular(20),
-                                            border: Border.all(
-                                              color: FlutterFlowTheme.of(context).borderPrimary,
-                                              width: 1,
-                                            ),
+                              if(submittedDoc.getAttachDoc.result?.chkAnyOther     == "yes")InkWell(
+                                onTap: () {
+                                  Get.toNamed(RouteName.myImageView, arguments: "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.anyOther ?? ""}");
+                                },
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Expanded(
+                                      child: Container(
+                                        width: Get.width * 0.5,
+                                        height: Get.height * 0.2,
+                                        decoration: BoxDecoration(
+                                          boxShadow: [
+                                            BoxShadow(
+                                              blurRadius: 4,
+                                              color: FlutterFlowTheme.of(context).shadowColour,
+                                              offset: const Offset(0, 2),
+                                            )
+                                          ],
+                                          borderRadius: BorderRadius.circular(20),
+                                          border: Border.all(
+                                            color: FlutterFlowTheme.of(context).borderPrimary,
+                                            width: 1,
                                           ),
-                                          child: ClipRRect(
-                                            borderRadius: BorderRadius.circular(19),
-                                            child: Image.network(
-                                              "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.anyOther ?? ""}",
-                                              fit: BoxFit.fill,
-                                            ),
+                                        ),
+                                        child: ClipRRect(
+                                          borderRadius: BorderRadius.circular(19),
+                                          child: Image.network(
+                                            "${AppUrl.uploadedFile}${submittedDoc.getAttachDoc.result?.anyOther ?? ""}",
+                                            fit: BoxFit.fill,
                                           ),
                                         ),
                                       ),
-                                      Text(
-                                        'Any Other',
-                                        style: FlutterFlowTheme.of(context).labelMedium,
-                                      ),
-                                    ],
-                                  ),
+                                    ),
+                                    Text(
+                                      'Any Other',
+                                      style: FlutterFlowTheme.of(context).labelMedium,
+                                    ),
+                                  ],
                                 ),
                               ),
                             ],

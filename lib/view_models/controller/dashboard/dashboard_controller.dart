@@ -4,6 +4,7 @@ import 'dart:developer';
 import 'package:cool_alert/cool_alert.dart';
 import 'package:get/get.dart';
 import 'package:ghar_darsan/data/response/status.dart';
+import 'package:ghar_darsan/flutter_flow/flutter_flow_theme.dart';
 import 'package:ghar_darsan/model/dashboard/dashboard_model.dart';
 import 'package:ghar_darsan/repository/dashboard_repository/dashboard_repository.dart';
 import 'package:ghar_darsan/view_models/services/common_methods.dart';
@@ -39,6 +40,10 @@ class DashboardController extends GetxController
   RxString siteId =  "".obs;
   get getSiteId => siteId.value;
   setSiteId(String value) => siteId.value = value;
+
+  RxInt notificationLength =  0.obs;
+  get getNotificationLength => notificationLength.value;
+  setNotificationLength(int value) => notificationLength.value = value;
 
   RxString calcId =  "".obs;
   get getCalId => calcId.value;
@@ -78,15 +83,20 @@ class DashboardController extends GetxController
           setCalId(value.clientInfo!.calcId ?? "");
           setBookingId(value.clientInfo!.bookingId ?? "");
 
+
           if(value.isDue ?? false)
             {
+              setNotificationLength(value.notification!.length);
               for (var element in value.notification!) {
                 CoolAlert.show(
                   context: context,
                   type: CoolAlertType.info,
                   // text: element.pendingAmt,
-                  title: "Upcoming  Payment ${element.pendingAmt ?? ""}/-",
+                  title: "${element.pendingAmt ?? ""}/-",
                   text: "Your Next Payment  Date is ${myDateFormat(element.payableDate ?? "")}",
+                  confirmBtnColor: FlutterFlowTheme.of(context).buttonPrimary,
+                  backgroundColor: FlutterFlowTheme.of(context).buttonPrimary
+
                 );
               }
             }

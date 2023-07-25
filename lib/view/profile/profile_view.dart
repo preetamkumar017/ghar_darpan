@@ -33,7 +33,9 @@ class _ProfileViewState extends State<ProfileView> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+      backgroundColor: FlutterFlowTheme
+          .of(context)
+          .primaryBackground,
       appBar: AppBar(
         // toolbarHeight: 35,
         backgroundColor:
@@ -41,7 +43,8 @@ class _ProfileViewState extends State<ProfileView> {
         elevation: 0, // Remove the elevation
         leading: IconButton(
             icon: Icon(Icons.arrow_back,
-                color: FlutterFlowTheme.of(context)
+                color: FlutterFlowTheme
+                    .of(context)
                     .iconSecondary), // Set the back arrow color to black
             onPressed: () {
               Get.back();
@@ -56,20 +59,24 @@ class _ProfileViewState extends State<ProfileView> {
           // crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 10.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(
+                  20.0, 0.0, 0.0, 10.0),
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Align(
                     alignment: const AlignmentDirectional(0.0, -1.0),
                     child: Container(
-                      width: 50.0,
-                      height: 50.0,
-                      clipBehavior: Clip.antiAlias,
-                      decoration: const BoxDecoration(
-                        shape: BoxShape.circle,
-                      ),
-                      child: Icon(Icons.person,size: 35,color: FlutterFlowTheme.of(context).iconSecondary,)
+                        width: 50.0,
+                        height: 50.0,
+                        clipBehavior: Clip.antiAlias,
+                        decoration: const BoxDecoration(
+                          shape: BoxShape.circle,
+                        ),
+                        child: Icon(
+                          Icons.person, size: 35, color: FlutterFlowTheme
+                            .of(context)
+                            .iconSecondary,)
                     ),
                   ),
                   Align(
@@ -83,21 +90,32 @@ class _ProfileViewState extends State<ProfileView> {
                         children: [
                           Text(
                             dashData.getName,
-                            style: FlutterFlowTheme.of(context).bodyLarge,
+                            style: FlutterFlowTheme
+                                .of(context)
+                                .bodyLarge,
                           ),
                           Text(
                             dashData.getEmail,
-                            style: FlutterFlowTheme.of(context).labelMedium,
+                            style: FlutterFlowTheme
+                                .of(context)
+                                .labelMedium,
                           ),
                           Text(
                             dashData.getMobile,
-                            style: FlutterFlowTheme.of(context).labelMedium,
+                            style: FlutterFlowTheme
+                                .of(context)
+                                .labelMedium,
                           ),
                           Text(
-                            "${dashData.getAddress['p_hno']},${dashData.getAddress['p_street']},\n"
-                                "${dashData.getAddress['p_landmark']},${dashData.getAddress['p_city']},"
-                                "${dashData.getAddress['p_state']},${dashData.getAddress['p_pincode']}",
-                            style: FlutterFlowTheme.of(context).labelMedium,
+                            "${dashData.getAddress['p_hno']},${dashData
+                                .getAddress['p_street']},\n"
+                                "${dashData.getAddress['p_landmark']},${dashData
+                                .getAddress['p_city']},"
+                                "${dashData.getAddress['p_state']},${dashData
+                                .getAddress['p_pincode']}",
+                            style: FlutterFlowTheme
+                                .of(context)
+                                .labelMedium,
                           ),
                         ],
                       ),
@@ -108,17 +126,24 @@ class _ProfileViewState extends State<ProfileView> {
             ),
             Divider(
               thickness: 1.0,
-              color: FlutterFlowTheme.of(context).divider,
+              color: FlutterFlowTheme
+                  .of(context)
+                  .divider,
             ),
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(
+                  0.0, 10.0, 0.0, 0.0),
               child: Container(
                 decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                  color: FlutterFlowTheme
+                      .of(context)
+                      .secondaryBackground,
                   boxShadow: [
                     BoxShadow(
                       blurRadius: 4.0,
-                      color: FlutterFlowTheme.of(context).shadowColour,
+                      color: FlutterFlowTheme
+                          .of(context)
+                          .shadowColour,
                       offset: const Offset(0.0, 2.0),
                     )
                   ],
@@ -127,18 +152,25 @@ class _ProfileViewState extends State<ProfileView> {
                   onTap: () {
                     Get.toNamed(RouteName.plotDetails);
                   },
-                  leading: Image.asset(ImageAssets.myBuilding,height: 25,width: 25,),
+                  leading: Image.asset(
+                    ImageAssets.myBuilding, height: 25, width: 25,),
                   title: Text(
                     'About Plot',
-                    style: FlutterFlowTheme.of(context).headlineMedium,
+                    style: FlutterFlowTheme
+                        .of(context)
+                        .headlineMedium,
                   ),
                   trailing: Icon(
                     Icons.arrow_forward,
-                    color: FlutterFlowTheme.of(context).iconSecondary,
+                    color: FlutterFlowTheme
+                        .of(context)
+                        .iconSecondary,
                     size: 20.0,
                   ),
                   tileColor:
-                  FlutterFlowTheme.of(context).secondaryBackground,
+                  FlutterFlowTheme
+                      .of(context)
+                      .secondaryBackground,
                   dense: false,
                 ),
               ),
@@ -147,11 +179,15 @@ class _ProfileViewState extends State<ProfileView> {
               padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
               child: Container(
                 decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                  color: FlutterFlowTheme
+                      .of(context)
+                      .secondaryBackground,
                   boxShadow: [
                     BoxShadow(
                       blurRadius: 4.0,
-                      color: FlutterFlowTheme.of(context).shadowColour,
+                      color: FlutterFlowTheme
+                          .of(context)
+                          .shadowColour,
                       offset: const Offset(0.0, 2.0),
                     )
                   ],
@@ -160,18 +196,25 @@ class _ProfileViewState extends State<ProfileView> {
                   onTap: () {
                     Get.toNamed(RouteName.addonView);
                   },
-                  leading: Image.asset(ImageAssets.addon,height: 25,width: 25,),
+                  leading: Image.asset(
+                    ImageAssets.addon, height: 25, width: 25,),
                   title: Text(
                     'My Addon',
-                    style: FlutterFlowTheme.of(context).headlineMedium,
+                    style: FlutterFlowTheme
+                        .of(context)
+                        .headlineMedium,
                   ),
                   trailing: Icon(
                     Icons.arrow_forward,
-                    color: FlutterFlowTheme.of(context).iconSecondary,
+                    color: FlutterFlowTheme
+                        .of(context)
+                        .iconSecondary,
                     size: 20.0,
                   ),
                   tileColor:
-                  FlutterFlowTheme.of(context).secondaryBackground,
+                  FlutterFlowTheme
+                      .of(context)
+                      .secondaryBackground,
                   dense: false,
                 ),
               ),
@@ -180,11 +223,15 @@ class _ProfileViewState extends State<ProfileView> {
               padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
               child: Container(
                 decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                  color: FlutterFlowTheme
+                      .of(context)
+                      .secondaryBackground,
                   boxShadow: [
                     BoxShadow(
                       blurRadius: 4.0,
-                      color: FlutterFlowTheme.of(context).shadowColour,
+                      color: FlutterFlowTheme
+                          .of(context)
+                          .shadowColour,
                       offset: const Offset(0.0, 2.0),
                     )
                   ],
@@ -193,18 +240,25 @@ class _ProfileViewState extends State<ProfileView> {
                   onTap: () {
                     Get.toNamed(RouteName.myWorkStageView);
                   },
-                  leading: Image.asset(ImageAssets.facilities,height: 25,width: 25,),
+                  leading: Image.asset(
+                    ImageAssets.facilities, height: 25, width: 25,),
                   title: Text(
                     'My Work Stage',
-                    style: FlutterFlowTheme.of(context).headlineMedium,
+                    style: FlutterFlowTheme
+                        .of(context)
+                        .headlineMedium,
                   ),
                   trailing: Icon(
                     Icons.arrow_forward,
-                    color: FlutterFlowTheme.of(context).iconSecondary,
+                    color: FlutterFlowTheme
+                        .of(context)
+                        .iconSecondary,
                     size: 20.0,
                   ),
                   tileColor:
-                  FlutterFlowTheme.of(context).secondaryBackground,
+                  FlutterFlowTheme
+                      .of(context)
+                      .secondaryBackground,
                   dense: false,
                 ),
               ),
@@ -213,11 +267,15 @@ class _ProfileViewState extends State<ProfileView> {
               padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
               child: Container(
                 decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                  color: FlutterFlowTheme
+                      .of(context)
+                      .secondaryBackground,
                   boxShadow: [
                     BoxShadow(
                       blurRadius: 4.0,
-                      color: FlutterFlowTheme.of(context).shadowColour,
+                      color: FlutterFlowTheme
+                          .of(context)
+                          .shadowColour,
                       offset: const Offset(0.0, 2.0),
                     )
                   ],
@@ -226,18 +284,25 @@ class _ProfileViewState extends State<ProfileView> {
                   onTap: () {
                     Get.toNamed(RouteName.facilities);
                   },
-                  leading: Image.asset(ImageAssets.facilities,height: 25,width: 25,),
+                  leading: Image.asset(
+                    ImageAssets.facilities, height: 25, width: 25,),
                   title: Text(
                     'My Facilities',
-                    style: FlutterFlowTheme.of(context).headlineMedium,
+                    style: FlutterFlowTheme
+                        .of(context)
+                        .headlineMedium,
                   ),
                   trailing: Icon(
                     Icons.arrow_forward,
-                    color: FlutterFlowTheme.of(context).iconSecondary,
+                    color: FlutterFlowTheme
+                        .of(context)
+                        .iconSecondary,
                     size: 20.0,
                   ),
                   tileColor:
-                  FlutterFlowTheme.of(context).secondaryBackground,
+                  FlutterFlowTheme
+                      .of(context)
+                      .secondaryBackground,
                   dense: false,
                 ),
               ),
@@ -276,11 +341,15 @@ class _ProfileViewState extends State<ProfileView> {
               padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
               child: Container(
                 decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                  color: FlutterFlowTheme
+                      .of(context)
+                      .secondaryBackground,
                   boxShadow: [
                     BoxShadow(
                       blurRadius: 4.0,
-                      color: FlutterFlowTheme.of(context).shadowColour,
+                      color: FlutterFlowTheme
+                          .of(context)
+                          .shadowColour,
                       offset: const Offset(0.0, 2.0),
                     )
                   ],
@@ -289,18 +358,25 @@ class _ProfileViewState extends State<ProfileView> {
                   onTap: () {
                     Get.toNamed(RouteName.attachments);
                   },
-                  leading: Image.asset(ImageAssets.attachment,height: 25,width: 25,),
+                  leading: Image.asset(
+                    ImageAssets.attachment, height: 25, width: 25,),
                   title: Text(
                     'My Attachments',
-                    style: FlutterFlowTheme.of(context).headlineMedium,
+                    style: FlutterFlowTheme
+                        .of(context)
+                        .headlineMedium,
                   ),
                   trailing: Icon(
                     Icons.arrow_forward,
-                    color: FlutterFlowTheme.of(context).iconSecondary,
+                    color: FlutterFlowTheme
+                        .of(context)
+                        .iconSecondary,
                     size: 20.0,
                   ),
                   tileColor:
-                  FlutterFlowTheme.of(context).secondaryBackground,
+                  FlutterFlowTheme
+                      .of(context)
+                      .secondaryBackground,
                   dense: false,
                 ),
               ),
@@ -339,11 +415,15 @@ class _ProfileViewState extends State<ProfileView> {
               padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
               child: Container(
                 decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                  color: FlutterFlowTheme
+                      .of(context)
+                      .secondaryBackground,
                   boxShadow: [
                     BoxShadow(
                       blurRadius: 4.0,
-                      color: FlutterFlowTheme.of(context).shadowColour,
+                      color: FlutterFlowTheme
+                          .of(context)
+                          .shadowColour,
                       offset: const Offset(0.0, 2.0),
                     )
                   ],
@@ -352,18 +432,25 @@ class _ProfileViewState extends State<ProfileView> {
                   onTap: () {
                     Get.toNamed(RouteName.plotGallery);
                   },
-                  leading: Image.asset(ImageAssets.plotGallery,height: 25,width: 25,),
+                  leading: Image.asset(
+                    ImageAssets.plotGallery, height: 25, width: 25,),
                   title: Text(
                     'My Plot Gallery',
-                    style: FlutterFlowTheme.of(context).headlineMedium,
+                    style: FlutterFlowTheme
+                        .of(context)
+                        .headlineMedium,
                   ),
                   trailing: Icon(
                     Icons.arrow_forward,
-                    color: FlutterFlowTheme.of(context).iconSecondary,
+                    color: FlutterFlowTheme
+                        .of(context)
+                        .iconSecondary,
                     size: 20.0,
                   ),
                   tileColor:
-                  FlutterFlowTheme.of(context).secondaryBackground,
+                  FlutterFlowTheme
+                      .of(context)
+                      .secondaryBackground,
                   dense: false,
                 ),
               ),
@@ -372,11 +459,15 @@ class _ProfileViewState extends State<ProfileView> {
               padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
               child: Container(
                 decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                  color: FlutterFlowTheme
+                      .of(context)
+                      .secondaryBackground,
                   boxShadow: [
                     BoxShadow(
                       blurRadius: 4.0,
-                      color: FlutterFlowTheme.of(context).shadowColour,
+                      color: FlutterFlowTheme
+                          .of(context)
+                          .shadowColour,
                       offset: const Offset(0.0, 2.0),
                     )
                   ],
@@ -385,142 +476,180 @@ class _ProfileViewState extends State<ProfileView> {
                   onTap: () {
                     Get.toNamed(RouteName.notification);
                   },
-                  leading: Image.asset(ImageAssets.notification,height: 25,width: 25,),
+                  leading: Image.asset(
+                    ImageAssets.notification, height: 25, width: 25,),
                   title: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
                         'My Notification',
-                        style: FlutterFlowTheme.of(context).headlineMedium,
+                        style: FlutterFlowTheme
+                            .of(context)
+                            .headlineMedium,
                       ),
-                            Container(
-                              height:30,
-                              width: 30,
-                              margin: const EdgeInsets.all(5.0),
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(100),
-                                color: FlutterFlowTheme.of(context).badgePrimary,
-                              ),
-                              child: Center(
-                                  child: Text("25",
-                                  style:FlutterFlowTheme.of(context).bodyMedium)))
+                      Container(
+                          height: 30,
+                          width: 30,
+                          margin: const EdgeInsets.all(5.0),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(100),
+                            color: FlutterFlowTheme
+                                .of(context)
+                                .badgePrimary,
+                          ),
+                          child: Obx(() {
+                            return Center(
+                                child: Text(dashData.getNotificationLength.toString(),
+                                    style: FlutterFlowTheme
+                                        .of(context)
+                                        .bodyMedium));
+                          }))
                     ],
                   ),
                   trailing: Icon(
                     Icons.arrow_forward,
-                    color: FlutterFlowTheme.of(context).iconSecondary,
+                    color: FlutterFlowTheme
+                        .of(context)
+                        .iconSecondary,
                     size: 20.0,
                   ),
                   tileColor:
-                  FlutterFlowTheme.of(context).secondaryBackground,
+                  FlutterFlowTheme
+                      .of(context)
+                      .secondaryBackground,
                   dense: false,
                 ),
               ),
             ),
 /*========================End ListTile=================================*/
 /*========================Start Bottom=================================*/
-            Expanded(
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+            Column(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(
+                      0.0, 5.0, 0.0, 0.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: FlutterFlowTheme
+                          .of(context)
+                          .secondaryBackground,
+                      boxShadow: [
+                        BoxShadow(
+                          blurRadius: 4.0,
+                          color: FlutterFlowTheme
+                              .of(context)
+                              .shadowColour,
+                          offset: const Offset(0.0, 2.0),
+                        )
+                      ],
+                    ),
+                    child: ListTile(
+                      onTap: () {
+                        showDialog<bool>(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return const LogoutConfirmationDialog();
+                          },
+                        );
+                      },
+                      leading: Image.asset(
+                        ImageAssets.logout, height: 25, width: 25,),
+                      title: Text(
+                        'Log Out',
+                        style: FlutterFlowTheme
+                            .of(context)
+                            .headlineMedium,
+                      ),
+                      trailing: Icon(
+                        Icons.arrow_forward,
+                        color: FlutterFlowTheme
+                            .of(context)
+                            .iconSecondary,
+                        size: 20.0,
+                      ),
+                      tileColor:
+                      FlutterFlowTheme
+                          .of(context)
+                          .secondaryBackground,
+                      dense: false,
+                    ),
+                  ),
+                ),
+                Align(
+                  alignment: const AlignmentDirectional(0.0, 0.0),
+                  child: Padding(
+                    padding: const EdgeInsetsDirectional.fromSTEB(
+                        0.0, 10.0, 0.0, 0.0),
                     child: Container(
+                      width: MediaQuery
+                          .of(context)
+                          .size
+                          .width * 0.98,
                       decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                        color: FlutterFlowTheme
+                            .of(context)
+                            .buttonPrimary,
                         boxShadow: [
                           BoxShadow(
                             blurRadius: 4.0,
-                            color: FlutterFlowTheme.of(context).shadowColour,
-                            offset: const Offset(0.0, 2.0),
+                            color: FlutterFlowTheme
+                                .of(context)
+                                .shadowColour,
+                            offset: const Offset(5.0, 4.0),
                           )
                         ],
                       ),
-                      child: ListTile(
-                        onTap: () {
-                          showDialog<bool>(
-                            context: context,
-                            builder: (BuildContext context) {
-                              return const LogoutConfirmationDialog();
-                            },
-                          );
-                        },
-                        leading: Image.asset(ImageAssets.logout,height: 25,width: 25,),
-                        title: Text(
-                          'Log Out',
-                          style: FlutterFlowTheme.of(context).headlineMedium,
-                        ),
-                        trailing: Icon(
-                          Icons.arrow_forward,
-                          color: FlutterFlowTheme.of(context).iconSecondary,
-                          size: 20.0,
-                        ),
-                        tileColor:
-                        FlutterFlowTheme.of(context).secondaryBackground,
-                        dense: false,
-                      ),
-                    ),
-                  ),
-                  Align(
-                    alignment: const AlignmentDirectional(0.0, 0.0),
-                    child: Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
-                      child: Container(
-                        width: MediaQuery.of(context).size.width * 0.98,
-                        decoration: BoxDecoration(
-                          color: FlutterFlowTheme.of(context).buttonPrimary,
-                          boxShadow: [
-                            BoxShadow(
-                              blurRadius: 4.0,
-                              color: FlutterFlowTheme.of(context).shadowColour,
-                              offset: const Offset(5.0, 4.0),
-                            )
-                          ],
-                        ),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  20.0, 10.0, 20.0, 10.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(
-                                    'Having Some Trouble?',
-                                    style: FlutterFlowTheme.of(context).labelLarge,
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                20.0, 10.0, 20.0, 10.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  'Having Some Trouble?',
+                                  style: FlutterFlowTheme
+                                      .of(context)
+                                      .labelLarge,
+                                ),
+                                Container(
+                                  decoration: BoxDecoration(
+                                    color:
+                                    FlutterFlowTheme
+                                        .of(context)
+                                        .badgePrimary,
+                                    borderRadius: BorderRadius.circular(2.0),
                                   ),
-                                  Container(
-                                    decoration: BoxDecoration(
-                                      color:
-                                      FlutterFlowTheme.of(context).badgePrimary,
-                                      borderRadius: BorderRadius.circular(2.0),
-                                    ),
-                                    child: Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
-                                      child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            20.0, 10.0, 20.0, 10.0),
-                                        child: Text(
-                                          'Contact Us',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
-                                        ),
+                                  child: Align(
+                                    alignment: const AlignmentDirectional(
+                                        0.0, 0.0),
+                                    child: Padding(
+                                      padding: const EdgeInsetsDirectional
+                                          .fromSTEB(
+                                          20.0, 10.0, 20.0, 10.0),
+                                      child: Text(
+                                        'Contact Us',
+                                        style: FlutterFlowTheme
+                                            .of(context)
+                                            .bodyMedium,
                                       ),
                                     ),
                                   ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
 /*========================End Bottom=================================*/
           ],
