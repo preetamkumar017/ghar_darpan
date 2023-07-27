@@ -15,6 +15,8 @@ class RouteName {
   static const String plotGallery = '/plot_gallery' ;
   static const String notification = '/notification' ;
   static const String moreDetails = '/moreDetails' ;
+  static const String selectSourceView = '/selectSourceView' ;
+  static const String cctvImageView = '/cctvImageView' ;
 
 
 

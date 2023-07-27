@@ -11,7 +11,9 @@ import 'package:ghar_darsan/view/profile/addon_view.dart';
 import 'package:ghar_darsan/view/profile/facilities_view.dart';
 import 'package:ghar_darsan/view/profile/notification_view.dart';
 import 'package:ghar_darsan/view/profile/plot_details_view.dart';
-import 'package:ghar_darsan/view/profile/plot_gallery_view.dart';
+import 'package:ghar_darsan/view/profile/plot_gallary/cctv_image_view.dart';
+import 'package:ghar_darsan/view/profile/plot_gallary/plot_gallery_view.dart';
+import 'package:ghar_darsan/view/profile/plot_gallary/select_source.dart';
 import 'package:ghar_darsan/view/profile/profile_view.dart';
 import 'package:ghar_darsan/view/profile/submitted_documents_view.dart';
 import 'package:ghar_darsan/view/splash_screen.dart';
@@ -106,6 +108,18 @@ class AppRoutes {
     GetPage(
       name: RouteName.moreDetails,
       page: () => const MoreDetails(),
+      transitionDuration: const Duration(milliseconds: 250),
+      transition: Transition.leftToRightWithFade ,
+    ),
+    GetPage(
+      name: RouteName.selectSourceView,
+      page: () => const SelectSourceView(),
+      transitionDuration: const Duration(milliseconds: 250),
+      transition: Transition.leftToRightWithFade ,
+    ),
+    GetPage(
+      name: RouteName.cctvImageView,
+      page: () =>  CctvImageView(),
       transitionDuration: const Duration(milliseconds: 250),
       transition: Transition.leftToRightWithFade ,
     ),

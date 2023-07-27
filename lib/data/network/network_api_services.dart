@@ -58,7 +58,7 @@ String user_id = login.read("auth_code") ?? "";
           },
         body: jsonEncode(data)
       ).timeout( const Duration(seconds: 10));
-      // log(response.body.toString());
+      log(response.body.toString());
       // Utils.snackBar("",response.body.toString());
       responseJson  = returnResponse(response) ;
     }on SocketException {
@@ -86,13 +86,15 @@ String user_id = login.read("auth_code") ?? "";
       final response = await http.post(Uri.parse(url),
         body: data
       ).timeout( const Duration(seconds: 10));
-      // log(response.body.toString());
+      log(response.body.toString());
       // Utils.snackBar("",response.body.toString());
       responseJson  = returnResponse(response) ;
     }on SocketException {
       throw InternetException('');
     }on RequestTimeOut {
       throw RequestTimeOut('');
+    }catch(e){
+
     }
     return responseJson ;
   }
@@ -111,6 +113,9 @@ String user_id = login.read("auth_code") ?? "";
       responseJson = returnResponseFile(response, responseString);
     } on SocketException {
       throw FetchDataException('No Internet Connection');
+    }catch (e) {
+      log("catch wala "+e.toString());
+
     }
 
     return responseJson;
@@ -180,7 +185,7 @@ String user_id = login.read("auth_code") ?? "";
       case 416:
         throw RequestedRangeNotSatisfiableException(responseString);
       case 500:
-        throw InternalServerException(responseString);
+        throw InternalServerException(responseString).toString();
       case 503:
         throw ServiceUnavailableException(responseString);
       default:

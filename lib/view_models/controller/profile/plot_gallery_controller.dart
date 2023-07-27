@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:ghar_darsan/data/response/status.dart';
+import 'package:ghar_darsan/flutter_flow/flutter_flow_util.dart';
 import 'package:ghar_darsan/model/profile/plot_gallery_model.dart';
 import 'package:ghar_darsan/repository/profile/profile_repository.dart';
 import 'package:ghar_darsan/view_models/controller/dashboard/dashboard_controller.dart';
@@ -20,7 +21,7 @@ class PlotGalleryController extends GetxController
   get getError => error.value;
   void setError(String value) => error.value = value;
 
-  RxString date = ''.obs;
+  RxString date = DateFormat("yyyy-MM-dd").format(DateTime.now()).obs;
   get getDate => date.value;
   void setDate(String value) => date.value = value;
 
@@ -34,7 +35,7 @@ class PlotGalleryController extends GetxController
     setLoading(Status.LOADING);
     Map data = {
       "site_id":dashboard.getSiteId ?? "",
-      "date":date.value
+      "date":"${date.value}"
     };
     _myRepo.plotGalleryApi(data).then((value) {
       setLoading(Status.COMPLETED);

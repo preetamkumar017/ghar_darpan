@@ -124,7 +124,7 @@ class _PlotDetailsViewState extends State<PlotDetailsView> {
                           padding: const EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                           child: Container(
                             width: Get.width,
-                            height: 50,
+                            height: 60,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context).secondaryBackground,
                               boxShadow: [
@@ -145,7 +145,7 @@ class _PlotDetailsViewState extends State<PlotDetailsView> {
                                     child: Image.asset(
                                       ImageAssets.plotLength,
                                       width: 30,
-                                      height: 30,
+                                      height: 25,
                                       fit: BoxFit.cover,
                                     ),
                                   ),

@@ -189,7 +189,6 @@ class _PlotGalleryViewState extends State<PlotGalleryView> {
                       });
                     }
                   case Status.EMPTY:
-                    log("No internet");
 
                       return DataNotFoundExceptionWidget(onPress: () {
                         galleryController.getData();
@@ -214,6 +213,7 @@ class _PlotGalleryViewState extends State<PlotGalleryView> {
                           itemBuilder: (context, index) {
                             Result result = galleryController.getPlotGallery
                                 .result![index];
+                            log("${Get.height * 0.15}");
                             return Column(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.start,
@@ -221,7 +221,7 @@ class _PlotGalleryViewState extends State<PlotGalleryView> {
                               children: [
                                 Container(
                                   width: Get.width * 0.5,
-                                  height: Get.height * 0.2,
+                                  height: 120,
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme
                                         .of(context)

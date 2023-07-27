@@ -10,6 +10,8 @@ class ImageAssets {
   static const String dashboard1 = '$images/dashboard1.png' ;
   static const String img1 = '$images/image1.png' ;
   static const String profileImage = '$images/profile.png' ;
+  static const String manualUpload = '$images/manual_upload.png' ;
+  static const String cctvUpload = '$images/cctv_upload.png' ;
 
 /*==============================Start Bottom Navigation==========================================*/
   static const String bottomNavigation = '$images/bottom_navigation' ;

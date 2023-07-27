@@ -24,7 +24,9 @@ class AppUrl {
   static const String notification = "$domainWithClientApi/notification";
 
 
-  static const String plotGallery = "$domainWithClientManagerApi/manualUploadedImages";
+  static const String plotGallery = "$domainWithClientApi/manualUploadedImages";
+  static const String cctvDetails =  '$domainWithClientApi/cctv_details' ;
+  static const String ftpIdPassword =  '$domainWithClientApi/ftp_id_password' ;
   /**************************End Profile pages***************************************/
 
   /// ************************Start Uploads/download Link**************************************
@@ -32,7 +34,8 @@ class AppUrl {
   static const String estimateWithGST  = "$domain/cost_calculator/pdf2/estimate_with_gst.php?cid=";
   static const String clientBookingPdf  = "$domain/cost_calc/index.php/booking/client_booking_pdf/";
   static const String anubandhPdf  = "$domain/cost_calc/index.php/anubandh/anubandh_pdf/";
-/**************************End Uploads/download Link***************************************/
+/// ************************End Uploads/download Link**************************************
 
+  static const String imageUrl  = "https://ukcdesigner.in/site_camera_data/";
 
 }

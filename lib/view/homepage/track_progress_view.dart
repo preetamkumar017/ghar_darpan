@@ -71,10 +71,10 @@ class _TrackProgressViewState extends State<TrackProgressView> {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.symmetric(vertical: 20),
+                    margin: const EdgeInsets.symmetric(vertical: 20),
                     width: MediaQuery.sizeOf(context).width,
                     height: MediaQuery.sizeOf(context).height * 0.05,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       // color: FlutterFlowTheme.of(context).secondaryBackground,
                     ),
                     child: Padding(
@@ -252,7 +252,7 @@ class _TrackProgressViewState extends State<TrackProgressView> {
                                           ],
                                         ),
 
-                                         Text("Amount Paid: "+(int.parse(result.payableAmt ?? "0") - int.parse(result.pendingAmt ?? "0")).toString()),
+                                         Text("Amount Paid: ${int.parse(result.payableAmt ?? "0") - int.parse(result.pendingAmt ?? "0")}"),
                                       ],
                                     ),),
                                 ],);

@@ -430,7 +430,7 @@ class _ProfileViewState extends State<ProfileView> {
                 ),
                 child: ListTile(
                   onTap: () {
-                    Get.toNamed(RouteName.plotGallery);
+                    Get.toNamed(RouteName.selectSourceView);
                   },
                   leading: Image.asset(
                     ImageAssets.plotGallery, height: 25, width: 25,),

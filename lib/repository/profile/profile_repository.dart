@@ -2,9 +2,11 @@
 import 'dart:developer';
 
 import 'package:ghar_darsan/data/network/network_api_services.dart';
+import 'package:ghar_darsan/model/profile/CctvDetailsModel.dart';
 import 'package:ghar_darsan/model/profile/addon_model.dart';
 import 'package:ghar_darsan/model/profile/attached_doc_model.dart';
 import 'package:ghar_darsan/model/profile/facility_model.dart';
+import 'package:ghar_darsan/model/profile/ftp_model.dart';
 import 'package:ghar_darsan/model/profile/notification_model.dart';
 import 'package:ghar_darsan/model/profile/plot_gallery_model.dart';
 import 'package:ghar_darsan/res/app_url/app_url.dart';
@@ -51,7 +53,7 @@ class ProfileRepository {
   Future<PlotGalleryModel> plotGalleryApi(Map data) async{
     log("attachDocApi");
     try{
-      dynamic response = await _apiService.postApiWithoutJson(data, AppUrl.plotGallery);
+      dynamic response = await _apiService.postApi(data, AppUrl.plotGallery);
       return response = PlotGalleryModel.fromJson(response);
     }catch(e)
     {
@@ -72,6 +74,23 @@ class ProfileRepository {
     }
   }
 
+  Future<CctvDetailsModel> fetchCctvDetails()async {
+    try {
+      dynamic response = await _apiService.postApi({},AppUrl.cctvDetails);
+      return response = CctvDetailsModel.fromJson(response);
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  Future<FTPModel> ftpDetails()async {
+    try {
+      dynamic response = await _apiService.postApi({},AppUrl.ftpIdPassword);
+      return response = FTPModel.fromJson(response);
+    } catch (e) {
+      rethrow;
+    }
+  }
 
 
 }
