@@ -43,11 +43,11 @@ String user_id = login.read("auth_code") ?? "";
     String bookingId = sharedPreferences.getString("bookingId") ?? "";
     data.addAll({"booking_id" : bookingId});
     // data.addAll({"booking_id" : "4"});
-    if (kDebugMode) {
+
       debugPrint(url);
       debugPrint(data.toString());
       debugPrint(authCode.toString());
-    }
+
 
     dynamic responseJson ;
     try {
@@ -58,7 +58,7 @@ String user_id = login.read("auth_code") ?? "";
           },
         body: jsonEncode(data)
       ).timeout( const Duration(seconds: 10));
-      log(response.body.toString());
+      // log(response.body.toString());
       // Utils.snackBar("",response.body.toString());
       responseJson  = returnResponse(response) ;
     }on SocketException {
@@ -86,7 +86,7 @@ String user_id = login.read("auth_code") ?? "";
       final response = await http.post(Uri.parse(url),
         body: data
       ).timeout( const Duration(seconds: 10));
-      log(response.body.toString());
+      // log(response.body.toString());
       // Utils.snackBar("",response.body.toString());
       responseJson  = returnResponse(response) ;
     }on SocketException {
@@ -94,7 +94,7 @@ String user_id = login.read("auth_code") ?? "";
     }on RequestTimeOut {
       throw RequestTimeOut('');
     }catch(e){
-
+      log(e.toString());
     }
     return responseJson ;
   }

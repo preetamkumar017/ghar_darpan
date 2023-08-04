@@ -22,18 +22,18 @@ class DashboardModel {
     if (json['notification'] != null) {
       notification = <Notification>[];
       json['notification'].forEach((v) {
-        notification!.add(Notification.fromJson(v));
+        notification!.add(new Notification.fromJson(v));
       });
     }
     isDue = json['is_due'];
     clientInfo = json['client_info'] != null
-        ? ClientInfo.fromJson(json['client_info'])
+        ? new ClientInfo.fromJson(json['client_info'])
         : null;
     paymentStatus = json['payment_status'] != null
-        ? PaymentStatus.fromJson(json['payment_status'])
+        ? new PaymentStatus.fromJson(json['payment_status'])
         : null;
     stageDetails = json['stage_details'] != null
-        ? StageDetails.fromJson(json['stage_details'])
+        ? new StageDetails.fromJson(json['stage_details'])
         : null;
     code = json['code'];
     status = json['status'];
@@ -41,7 +41,7 @@ class DashboardModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
+    final Map<String, dynamic> data = new Map<String, dynamic>();
     if (notification != null) {
       data['notification'] = notification!.map((v) => v.toJson()).toList();
     }
@@ -77,6 +77,7 @@ class Notification {
   String? paymentStatus;
   String? runningStatus;
   String? workStartDate;
+  String? remark;
   String? status;
   String? createBy;
   String? createDate;
@@ -98,6 +99,7 @@ class Notification {
         this.paymentStatus,
         this.runningStatus,
         this.workStartDate,
+        this.remark,
         this.status,
         this.createBy,
         this.createDate,
@@ -119,6 +121,7 @@ class Notification {
     paymentStatus = json['payment_status'];
     runningStatus = json['running_status'];
     workStartDate = json['work_start_date'];
+    remark = json['remark'];
     status = json['status'];
     createBy = json['create_by'];
     createDate = json['create_date'];
@@ -127,7 +130,7 @@ class Notification {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
+    final Map<String, dynamic> data = new Map<String, dynamic>();
     data['id'] = id;
     data['booking_id'] = bookingId;
     data['stage_id'] = stageId;
@@ -142,6 +145,7 @@ class Notification {
     data['payment_status'] = paymentStatus;
     data['running_status'] = runningStatus;
     data['work_start_date'] = workStartDate;
+    data['remark'] = remark;
     data['status'] = status;
     data['create_by'] = createBy;
     data['create_date'] = createDate;
@@ -198,7 +202,7 @@ class ClientInfo {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
+    final Map<String, dynamic> data = new Map<String, dynamic>();
     data['aggrement_date'] = aggrementDate;
     data['site_id'] = siteId;
     data['booking_id'] = bookingId;
@@ -245,7 +249,7 @@ class PaymentStatus {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
+    final Map<String, dynamic> data = new Map<String, dynamic>();
     data['upcoming_amt_date'] = upcomingAmtDate;
     data['upcoming_amt'] = upcomingAmt;
     data['last_payment'] = lastPayment;
@@ -263,13 +267,15 @@ class StageDetails {
   String? payableAmt;
   String? pendingAmt;
   String? stageName;
+  String? remark;
 
   StageDetails(
       {this.startDate,
         this.endDate,
         this.payableAmt,
         this.pendingAmt,
-        this.stageName});
+        this.stageName,
+        this.remark});
 
   StageDetails.fromJson(Map<String, dynamic> json) {
     startDate = json['start_date'];
@@ -277,15 +283,17 @@ class StageDetails {
     payableAmt = json['payable_amt'];
     pendingAmt = json['pending_amt'];
     stageName = json['stage_name'];
+    remark = json['remark'];
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
+    final Map<String, dynamic> data = new Map<String, dynamic>();
     data['start_date'] = startDate;
     data['end_date'] = endDate;
     data['payable_amt'] = payableAmt;
     data['pending_amt'] = pendingAmt;
     data['stage_name'] = stageName;
+    data['remark'] = remark;
     return data;
   }
 }

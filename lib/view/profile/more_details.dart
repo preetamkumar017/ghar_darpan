@@ -52,6 +52,7 @@ class _MoreDetailsState extends State<MoreDetails> {
       body: Column(
         mainAxisSize: MainAxisSize.max,
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Padding(
             padding: const EdgeInsetsDirectional.fromSTEB(20, 10, 0, 0),
@@ -126,6 +127,36 @@ class _MoreDetailsState extends State<MoreDetails> {
              style: FlutterFlowTheme.of(context).labelMedium,
             ),
           ),
+          if(data['remark']!="")
+          Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(20, 20, 0, 0),
+                child: Text(
+                  'This Site is Hold due to',
+                  style: FlutterFlowTheme.of(context).headlineMedium,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(20, 5, 20, 20),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: FlutterFlowTheme.of(context).badgePrimary,
+                    borderRadius: BorderRadius.circular(3),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsetsDirectional.fromSTEB(10, 5, 10, 5),
+                    child: Text(
+                      data['remark'],
+                      style: FlutterFlowTheme.of(context).labelLarge,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          )
         ],
       ),
     );

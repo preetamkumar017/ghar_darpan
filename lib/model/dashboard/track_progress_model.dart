@@ -39,14 +39,16 @@ class Result {
   String? workTag;
   String? stageDetails;
   String? payableAmt;
-  String? pendingAmt;
   String? payableDate;
+  String? pendingAmt;
   String? totalPaidAmt;
   String? paymentStatus;
+  String? runningStatus;
+  String? workStartDate;
+  String? remark;
   String? status;
   String? createBy;
   String? createDate;
-  String? runningStatus;
   String? updateDate;
   String? ip;
   String? stageName;
@@ -60,14 +62,16 @@ class Result {
         this.workTag,
         this.stageDetails,
         this.payableAmt,
-        this.pendingAmt,
         this.payableDate,
+        this.pendingAmt,
         this.totalPaidAmt,
         this.paymentStatus,
+        this.runningStatus,
+        this.workStartDate,
+        this.remark,
         this.status,
         this.createBy,
         this.createDate,
-        this.runningStatus,
         this.updateDate,
         this.ip,
         this.stageName});
@@ -81,14 +85,16 @@ class Result {
     workTag = json['work_tag'];
     stageDetails = json['stage_details'];
     payableAmt = json['payable_amt'];
-    pendingAmt = json['pending_amt'];
     payableDate = json['payable_date'];
+    pendingAmt = json['pending_amt'];
     totalPaidAmt = json['total_paid_amt'];
     paymentStatus = json['payment_status'];
+    runningStatus = json['running_status'];
+    workStartDate = json['work_start_date'];
+    remark = json['remark'];
     status = json['status'];
     createBy = json['create_by'];
     createDate = json['create_date'];
-    runningStatus = json['running_status'];
     updateDate = json['update_date'];
     ip = json['ip'];
     stageName = json['stage_name'];
@@ -104,14 +110,16 @@ class Result {
     data['work_tag'] = this.workTag;
     data['stage_details'] = this.stageDetails;
     data['payable_amt'] = this.payableAmt;
-    data['pending_amt'] = this.pendingAmt;
     data['payable_date'] = this.payableDate;
+    data['pending_amt'] = this.pendingAmt;
     data['total_paid_amt'] = this.totalPaidAmt;
     data['payment_status'] = this.paymentStatus;
+    data['running_status'] = this.runningStatus;
+    data['work_start_date'] = this.workStartDate;
+    data['remark'] = this.remark;
     data['status'] = this.status;
     data['create_by'] = this.createBy;
     data['create_date'] = this.createDate;
-    data['running_status'] = this.runningStatus;
     data['update_date'] = this.updateDate;
     data['ip'] = this.ip;
     data['stage_name'] = this.stageName;

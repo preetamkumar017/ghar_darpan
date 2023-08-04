@@ -11,7 +11,6 @@ import 'package:ghar_darsan/res/routes/routes_name.dart';
 import 'package:ghar_darsan/view_models/controller/profile/plot_gallery_controller.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:ghar_darsan/model/profile/plot_gallery_model.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class PlotGalleryView extends StatefulWidget {
@@ -199,73 +198,105 @@ class _PlotGalleryViewState extends State<PlotGalleryView> {
                       child: Padding(
                         padding: const EdgeInsetsDirectional.fromSTEB(
                             20, 15, 20, 20),
-                        child: GridView.builder(
-                          physics: const BouncingScrollPhysics(),
-                          padding: EdgeInsets.zero,
-                          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2,
-                            crossAxisSpacing: 20,
-                            mainAxisSpacing: 0,
-                          ),
-                          scrollDirection: Axis.vertical,
-                          itemCount: galleryController.getPlotGallery.result!
-                              .length,
-                          itemBuilder: (context, index) {
-                            Result result = galleryController.getPlotGallery
-                                .result![index];
-                            log("${Get.height * 0.15}");
-                            return Column(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Container(
-                                  width: Get.width * 0.5,
-                                  height: 120,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme
-                                        .of(context)
-                                        .secondaryBackground,
-                                    borderRadius: BorderRadius.circular(10),
-                                    border: Border.all(
-                                      color:
-                                      FlutterFlowTheme
-                                          .of(context)
-                                          .borderPrimary,
-                                      width: 2,
-                                    ),
-                                  ),
-                                  child: InkWell(
+                        child: ListView.builder(
+                            shrinkWrap: false,
+                            itemCount: galleryController.getPlotGallery.result!.length,
+                            itemBuilder:(context, idx)   {
 
-                                    onTap: () {
-                                      log("message");
-                                      Get.toNamed(RouteName.myImageView,arguments:  "${AppUrl.subMainUrl}/assets/site_images/manual_upload/${result.imageName}");
-                                    },
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(9),
-                                      child: Image.network(
-                                        "${AppUrl.subMainUrl}/assets/site_images/manual_upload/${result
-                                            .imageName}",
-                                        fit: BoxFit.cover,
+                              // log(galleryController.getPlotGallery.result!.length.toString() ?? "");
+                              return Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Container(
+                                      width: Get.width,
+                                      margin: const EdgeInsets.symmetric(vertical: 5,horizontal: 10),
+                                      padding: const EdgeInsets.all(8),
+                                      decoration: BoxDecoration(
+                                        // color: Colors.brown[400],
+                                        borderRadius: BorderRadius.circular(10.0),
                                       ),
+                                      child: Text("Remark:- ${galleryController.getPlotGallery.result![idx].remark ?? ""}",
+                                        style: const TextStyle(
+                                          // color: Colors.white,
+                                            fontSize: 15
+                                        ),
+                                      )),
+                                  GridView.builder(
+                                    shrinkWrap: true,
+                                    itemCount: galleryController.getPlotGallery.result![idx].imageNames!.length,
+                                    padding: EdgeInsets.zero,
+                                    gridDelegate:
+                                    const SliverGridDelegateWithFixedCrossAxisCount(
+                                      crossAxisCount: 2,
+                                      crossAxisSpacing: 10.0,
+                                      mainAxisSpacing: 0.1,
+                                      childAspectRatio: 1.0,
                                     ),
+                                    scrollDirection: Axis.vertical,
+                                    itemBuilder: (context, index) {
+                                      // log(galleryController.getPlotGallery.result![idx].imageNames!.length.toString() ?? "");
+                                      String data =  galleryController.getPlotGallery.result![idx].imageNames![index];
+                                      // log(AppUrl.subMainUrl+"/assets/site_images/manual_upload/"+ data.imageName.toString());
+                                      return Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          InkWell(
+                                            onTap: () {
+                                              // Map<String, String> da = {
+                                              //   'image':
+                                              //   "${AppUrl.subMainUrl}/assets/site_images/manual_upload/$data"
+                                              // };
+                                              log("message");
+                                              Get.toNamed(RouteName.myImageView,arguments:  "${AppUrl.subMainUrl}/assets/site_images/manual_upload/$data");
+
+                                            },
+                                            child: Container(
+                                              width: MediaQuery.of(context).size.width *
+                                                  0.8,
+                                              height:
+                                              MediaQuery.of(context).size.height *
+                                                  0.17,
+                                              decoration: BoxDecoration(
+                                                color: FlutterFlowTheme.of(context)
+                                                    .secondaryBackground,
+                                                borderRadius:
+                                                BorderRadius.circular(15.0),
+                                                border: Border.all(
+                                                  width: 3.0,
+                                                ),
+                                              ),
+                                              child: ClipRRect(
+                                                borderRadius:
+                                                BorderRadius.circular(13.0),
+                                                child: Image.network(
+                                                  "${AppUrl.subMainUrl}/assets/site_images/manual_upload/$data",
+                                                  width: MediaQuery.of(context)
+                                                      .size
+                                                      .width * 0.7,
+                                                  height: MediaQuery.of(context)
+                                                      .size
+                                                      .height * 0.0,
+                                                  fit: BoxFit.fill,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                          // Center(
+                                          //   child: Text(
+                                          //     data ?? "",
+                                          //     style: FlutterFlowTheme.of(context)
+                                          //         .labelMedium,
+                                          //     overflow: TextOverflow.ellipsis,
+                                          //   ),
+                                          // ),
+                                        ],
+                                      );
+                                    },
                                   ),
-                                ),
-                                Padding(
-                                  padding:
-                                  const EdgeInsetsDirectional.fromSTEB(
-                                      0, 10, 0, 0),
-                                  child: Text(
-                                    result.imageName ?? "",
-                                    style: FlutterFlowTheme
-                                        .of(context)
-                                        .bodyLarge,
-                                    overflow: TextOverflow.ellipsis,
-                                  ),
-                                ),
-                              ],
-                            );
-                          },
+                                ],
+                              );
+                            }
                         ),
                       ),
                     );

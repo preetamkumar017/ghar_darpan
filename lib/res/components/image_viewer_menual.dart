@@ -16,7 +16,8 @@ class _MyImageViewManualState extends State<MyImageViewManual> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold( appBar: AppBar(
+      child: Scaffold(
+        appBar: AppBar(
         // toolbarHeight: 35,
         backgroundColor:
         Colors.black, // Set the background color to transparent

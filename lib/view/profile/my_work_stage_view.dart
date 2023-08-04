@@ -247,6 +247,7 @@ class _MyWorkStageViewState
                                                     'work_tag': result.workTag,
                                                     'stage_details':result.stageDetails,
                                                     'stage_name':result.stageName,
+                                                    'remark':result.remark ?? ""
                                                   };
                                                   Get.toNamed(RouteName.moreDetails,arguments: data);
                                                 },
